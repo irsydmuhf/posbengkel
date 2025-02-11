@@ -32,21 +32,21 @@ class Kategori extends BaseController
         session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan!');
         return redirect()->to('Kategori');
     }
-    public function UpdateData($kode_kategori)
+    public function UpdateData($id_kategori)
     {
         $data = [
-            'kode_kategori' => $kode_kategori,
-            'nama_kategori' => $this->request->getPost('nama_kategori')
+            'id_kategori' => $id_kategori,
+            'nama_kategori' => $this->request->getPost('nama_kategori'),
         ];
 
         $this->ModelKategori->UpdateData($data);
         session()->setFlashdata('pesan', 'Data Berhasil Diupdate!');
         return redirect()->to('Kategori');
     }
-    public function DeleteData($kode_kategori)
+    public function DeleteData($id_kategori)
     {
         $data = [
-            'kode_kategori' => $kode_kategori,
+            'id_kategori' => $id_kategori,
         ];
         $this->ModelKategori->DeleteData($data);
         session()->setFlashdata('pesan', 'Data Berhasil Dihapus!');

@@ -18,13 +18,13 @@ class ModelKategori extends Model
     public function UpdateData($data)
     {
         $this->db->table('kategori')
-        ->where('kode_kategori', $data['kode_kategori'])
+        ->where('id_kategori', $data['id_kategori'])
         ->update($data);
     }
     public function DeleteData($data)
     {
         $this->db->table('kategori')
-        ->where('kode_kategori', $data['kode_kategori'])
+        ->where('id_kategori', $data['id_kategori'])
         ->delete($data);
     }
 }

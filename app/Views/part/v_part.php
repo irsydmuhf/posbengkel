@@ -27,19 +27,19 @@
                 <thead>
                     <tr>
                         <th width="50px">No</th>
-                        <th>Kategori</th>
+                        <th>Part</th>
                         <th width="200px">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php $no = 1;
-                    foreach ($kategori as $key => $value) { ?>
+                    foreach ($part as $key => $value) { ?>
                         <tr>
                             <td><?= $no++ ?></td>
-                            <td><?= $value['nama_kategori'] ?></td>
+                            <td><?= $value['nama_part'] ?></td>
                             <td>
-                                <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#edit-data<?= $value['id_kategori'] ?>"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-data<?= $value['id_kategori'] ?>"><i class="fas fa-trash"></i></a>
+                                <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#edit-data<?= $value['id_part'] ?>"><i class="fas fa-pencil-alt"></i></a>
+                                <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-data<?= $value['id_part'] ?>"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php } ?>
@@ -55,12 +55,12 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <?php echo form_open('Kategori/InsertData') ?>
+                    <?php echo form_open('Part/InsertData') ?>
                     <div class="modal-body">
 
                         <div class="form-group">
-                            <label for="">Nama Katgeori</label>
-                            <input name="nama_kategori" class="form-control" placeholder="Kategori" required>
+                            <label for="">Nama Part</label>
+                            <input name="nama_part" class="form-control" placeholder="Part" required>
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between">
@@ -74,9 +74,9 @@
             </div>
             <!-- /.modal-dialog -->
         </div>
-        <!-- update kategori -->
-        <?php foreach ($kategori as $key => $value) { ?>
-            <div class="modal fade" id="edit-data<?= $value['id_kategori'] ?>">
+        <!-- update part -->
+        <?php foreach ($part as $key => $value) { ?>
+            <div class="modal fade" id="edit-data<?= $value['id_part'] ?>">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -85,12 +85,12 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <?php echo form_open('Kategori/UpdateData/' . $value['id_kategori']) ?>
+                        <?php echo form_open('Part/UpdateData/' . $value['id_part']) ?>
                         <div class="modal-body">
 
                             <div class="form-group">
-                                <label for="">Nama Kategori</label>
-                                <input name="nama_kategori" value="<?= $value['nama_kategori'] ?>" class="form-control" placeholder="Kategori" required>
+                                <label for="">Nama Part</label>
+                                <input name="nama_part" value="<?= $value['nama_part'] ?>" class="form-control" placeholder="Part" required>
                             </div>
                         </div>
                         <div class="modal-footer justify-content-between">
@@ -105,9 +105,9 @@
                 <!-- /.modal-dialog -->
             </div>
         <?php } ?>
-        <!-- delete kategori -->
-        <?php foreach ($kategori as $key => $value) { ?>
-            <div class="modal fade" id="delete-data<?= $value['id_kategori'] ?>">
+        <!-- delete part -->
+        <?php foreach ($part as $key => $value) { ?>
+            <div class="modal fade" id="delete-data<?= $value['id_part'] ?>">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -117,12 +117,12 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>Apakah Anda Yakin Menghapus Kategori</p>
-                            <p> <?= $value['nama_kategori'] ?></p>
+                            <p>Apakah Anda Yakin Menghapus Part</p>
+                            <p> <?= $value['nama_part'] ?></p>
                         </div>
                         <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
-                            <a href="<?= base_url('Kategori/DeleteData/' . $value['id_kategori']) ?>" class="btn btn-danger btn-flat">Delete</a>
+                            <a href="<?= base_url('Part/DeleteData/' . $value['id_part']) ?>" class="btn btn-danger btn-flat">Delete</a>
                         </div>
                     </div>
                     <!-- /.modal-content -->

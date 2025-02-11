@@ -4,6 +4,8 @@ namespace Config;
 
 use CodeIgniter\Config\BaseService;
 
+// $pager = service('pager');
+
 /**
  * Services Configuration file.
  *

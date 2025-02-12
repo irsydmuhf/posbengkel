@@ -38,8 +38,8 @@
                             <td><?= $no++ ?></td>
                             <td><?= $value['nama_satuan'] ?></td>
                             <td>
-                                <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#edit-data<?= $value['kode_satuan'] ?>"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-data<?= $value['kode_satuan'] ?>"><i class="fas fa-trash"></i></a>
+                                <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#edit-data<?= $value['id_satuan'] ?>"><i class="fas fa-pencil-alt"></i></a>
+                                <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-data<?= $value['id_satuan'] ?>"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php } ?>
@@ -76,7 +76,7 @@
         </div>
         <!-- update satuan -->
         <?php foreach ($satuan as $key => $value) { ?>
-            <div class="modal fade" id="edit-data<?= $value['kode_satuan'] ?>">
+            <div class="modal fade" id="edit-data<?= $value['id_satuan'] ?>">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -85,7 +85,7 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <?php echo form_open('Satuan/UpdateData' . $value['kode_satuan']) ?>
+                        <?php echo form_open('Satuan/UpdateData' . $value['id_satuan']) ?>
                         <div class="modal-body">
 
                             <div class="form-group">
@@ -107,7 +107,7 @@
         <?php } ?>
         <!-- delete satuan -->
         <?php foreach ($satuan as $key => $value) { ?>
-            <div class="modal fade" id="delete-data<?= $value['kode_satuan'] ?>">
+            <div class="modal fade" id="delete-data<?= $value['id_satuan'] ?>">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -122,7 +122,7 @@
                         </div>
                         <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
-                            <a href="<?= base_url('Satuan/DeleteData/'. $value['kode_satuan'])?>" class="btn btn-danger btn-flat">Delete</a>
+                            <a href="<?= base_url('Satuan/DeleteData/'. $value['id_satuan'])?>" class="btn btn-danger btn-flat">Delete</a>
                         </div>
                     </div>
                     <!-- /.modal-content -->

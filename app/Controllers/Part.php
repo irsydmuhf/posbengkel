@@ -17,6 +17,9 @@ class Part extends BaseController
     }
     public function index()
     {
+        $modelkategori = new ModelKategori();
+        $modelsatuan = new ModelSatuan();
+        
         $data = [
             'judul' => 'MasterData',
             'subjudul' => 'Part',
@@ -24,12 +27,18 @@ class Part extends BaseController
             'submenu' => 'part',
             'page' => 'part/v_part',
             'part' => $this->ModelPart->AllData(),
+            'datakategori' => $modelkategori->AllData(),
+            'datasatuan' => $modelsatuan->AllData(),
         ];
         return view('v_template', $data);
     }
+
     public function InsertData()
     {
-        $data = ['nama_part' => $this->request->getPost('nama_part')];
+
+        $data = [
+            'nama_part' => $this->request->getPost('nama_part'),
+        ];
         $this->ModelPart->InsertData($data);
         session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan!');
         return redirect()->to('Part');

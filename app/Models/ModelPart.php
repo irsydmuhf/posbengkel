@@ -27,8 +27,9 @@ class ModelPart extends Model
     {
         return $this->insert($data);
     }
-    // public function tampilData(){
-    //    return $this->table('part')->join('kategori', 'id_kategori_part=id_kategori')
-    //    ->join('satuan','id_satuan_part=id_satuan')->get;
-    // }
+
+    public function UpdateData($data)
+    {
+        return $this->update($data['id_part'], $data);
+    }
 }

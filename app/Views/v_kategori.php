@@ -2,9 +2,8 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title"><?= $subjudul ?></h3>
-
             <div class="card-tools">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-data">
+                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#add-data">
                     <i class="fas fa-plus-circle"></i>
                      Tambah Data
                 </button>

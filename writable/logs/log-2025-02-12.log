@@ -955,3 +955,51 @@ in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
 12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
 14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-12 09:20:00 --> Call to undefined method App\Models\ModelPart::UpdateData
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Part.php(60): CodeIgniter\Model->__call('UpdateData', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->UpdateData('RC-0001')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-12 09:20:57 --> Call to undefined method App\Models\ModelPart::UpdateData
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Part.php(65): CodeIgniter\Model->__call('UpdateData', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->UpdateData('RC-0001')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-12 09:20:59 --> Call to undefined method App\Models\ModelPart::UpdateData
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Part.php(65): CodeIgniter\Model->__call('UpdateData', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->UpdateData('RC-0001')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-12 09:21:11 --> Call to undefined method App\Models\ModelPart::UpdateData
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Part.php(65): CodeIgniter\Model->__call('UpdateData', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->UpdateData('RC-0001')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-12 09:21:36 --> Call to undefined method App\Models\ModelPart::UpdateData
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Part.php(65): CodeIgniter\Model->__call('UpdateData', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->UpdateData('RC-0001')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-12 09:37:43 --> Call to undefined method App\Models\ModelPart::UpdateData
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Part.php(65): CodeIgniter\Model->__call('UpdateData', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->UpdateData('RC-0001')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

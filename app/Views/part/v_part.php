@@ -2,9 +2,8 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title"><?= $subjudul ?></h3>
-
             <div class="card-tools">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-data-part">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-data">
                     <i class="fas fa-plus-circle"></i>
                     Tambah Data
                 </button>
@@ -50,7 +49,7 @@
             </table>
         </div>
         <!-- tambah data part -->
-        <div class="modal fade" id="add-data-part">
+        <div class="modal fade" id="add-data">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -61,14 +60,13 @@
                     </div>
                     <?php echo form_open('Part/InsertData') ?>
                     <div class="modal-body">
-
                         <div class="form-group">
-                            <label for="">Kode Part</label>
-                            <input name="id_part" class="form-control" placeholder="Part" required>
+                            <label for="">Kode Part / Jasa</label>
+                            <input name="id_part" class="form-control" placeholder="Masukkan Kode" required>
                         </div>
                         <div class="form-group">
-                            <label for="">Nama Part</label>
-                            <input name="nama_part" class="form-control" placeholder="Part" required>
+                            <label for="">Nama Part / Jasa</label>
+                            <input name="nama_part" class="form-control" placeholder="Masukkan Nama" required>
                         </div>
                         <div class="form-group">
                             <label for="kategori">Kategori</label>
@@ -79,15 +77,32 @@
                                 <?php } ?>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="satuan">Satuan</label>
-                            <select name="satuan" id="satuan" class="form-control col-sm-3">
-                                <option selected value="">Pilih Satuan</option>
-                                <?php foreach ($datasatuan as $sat) { ?>
-                                    <option value="<?= $sat['id_satuan'] ?>"><?= $sat['nama_satuan'] ?></option>
-                                <?php } ?>
-                            </select>
+                        <div style="display: flex; gap: 5px;">
+                            <div class="form-group">
+                                <label for="">Harga Beli</label>
+                                <input name="harga_beli" class="form-control" placeholder="Harga Beli" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Harga Jual</label>
+                                <input name="harga_jual" class="form-control" placeholder="Harga Jual" required>
+                            </div>
                         </div>
+                        <div style="display: flex; gap: 5px;">
+                            <div class="form-group">
+                                <label for="">Jumlah Stok</label>
+                                <input name="stok" class="form-control" placeholder="Jumlah Stok" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="satuan">Satuan</label>
+                                <select name="satuan" id="satuan" class="form-control col-sm-12">
+                                    <option selected value="">Pilih Satuan</option>
+                                    <?php foreach ($datasatuan as $sat) { ?>
+                                        <option value="<?= $sat['id_satuan'] ?>"><?= $sat['nama_satuan'] ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
@@ -101,6 +116,51 @@
             <!-- /.modal-dialog -->
         </div>
         <!-- update part -->
+        <?php foreach ($part as $key => $value) { ?>
+            <div class="modal fade" id="view-data<?= $value['id_part'] ?>">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Edit Data<?= $subjudul ?></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <?php echo form_open('Part/AllData/' . $value['id_part']) ?>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="">Kode Part</label>
+                                <div name="id_part" class="form-control" placeholder="Part" required><?= $value['id_part'] ?></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Nama Part</label>
+                                <div name="nama_part" class="form-control" placeholder="Part"><?= $value['nama_part'] ?></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="kategori">Kategori</label>
+                                <div name="kategori" id="kategori" class="form-control col-sm-3" placeholder="Part" selected value="<?= $value['id_kategori'] ?>">
+                                    <?= $value['nama_kategori'] ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="kategori">Stok</label>
+                                <div name="satuan" id="satuan" class="form-control col-sm-3" placeholder="Part" selected value="<?= $value['id_satuan'] ?>">
+                                    <?= $value['stok'] ?> <?= $value['nama_satuan'] ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                            <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-warning btn-flat">Save</button>
+                        </div>
+                        <?php echo form_close() ?>
+
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+        <?php } ?>
         <?php foreach ($part as $key => $value) { ?>
             <div class="modal fade" id="edit-data<?= $value['id_part'] ?>">
                 <div class="modal-dialog modal-lg">

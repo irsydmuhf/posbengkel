@@ -124,7 +124,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <li class="nav-item">
                                     <a href="<?= base_url('Part') ?>" class="nav-link <?= $submenu == 'part' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Part</p>
+                                        <p>Part dan Jasa</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">

@@ -124,7 +124,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <li class="nav-item">
                                     <a href="<?= base_url('Part') ?>" class="nav-link <?= $submenu == 'part' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Part dan Jasa</p>
+                                        <p>Part</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?= base_url('Jasa') ?>" class="nav-link <?= $submenu == 'jasa' ? 'active' : '' ?>">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Jasa</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -175,12 +181,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0"><?= $judul?></h1>
+                            <h1 class="m-0"><?= $judul ?></h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#"><?= $judul?></a></li>
-                                <li class="breadcrumb-item active"><?= $subjudul?></li>
+                                <li class="breadcrumb-item"><a href="#"><?= $judul ?></a></li>
+                                <li class="breadcrumb-item active"><?= $subjudul ?></li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -228,6 +234,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="/assets/dist/js/adminlte.min.js"></script>
+    <!-- <script>
+        $(document).ready(function() {
+            $("#kategori").change(function() {
+                var selectedCategory = $("#kategori option:selected").text().toLowerCase();
+
+                if (selectedCategory === "jasa") {
+                    $("#harga_beli").hide().val(0).prop("readonly", true); // Harga beli jadi 0 & tidak bisa diedit
+                    $("#stok-container").hide(); // Sembunyikan stok
+                    $("#satuan-container").hide(); // Sembunyikan stok
+                } else {
+                    $("#harga_beli").prop("readonly", false); // Bisa diedit
+                    $("#stok-container").show(); // Tampilkan stok
+                    $("#satuan-container").show(); // Tampilkan stok
+                }
+            });
+        });
+    </script> -->
 </body>
 
 </html>

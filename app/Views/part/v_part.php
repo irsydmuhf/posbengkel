@@ -63,11 +63,11 @@
                         <div class="modal-body">
                             <table class="table table-bordered table-striped">
                                 <tr>
-                                    <th style="width: 30%;">Kode Part / Jasa</th>
+                                    <th style="width: 30%;">Kode Part</th>
                                     <td><?= $value['id_part'] ?></td>
                                 </tr>
                                 <tr>
-                                    <th>Nama Part / Jasa</th>
+                                    <th>Nama Part</th>
                                     <td><?= $value['nama_part'] ?></td>
                                 </tr>
                                 <tr>
@@ -92,10 +92,6 @@
                                 </tr>
                             </table>
                         </div>
-
-                        <div class="modal-footer justify-content-between">
-                            <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Tutup</button>
-                        </div>
                     </div>
                     <!-- /.modal-content -->
                 </div>
@@ -106,150 +102,192 @@
         <div class="modal fade" id="add-data">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Tambah Data <?= $subjudul ?></h4>
+                    <div class="modal-header bg-primary">
+                        <h4 class="modal-title">Tambah Data Barang</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <?php echo form_open('Part/InsertData') ?>
                     <div class="modal-body">
-                        <div class="form-group">
-                            <label for="">Kode Part / Jasa</label>
-                            <input name="id_part" class="form-control" placeholder="Masukkan Kode" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Nama Part / Jasa</label>
-                            <input name="nama_part" class="form-control" placeholder="Masukkan Nama" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="kategori">Kategori</label>
-                            <select name="kategori" id="kategori" class="form-control col-sm-3">
-                                <option selected value="">Pilih Kategori</option>
-                                <?php foreach ($datakategori as $kat) { ?>
-                                    <option value="<?= $kat['id_kategori'] ?>"><?= $kat['nama_kategori'] ?></option>
-                                <?php } ?>
-                            </select>
-                        </div>
-                        <div style="display: flex; gap: 5px;">
-                            <div class="form-group">
-                                <label for="">Harga Beli</label>
-                                <input name="harga_beli" class="form-control" placeholder="Harga Beli" required>
+                        <div class="row">
+                            <!-- Kode Part -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="id_part">Kode Part</label>
+                                    <input type="text" name="id_part" class="form-control" placeholder="Masukkan Kode" required>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="">Harga Jual</label>
-                                <input name="harga_jual" class="form-control" placeholder="Harga Jual" required>
-                            </div>
-                        </div>
-                        <div style="display: flex; gap: 5px;">
-                            <div class="form-group">
-                                <label for="">Jumlah Stok</label>
-                                <input name="stok" class="form-control" placeholder="Jumlah Stok" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="satuan">Satuan</label>
-                                <select name="satuan" id="satuan" class="form-control col-sm-12">
-                                    <option selected value="">Pilih Satuan</option>
-                                    <?php foreach ($datasatuan as $sat) { ?>
-                                        <option value="<?= $sat['id_satuan'] ?>"><?= $sat['nama_satuan'] ?></option>
-                                    <?php } ?>
-                                </select>
+                            <!-- Nama Part -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="nama_part">Nama Part</label>
+                                    <input type="text" name="nama_part" class="form-control" placeholder="Masukkan Nama" required>
+                                </div>
                             </div>
                         </div>
 
+                        <div class="row">
+                            <!-- Kategori -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="kategori">Kategori</label>
+                                    <select name="kategori" id="kategori" class="form-control">
+                                        <option selected value="">Pilih Kategori</option>
+                                        <?php foreach ($datakategori as $kat) { ?>
+                                            <option value="<?= $kat['id_kategori'] ?>"><?= $kat['nama_kategori'] ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Satuan -->
+                            <div class="col-md-6" id="satuan-container">
+                                <div class="form-group">
+                                    <label for="satuan">Satuan</label>
+                                    <select name="satuan" id="satuan" class="form-control">
+                                        <option selected value="">Pilih Satuan</option>
+                                        <?php foreach ($datasatuan as $sat) { ?>
+                                            <option value="<?= $sat['id_satuan'] ?>"><?= $sat['nama_satuan'] ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Harga Beli -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="harga_beli">Harga Beli</label>
+                                    <input type="number" name="harga_beli" id="harga_beli" class="form-control" placeholder="Harga Beli" required>
+                                </div>
+                            </div>
+                            <!-- Harga Jual -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="harga_jual">Harga Jual</label>
+                                    <input type="number" name="harga_jual" class="form-control" placeholder="Harga Jual" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="stok-container">
+                            <!-- Jumlah Stok -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="stok">Jumlah Stok</label>
+                                    <input type="number" name="stok" class="form-control" placeholder="Jumlah Stok" required>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                        <div></div> 
                         <button type="submit" class="btn btn-primary btn-flat">Save</button>
                     </div>
                     <?php echo form_close() ?>
-
                 </div>
-                <!-- /.modal-content -->
             </div>
-            <!-- /.modal-dialog -->
         </div>
+
         <!-- update part -->
         <?php foreach ($part as $key => $value) { ?>
             <div class="modal fade" id="edit-data<?= $value['id_part'] ?>">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Edit Data<?= $subjudul ?></h4>
+                        <div class="modal-header bg-warning">
+                            <h4 class="modal-title">Edit Data <?= $subjudul ?></h4>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <?php echo form_open('Part/UpdateData/' . $value['id_part']) ?>
                         <div class="modal-body">
-                            <div class="form-group">
-                                <label for="">Kode Part</label>
-                                <input name="id_part" value="<?= $value['id_part'] ?>" class="form-control" placeholder="Part" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Nama Part</label>
-                                <input name="nama_part" value="<?= $value['nama_part'] ?>" class="form-control" placeholder="Part" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="kategori">Kategori</label>
-                                <select name="kategori" id="kategori" class="form-control col-sm-3">
-                                    <option selected value="<?= $value['id_kategori'] ?>"><?= $value['nama_kategori'] ?></option>
-                                    <?php foreach ($datakategori as $kat) {
-                                        if ($kat['id_kategori'] != $value['id_kategori']) {
-                                    ?>
-                                            <option value="<?= $kat['id_kategori'] ?>"><?= $kat['nama_kategori'] ?></option>
-                                    <?php }
-                                    } ?>
-                                </select>
-                            </div>
-                            <div style="display: flex; gap: 5px;">
-                                <div class="form-group">
-                                    <label for="">Harga Beli</label>
-                                    <input name="harga_beli" class="form-control" value="<?= $value['harga_beli'] ?>" required>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="id_part">Kode Part</label>
+                                        <input type="text" name="id_part" value="<?= $value['id_part'] ?>" class="form-control" required>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="">Harga Jual</label>
-                                    <input name="harga_jual" class="form-control" value="<?= $value['harga_beli'] ?>" required>
-                                </div>
-                            </div>
-                            <div style="display: flex; gap: 5px;">
-                                <div class="form-group">
-                                    <label for="">Jumlah Stok</label>
-                                    <input name="stok" class="form-control" value="<?= $value['stok'] ?>" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="satuan">Satuan</label>
-                                    <select name="satuan" id="satuan" class="form-control col-sm-12">
-                                        <option selected value="<?= $value['id_satuan'] ?>"><?= $value['nama_satuan'] ?></option>
-                                        <?php foreach ($datasatuan as $sat) {
-                                            if ($sat['id_satuan'] != $value['id_satuan']) {
-                                        ?>
-                                                <option value="<?= $sat['id_satuan'] ?>"><?= $sat['nama_satuan'] ?></option>
-                                        <?php }
-                                        } ?>
-                                    </select>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="nama_part">Nama Part</label>
+                                        <input type="text" name="nama_part" value="<?= $value['nama_part'] ?>" class="form-control" required>
+                                    </div>
                                 </div>
                             </div>
 
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="kategori">Kategori</label>
+                                        <select name="kategori" class="form-control">
+                                            <option selected value="<?= $value['id_kategori'] ?>"><?= $value['nama_kategori'] ?></option>
+                                            <?php foreach ($datakategori as $kat) {
+                                                if ($kat['id_kategori'] != $value['id_kategori']) { ?>
+                                                    <option value="<?= $kat['id_kategori'] ?>"><?= $kat['nama_kategori'] ?></option>
+                                            <?php }
+                                            } ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="satuan">Satuan</label>
+                                        <select name="satuan" class="form-control">
+                                            <option selected value="<?= $value['id_satuan'] ?>"><?= $value['nama_satuan'] ?></option>
+                                            <?php foreach ($datasatuan as $sat) {
+                                                if ($sat['id_satuan'] != $value['id_satuan']) { ?>
+                                                    <option value="<?= $sat['id_satuan'] ?>"><?= $sat['nama_satuan'] ?></option>
+                                            <?php }
+                                            } ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="harga_beli">Harga Beli</label>
+                                        <input type="number" name="harga_beli" value="<?= $value['harga_beli'] ?>" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="harga_jual">Harga Jual</label>
+                                        <input type="number" name="harga_jual" value="<?= $value['harga_jual'] ?>" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="stok">Jumlah Stok</label>
+                                        <input type="number" name="stok" value="<?= $value['stok'] ?>" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="modal-footer justify-content-between">
-                            <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                            <div></div>
                             <button type="submit" class="btn btn-warning btn-flat">Save</button>
                         </div>
                         <?php echo form_close() ?>
-
                     </div>
-                    <!-- /.modal-content -->
                 </div>
-                <!-- /.modal-dialog -->
             </div>
         <?php } ?>
+
         <!-- delete part -->
         <?php foreach ($part as $key => $value) { ?>
             <div class="modal fade" id="delete-data<?= $value['id_part'] ?>">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <div class="modal-header">
+                        <div class="modal-header bg-danger">
                             <h4 class="modal-title">Delete Data<?= $subjudul ?></h4>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>

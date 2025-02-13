@@ -22,7 +22,7 @@ class Part extends BaseController
 
         $data = [
             'judul' => 'MasterData',
-            'subjudul' => 'Part dan Jasa',
+            'subjudul' => 'Part',
             'menu' => 'masterdata',
             'submenu' => 'part',
             'page' => 'part/v_part',

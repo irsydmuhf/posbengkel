@@ -1,7 +1,7 @@
 <div class="col-md-12">
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title"><?= $subjudul ?></h3>
+            <h3 class="card-title mt-2"><?= $subjudul ?></h3>
             <div class="card-tools">
                 <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#add-data">
                     <i class="fas fa-plus-circle"></i>
@@ -12,6 +12,13 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
+            <!-- searhcing -->
+            <!-- <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Cari Berdasarkan Kode, Nama Part atau Kategori" name="search" autofocus>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search" name="tombolsearch"></i></button>
+                </div>
+            </div> -->
             <?php
             if (session()->getFlashData('pesan')) {
                 echo '<div class="alert alert-success alert-dismissible">
@@ -183,7 +190,7 @@
                     </div>
 
                     <div class="modal-footer justify-content-between">
-                        <div></div> 
+                        <div></div>
                         <button type="submit" class="btn btn-primary btn-flat">Save</button>
                     </div>
                     <?php echo form_close() ?>

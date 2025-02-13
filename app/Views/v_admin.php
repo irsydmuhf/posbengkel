@@ -1,13 +1,27 @@
 <div class="col-lg-3 col-6">
     <!-- small box -->
+    <div class="small-box bg-primary">
+        <div class="inner">
+            <h3>150</h3>
+
+            <p>Part</p>
+        </div>
+        <div class="icon">
+            <i class="fas fa-boxes"></i>
+        </div>
+        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+    </div>
+</div>
+<div class="col-lg-3 col-6">
+    <!-- small box -->
     <div class="small-box bg-info">
         <div class="inner">
             <h3>150</h3>
 
-            <p>Part & Jasa</p>
+            <p>Jasa</p>
         </div>
         <div class="icon">
-            <i class="fas fa-boxes"></i>
+            <i class="fas fa-wrench"></i>
         </div>
         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
     </div>

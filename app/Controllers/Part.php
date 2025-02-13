@@ -6,6 +6,9 @@ use App\Controllers\BaseController;
 use App\Models\ModelPart;
 use App\Models\ModelKategori;
 use App\Models\ModelSatuan;
+use CodeIgniter\Commands\Server\Serve;
+use Config\Services;
+use PSpell\Config;
 
 class Part extends BaseController
 {
@@ -16,12 +19,12 @@ class Part extends BaseController
         $this->ModelPart = new ModelPart();
     }
     public function index()
-    {
+    {        ('tombolcari');
         $modelkategori = new ModelKategori();
         $modelsatuan = new ModelSatuan();
 
         $data = [
-            'judul' => 'MasterData',
+            'judul' => 'Master Data',
             'subjudul' => 'Part',
             'menu' => 'masterdata',
             'submenu' => 'part',
@@ -45,7 +48,7 @@ class Part extends BaseController
             'harga_jual' => $this->request->getPost('harga_jual'),
             'stok' => $this->request->getPost('stok'),
         ];
-        
+         
         $this->ModelPart->InsertData($data);
         session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan!');
         return redirect()->to('Part');

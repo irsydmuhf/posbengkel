@@ -152,6 +152,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
+                                    <a href="<?= base_url('Supplier') ?>" class="nav-link <?= $submenu == 'supplier' ? 'active' : '' ?>">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Supplier</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="<?= base_url('User') ?>" class="nav-link <?= $submenu == 'user' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>User</p>
@@ -221,7 +227,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Anything you want
             </div> -->
             <!-- Default to the left -->
-            <strong>Copyright &copy; <a href="https://instagram.com/irsydmuhf/">Irsyad Muhamad Firdaus</a>.</strong> All rights reserved.
+            <strong>Point of Sale &copy; <a href="https://instagram.com/irsydmuhf/">Irsyad Muhamad Firdaus</a>.</strong> All rights reserved.
         </footer>
     </div>
     <!-- ./wrapper -->

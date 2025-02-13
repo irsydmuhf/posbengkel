@@ -32,4 +32,12 @@ class ModelPart extends Model
     {
         return $this->update($data['id_part'], $data);
     }
+
+    public function tampildata_search($search) {
+        return $this->table('part')
+        ->join('kategori','id_kategori_part=id_kategori')
+        ->orlike('id_part', $search)
+        ->orlike('nama_part', $search)
+        ->orlike('nama_kategori', $search);
+    }
 }

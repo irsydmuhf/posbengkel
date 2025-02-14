@@ -89,8 +89,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
+                        <li class="nav-item <?= $menu == 'transaksi' ? 'menu-open' : '' ?>">
+                            <a href="#" class="nav-link <?= $menu == 'transaksi' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-cash-register"></i>
                                 <p>
                                     Transaksi
@@ -99,13 +99,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="<?= base_url('TransaksiMasuk') ?>" class="nav-link <?= $submenu == 'masuk' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>TransaksiMasuk</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="<?= base_url('TransaksiKeluar') ?>" class="nav-link <?= $submenu == 'keluar' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>TransaksiKeluar</p>
                                     </a>

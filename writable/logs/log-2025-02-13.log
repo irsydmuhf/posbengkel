@@ -622,3 +622,38 @@ Stack trace:
 #14 C:\xampp\htdocs\posbengkel\system\CLI\Console.php(48): CodeIgniter\CodeIgniter->run()
 #15 C:\xampp\htdocs\posbengkel\spark(98): CodeIgniter\CLI\Console->run()
 #16 {main}
+CRITICAL - 2025-02-13 21:10:08 --> Class "App\Controllers\ModelTrasnsaksiKeluar" not found
+in APPPATH\Controllers\TransaksiKeluar.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(860): App\Controllers\TransaksiKeluar->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-13 21:12:55 --> Object of class App\Models\ModelPart could not be converted to string
+in APPPATH\Controllers\TransaksiKeluar.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->index()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-13 21:13:22 --> Object of class App\Models\ModelPart could not be converted to string
+in APPPATH\Controllers\TransaksiKeluar.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->index()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-13 21:17:27 --> Object of class App\Models\ModelPart could not be converted to string
+in APPPATH\Controllers\TransaksiKeluar.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->index()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-13 21:19:08 --> Object of class App\Models\ModelPart could not be converted to string
+in APPPATH\Controllers\TransaksiKeluar.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->index()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

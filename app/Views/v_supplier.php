@@ -87,7 +87,7 @@
         <!-- update supplier -->
         <?php foreach ($supplier as $key => $value) { ?>
             <div class="modal fade" id="edit-data<?= $value['id_supplier'] ?>">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header bg-warning">
                             <h4 class="modal-title">Edit Data <?= $subjudul ?></h4>

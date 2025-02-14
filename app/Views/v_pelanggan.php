@@ -151,6 +151,10 @@
                         <?php echo form_open('Pelanggan/UpdateData/' . $value['nopol']) ?>
                         <div class="modal-body">
                             <div class="form-group">
+                                <label for="">Nopol</label>
+                                <input name="nopol" value="<?= $value['nopol'] ?>" class="form-control" required>
+                            </div>
+                            <div class="form-group">
                                 <label for="">Nama Pelanggan</label>
                                 <input name="nama_pelanggan" value="<?= $value['nama_pelanggan'] ?>" class="form-control" required>
                             </div>

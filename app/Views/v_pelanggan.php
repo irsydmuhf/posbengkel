@@ -26,9 +26,8 @@
                 <thead>
                     <tr>
                         <th width="50px">No</th>
-                        <th>Nama</th>
-                        <th>Alamat</th>
-                        <th>No Telp.</th>
+                        <th>Nopol</th>
+                        <th>Nama Pelanggan</th>
                         <th width="200px">Aksi</th>
                     </tr>
                 </thead>
@@ -37,10 +36,10 @@
                     foreach ($pelanggan as $key => $value) { ?>
                         <tr>
                             <td><?= $no++ ?></td>
+                            <td><?= $value['nopol'] ?></td>
                             <td><?= $value['nama_pelanggan'] ?></td>
-                            <td><?= $value['alamat_pelanggan'] ?></td>
-                            <td><?= $value['telp_pelanggan'] ?></td>
                             <td>
+                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#view-data<?= $value['nopol'] ?>"><i class="fas fa-eye"></i></a>
                                 <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#edit-data<?= $value['nopol'] ?>"><i class="fas fa-pencil-alt"></i></a>
                                 <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-data<?= $value['nopol'] ?>"><i class="fas fa-trash"></i></a>
                             </td>
@@ -49,6 +48,52 @@
                 </tbody>
             </table>
         </div>
+        <!-- view data -->
+        <?php foreach ($pelanggan as $key => $value) { ?>
+            <div class="modal fade" id="view-data<?= $value['nopol'] ?>">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary">
+                            <h4 class="modal-title">Detail Data <?= $subjudul ?></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th style="width: 30%;">Nopol Pelanggan</th>
+                                    <td><?= $value['nopol'] ?></td>
+                                </tr>
+                                <tr>
+                                    <th>Nama Pelanggan</th>
+                                    <td><?= $value['nama_pelanggan'] ?></td>
+                                </tr>
+                                <tr>
+                                    <th>Alamat Pelanggan</th>
+                                    <td><?= $value['alamat_pelanggan'] ?></td>
+                                </tr>
+                                <tr>
+                                    <th>Alamat Pelanggan</th>
+                                    <td><?= $value['alamat_pelanggan'] ?></td>
+                                </tr>
+                                <tr>
+                                    <th>No Telp</th>
+                                    <td><?= $value['telp_pelanggan'] ?></td>
+                                </tr>
+                                <tr>
+                                    <th>Mobil Pelanggan</th>
+                                    <td><?= $value['mobil_pelanggan']?></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+        <?php } ?>
         <!-- tambah data -->
         <div class="modal fade" id="add-data">
             <div class="modal-dialog modal-lg">
@@ -63,7 +108,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="">Nopol Pelanggan</label>
-                            <input name="nama_pelanggan" class="form-control" placeholder="Masukkan Nopol Pelanggan" required>
+                            <input name="nopol" class="form-control" placeholder="Masukkan Nopol Pelanggan" required>
                         </div>
                         <div class="form-group">
                             <label for="">Nama Pelanggan</label>

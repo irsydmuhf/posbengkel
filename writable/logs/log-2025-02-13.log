@@ -439,3 +439,186 @@ in APPPATH\Views\v_pelanggan.php on line 44.
 12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
 14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-13 17:48:59 --> Undefined array key "id_pelanggan"
+in APPPATH\Views\v_pelanggan.php on line 53.
+ 1 APPPATH\Views\v_pelanggan.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_pelanggan"', 'APPPATH\\Views\\v_pelanggan.php', 53)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_pelanggan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_pelanggan', [], true)
+ 5 APPPATH\Views\v_template.php(210): view('v_pelanggan')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Pelanggan.php(26): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Pelanggan->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pelanggan))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-13 17:49:29 --> Undefined array key "id_pelanggan"
+in APPPATH\Views\v_pelanggan.php on line 53.
+ 1 APPPATH\Views\v_pelanggan.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_pelanggan"', 'APPPATH\\Views\\v_pelanggan.php', 53)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_pelanggan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_pelanggan', [], true)
+ 5 APPPATH\Views\v_template.php(210): view('v_pelanggan')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Pelanggan.php(26): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Pelanggan->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pelanggan))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-13 17:51:36 --> mysqli_sql_exception: Table 'pelanggan' already exists in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('CREATE TABLE `p...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `p...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `p...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\Forge.php(509): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `p...')
+#4 C:\xampp\htdocs\posbengkel\app\Database\Migrations\2025-02-13-132506_Pelanggan.php(34): CodeIgniter\Database\Forge->createTable('pelanggan')
+#5 C:\xampp\htdocs\posbengkel\system\Database\MigrationRunner.php(868): App\Database\Migrations\Pelanggan->up()
+#6 C:\xampp\htdocs\posbengkel\system\Database\MigrationRunner.php(187): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\posbengkel\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\posbengkel\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\posbengkel\system\CLI\CommandRunner.php(65): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\posbengkel\system\CLI\CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index(Array)
+#11 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(891): CodeIgniter\CLI\CommandRunner->_remap('index', Array)
+#12 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(CodeIgniter\CLI\CommandRunner))
+#13 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#14 C:\xampp\htdocs\posbengkel\system\CLI\Console.php(48): CodeIgniter\CodeIgniter->run()
+#15 C:\xampp\htdocs\posbengkel\spark(98): CodeIgniter\CLI\Console->run()
+#16 {main}
+ERROR - 2025-02-13 17:52:10 --> mysqli_sql_exception: Column 'nopol' cannot be null in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\app\Models\ModelPelanggan.php(24): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\posbengkel\app\Controllers\Pelanggan.php(37): App\Models\ModelPelanggan->InsertData(Array)
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\Pelanggan->InsertData()
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pelanggan))
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-02-13 17:52:10 --> Column 'nopol' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pelanggan` (`nopol`, `nama_pelanggan`, `mobil_pelanggan`, `alamat_pelanggan`, `telp_pelanggan`) VALUES (NULL, \'Mas Akoi\', \'Avanza 2013\', \'Banjarnegoro, Mertoyudan, Magelang\', \'6234567\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pelanggan` (`nopol`, `nama_pelanggan`, `mobil_pelanggan`, `alamat_pelanggan`, `telp_pelanggan`) VALUES (NULL, \'Mas Akoi\', \'Avanza 2013\', \'Banjarnegoro, Mertoyudan, Magelang\', \'6234567\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pelanggan` (`nopol`, `nama_pelanggan`, `mobil_pelanggan`, `alamat_pelanggan`, `telp_pelanggan`) VALUES (NULL, \'Mas Akoi\', \'Avanza 2013\', \'Banjarnegoro, Mertoyudan, Magelang\', \'6234567\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pelanggan` (`nopol`, `nama_pelanggan`, `mobil_pelanggan`, `alamat_pelanggan`, `telp_pelanggan`) VALUES (:nopol:, :nama_pelanggan:, :mobil_pelanggan:, :alamat_pelanggan:, :telp_pelanggan:)', [...], false)
+ 5 APPPATH\Models\ModelPelanggan.php(24): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Pelanggan.php(37): App\Models\ModelPelanggan->InsertData([...])
+ 7 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Pelanggan->InsertData()
+ 8 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pelanggan))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-13 17:55:55 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNSIGNED NOT NULL,
+	`nama_pelanggan` varchar(50) NOT NULL,
+	`mobil_pelanggan`...' at line 2 in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('CREATE TABLE `p...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `p...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `p...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\Forge.php(509): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `p...')
+#4 C:\xampp\htdocs\posbengkel\app\Database\Migrations\2025-02-13-132506_Pelanggan.php(35): CodeIgniter\Database\Forge->createTable('pelanggan')
+#5 C:\xampp\htdocs\posbengkel\system\Database\MigrationRunner.php(868): App\Database\Migrations\Pelanggan->up()
+#6 C:\xampp\htdocs\posbengkel\system\Database\MigrationRunner.php(187): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\posbengkel\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\posbengkel\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\posbengkel\system\CLI\CommandRunner.php(65): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\posbengkel\system\CLI\CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index(Array)
+#11 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(891): CodeIgniter\CLI\CommandRunner->_remap('index', Array)
+#12 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(CodeIgniter\CLI\CommandRunner))
+#13 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#14 C:\xampp\htdocs\posbengkel\system\CLI\Console.php(48): CodeIgniter\CodeIgniter->run()
+#15 C:\xampp\htdocs\posbengkel\spark(98): CodeIgniter\CLI\Console->run()
+#16 {main}
+ERROR - 2025-02-13 17:56:30 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNSIGNED NOT NULL,
+	`nama_pelanggan` varchar(50) NOT NULL,
+	`mobil_pelanggan`...' at line 2 in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('CREATE TABLE `p...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `p...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `p...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\Forge.php(509): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `p...')
+#4 C:\xampp\htdocs\posbengkel\app\Database\Migrations\2025-02-13-132506_Pelanggan.php(34): CodeIgniter\Database\Forge->createTable('pelanggan')
+#5 C:\xampp\htdocs\posbengkel\system\Database\MigrationRunner.php(868): App\Database\Migrations\Pelanggan->up()
+#6 C:\xampp\htdocs\posbengkel\system\Database\MigrationRunner.php(187): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\posbengkel\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\posbengkel\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\posbengkel\system\CLI\CommandRunner.php(65): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\posbengkel\system\CLI\CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index(Array)
+#11 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(891): CodeIgniter\CLI\CommandRunner->_remap('index', Array)
+#12 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(CodeIgniter\CLI\CommandRunner))
+#13 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#14 C:\xampp\htdocs\posbengkel\system\CLI\Console.php(48): CodeIgniter\CodeIgniter->run()
+#15 C:\xampp\htdocs\posbengkel\spark(98): CodeIgniter\CLI\Console->run()
+#16 {main}
+ERROR - 2025-02-13 17:57:25 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNSIGNED NOT NULL,
+	`nama_pelanggan` varchar(50) NOT NULL,
+	`mobil_pelanggan`...' at line 2 in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('CREATE TABLE `p...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `p...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `p...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\Forge.php(509): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `p...')
+#4 C:\xampp\htdocs\posbengkel\app\Database\Migrations\2025-02-13-132506_Pelanggan.php(34): CodeIgniter\Database\Forge->createTable('pelanggan')
+#5 C:\xampp\htdocs\posbengkel\system\Database\MigrationRunner.php(868): App\Database\Migrations\Pelanggan->up()
+#6 C:\xampp\htdocs\posbengkel\system\Database\MigrationRunner.php(187): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\posbengkel\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\posbengkel\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\posbengkel\system\CLI\CommandRunner.php(65): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\posbengkel\system\CLI\CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index(Array)
+#11 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(891): CodeIgniter\CLI\CommandRunner->_remap('index', Array)
+#12 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(CodeIgniter\CLI\CommandRunner))
+#13 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#14 C:\xampp\htdocs\posbengkel\system\CLI\Console.php(48): CodeIgniter\CodeIgniter->run()
+#15 C:\xampp\htdocs\posbengkel\spark(98): CodeIgniter\CLI\Console->run()
+#16 {main}
+ERROR - 2025-02-13 17:58:02 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNSIGNED NOT NULL,
+	`nama_pelanggan` varchar(50) NOT NULL,
+	`mobil_pelanggan`...' at line 2 in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('CREATE TABLE `p...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `p...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `p...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\Forge.php(509): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `p...')
+#4 C:\xampp\htdocs\posbengkel\app\Database\Migrations\2025-02-13-132506_Pelanggan.php(34): CodeIgniter\Database\Forge->createTable('pelanggan')
+#5 C:\xampp\htdocs\posbengkel\system\Database\MigrationRunner.php(868): App\Database\Migrations\Pelanggan->up()
+#6 C:\xampp\htdocs\posbengkel\system\Database\MigrationRunner.php(187): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\posbengkel\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\posbengkel\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\posbengkel\system\CLI\CommandRunner.php(65): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\posbengkel\system\CLI\CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index(Array)
+#11 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(891): CodeIgniter\CLI\CommandRunner->_remap('index', Array)
+#12 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(CodeIgniter\CLI\CommandRunner))
+#13 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#14 C:\xampp\htdocs\posbengkel\system\CLI\Console.php(48): CodeIgniter\CodeIgniter->run()
+#15 C:\xampp\htdocs\posbengkel\spark(98): CodeIgniter\CLI\Console->run()
+#16 {main}
+ERROR - 2025-02-13 17:58:52 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNSIGNED NOT NULL,
+	`nama_pelanggan` varchar(50) NOT NULL,
+	`mobil_pelanggan`...' at line 2 in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('CREATE TABLE `p...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `p...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `p...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\Forge.php(509): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `p...')
+#4 C:\xampp\htdocs\posbengkel\app\Database\Migrations\2025-02-13-132506_Pelanggan.php(34): CodeIgniter\Database\Forge->createTable('pelanggan')
+#5 C:\xampp\htdocs\posbengkel\system\Database\MigrationRunner.php(868): App\Database\Migrations\Pelanggan->up()
+#6 C:\xampp\htdocs\posbengkel\system\Database\MigrationRunner.php(187): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\posbengkel\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\posbengkel\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\posbengkel\system\CLI\CommandRunner.php(65): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\posbengkel\system\CLI\CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index(Array)
+#11 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(891): CodeIgniter\CLI\CommandRunner->_remap('index', Array)
+#12 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(CodeIgniter\CLI\CommandRunner))
+#13 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#14 C:\xampp\htdocs\posbengkel\system\CLI\Console.php(48): CodeIgniter\CodeIgniter->run()
+#15 C:\xampp\htdocs\posbengkel\spark(98): CodeIgniter\CLI\Console->run()
+#16 {main}

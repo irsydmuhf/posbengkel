@@ -10,9 +10,8 @@ class Pelanggan extends Migration
     {
         $this->forge->addField([
             'nopol' => [
-                'type' => 'int',
-                'unsigned' => TRUE,
-                'auto_increment' => TRUE
+                'type' => 'varchar',
+                'constraint' => '8'
             ],
             'nama_pelanggan' => [
                 'type' => 'varchar',

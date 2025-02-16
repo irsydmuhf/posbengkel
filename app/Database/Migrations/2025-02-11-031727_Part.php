@@ -11,7 +11,7 @@ class Part extends Migration
         $this->forge->addField([
             'id_part' => [
                 'type' => 'char',
-                'constraint' => '11',
+                'constraint' => '50',
             ],
             'nama_part' => [
                 'type' => 'varchar',

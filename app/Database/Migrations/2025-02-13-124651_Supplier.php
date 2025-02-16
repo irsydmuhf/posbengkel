@@ -11,6 +11,7 @@ class Supplier extends Migration
         $this->forge->addField([
             'id_supplier' => [
                 'type' => 'int',
+                'constraint' => '11',
                 'unsigned' => TRUE,
                 'auto_increment' => TRUE
             ],

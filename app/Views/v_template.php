@@ -227,7 +227,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Anything you want
             </div> -->
             <!-- Default to the left -->
-            <strong>Point of Sale &copy; <a href="https://instagram.com/irsydmuhf/">Irsyad Muhamad Firdaus</a>.</strong> All rights reserved.
+            <strong>Point of Sale &copy; <a href="https://instagram.com/irsydmuhf/">Irsyad Muhamad Firdaus</a>.</strong>
         </footer>
     </div>
     <!-- ./wrapper -->

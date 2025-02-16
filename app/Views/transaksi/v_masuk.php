@@ -2,14 +2,32 @@
     <div class="card">
         <div class="card-header">
             <div class="form-row">
-                <div class="form-group col-md-6 ">
+                <div class="form-group col-md">
                     <label for="">No Faktur</label>
                     <input type="text" class="form-control" value="<?= date('Y-m-d') ?>" id="faktur">
                 </div>
-                <div class="form-group col-md-6 ">
+                <div class="form-group col-md ">
                     <label for="">Tanggal</label>
                     <input type="date" class="form-control" name="tglfaktur" value="<?= date('Y-m-d') ?>" id="tglfaktur">
                 </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md">
+                    <label for="">Kode Supplier</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="id_supplier">
+                        <div class="input-group-append">
+                            <button class="btn btn-sm btn-primary" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md">
+                    <label for="">Nama Supplier</label>
+                    <input type="text" class="form-control" id="nama_supplier" readonly>
+                </div>
+
             </div>
             <div class="card">
                 <div class="card-header bg-primary">

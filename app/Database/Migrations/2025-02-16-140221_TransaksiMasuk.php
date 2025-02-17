@@ -18,30 +18,11 @@ class TransaksiMasuk extends Migration
                 'type'        => 'date',
                 'null'        => false
             ],
-            'id_part_beli' => [
-                'type' => 'char',
-                'constraint' => '50',
-            ],
             'id_supp_beli' => [
                 'type' => 'int',
                 'constraint' => '11',
                 'unsigned' => TRUE
             ],
-            'besar_diskon_beli' => [
-				'type' => 'double',
-				'constraint' => '11,2',
-				'default' => 0.00
-			],
-			'uang_diskon_beli' => [
-				'type' => 'double',
-				'constraint' => '11,2',
-				'default' => 0.00
-			],
-			'subtotal_beli' => [
-				'type' => 'double',
-				'constraint' => '11,2',
-				'default' => 0.00
-			],
 			'total_beli' => [
 				'type' => 'double',
 				'constraint' => '11,2',

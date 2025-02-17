@@ -57,7 +57,7 @@
                         <label for="">Harga Beli</label>
                         <input type="number" class="form-control" id="id_part" readonly>
                     </div>
-                    <div class="form-group col-md-1">
+                    <div class="form-group col-md-1">000
                         <label for="">Jumlah</label>
                         <input type="number" class="form-control" id="id_part">
                     </div>

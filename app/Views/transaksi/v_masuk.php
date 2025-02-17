@@ -51,15 +51,15 @@
                     </div>
                     <div class="form-group col">
                         <label for="">Harga Jual</label>
-                        <input type="text" class="form-control" id="id_part">
+                        <input type="number" class="form-control" id="id_part">
                     </div>
                     <div class="form-group col">
                         <label for="">Harga Beli</label>
-                        <input type="text" class="form-control" id="id_part">
+                        <input type="number" class="form-control" id="id_part">
                     </div>
-                    <div class="form-group col">
+                    <div class="form-group col-md-1">
                         <label for="">Jumlah</label>
-                        <input type="text" class="form-control" id="id_part">
+                        <input type="number" class="form-control" id="id_part">
                     </div>
                     <div class="form-group col-md-1">
                         <label for="">Aksi</label>

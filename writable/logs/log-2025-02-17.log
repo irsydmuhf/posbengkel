@@ -4,3 +4,63 @@ in SYSTEMPATH\CodeIgniter.php on line 181.
 CRITICAL - 2025-02-17 05:25:33 --> Class "Locale" not found
 in SYSTEMPATH\CodeIgniter.php on line 181.
  1 ROOTPATH\spark(83): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2025-02-17 21:35:43 --> Invalid file: transaksimasuk/datatemp.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('transaksimasuk/datatemp.php')
+ 2 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksimasuk/datatemp', [], true)
+ 3 APPPATH\Controllers\TransaksiMasuk.php(32): view('transaksimasuk/datatemp', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-17 21:36:31 --> Invalid file: transaksimasuk/datatemp.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('transaksimasuk/datatemp.php')
+ 2 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksimasuk/datatemp', [], true)
+ 3 APPPATH\Controllers\TransaksiMasuk.php(32): view('transaksimasuk/datatemp', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-17 21:39:02 --> Invalid file: transaksi_ masuk/datatemp.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('transaksi_ masuk/datatemp.php')
+ 2 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi_ masuk/datatemp', [], true)
+ 3 APPPATH\Controllers\TransaksiMasuk.php(32): view('transaksi_ masuk/datatemp', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-17 21:39:05 --> Invalid file: transaksi_ masuk/datatemp.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('transaksi_ masuk/datatemp.php')
+ 2 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi_ masuk/datatemp', [], true)
+ 3 APPPATH\Controllers\TransaksiMasuk.php(32): view('transaksi_ masuk/datatemp', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-17 21:50:43 --> Undefined variable $dataTemp
+in APPPATH\Views\transaksi_masuk\datatemp.php on line 17.
+ 1 APPPATH\Views\transaksi_masuk\datatemp.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataTemp', 'APPPATH\\Views\\transaksi_masuk\\datatemp.php', 17)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\transaksi_masuk\\datatemp.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi_masuk/datatemp', [], true)
+ 5 APPPATH\Controllers\TransaksiMasuk.php(32): view('transaksi_masuk/datatemp', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-17 22:03:16 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\TransaksiMasuk.php on line 49.
+ 1 APPPATH\Controllers\TransaksiMasuk.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\TransaksiMasuk.php', 49)
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->ambilDataBarang()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

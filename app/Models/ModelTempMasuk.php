@@ -12,4 +12,9 @@ class ModelTempMasuk extends Model
         'id_detbeli', 'faktur_detbeli', 'id_part_detbeli',
         'hargabeli_detbeli', 'hargajual_detbeli', 'jml_detbeli', 'subtotal_detbeli'
     ];
+
+    public function tampilDataTemp($faktur) {
+        return $this->table('temp_trans_masuk')->join('part', 'id_part=id_part_detbeli')
+        ->where(['faktur_detbeli' => $faktur])->get();
+    }
 }

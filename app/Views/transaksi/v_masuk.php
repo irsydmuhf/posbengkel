@@ -8,7 +8,7 @@
                 </div>
                 <div class="form-group col-md ">
                     <label for="">Tanggal</label>
-                    <input type="date" class="form-control" name="tglfaktur" value="<?= date('Y-m-d') ?>" id="tglfaktur">
+                    <input type="date" class="form-control" name="tglfaktur" value="<?= date('Y-m-d') ?>" id="tglfaktur" readonly>
                 </div>
             </div>
             <div class="form-row">

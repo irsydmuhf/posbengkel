@@ -131,6 +131,35 @@
             };
         });
 
+        $('#id_supplier').keydown(function(e) {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                let id_supplier = $('#id_supplier').val();
+
+                $.ajax({
+                    type: "post",
+                    url: "/transaksimasuk/ambilDataSupplier",
+                    data: {
+                        id_supplier: id_supplier
+                    },
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.sukses) {
+                            $('#nama_supplier').val(response.sukses.nama_supplier);
+                        } else {
+                            alert(response.error);
+                            $('#nama_supplier').val('');
+                        }
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        alert(xhr.status + '\n' + thrownError);
+                    }
+                });
+            }
+        });
+
+
+
         $('#tombolTambahItem').click(function(e) {
             e.preventDefault();
             let faktur = $('#faktur').val();
@@ -138,7 +167,7 @@
             let harga_beli = $('#harga_beli').val();
             let jml_item = $('#jml_item').val();
 
-            if (faktur.length == 0){
+            if (faktur.length == 0) {
                 alert('Faktur Wajib Diisi');
             }
         });

@@ -30,6 +30,8 @@ class Part extends BaseController
             'submenu' => 'part',
             'page' => 'part/v_part',
             'part' => $this->ModelPart->AllData(),
+            // 'part' => $this->ModelPart->paginate(10),
+            // 'pager' => $this->ModelPart->pager,
             'datakategori' => $modelkategori->AllData(),
             'datasatuan' => $modelsatuan->AllData(),
         ];

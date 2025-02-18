@@ -26,6 +26,7 @@
                 <thead>
                     <tr>
                         <th width="50px">No</th>
+                        <th width="120px">Kode Supp</th>
                         <th>Nama</th>
                         <th>Alamat</th>
                         <th>No Telp.</th>
@@ -37,6 +38,7 @@
                     foreach ($supplier as $key => $value) { ?>
                         <tr>
                             <td><?= $no++ ?></td>
+                            <td><?= $value['id_supplier'] ?></td>
                             <td><?= $value['nama_supplier'] ?></td>
                             <td><?= $value['alamat_supplier'] ?></td>
                             <td><?= $value['telp_supplier'] ?></td>

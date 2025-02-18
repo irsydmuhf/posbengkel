@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\ModelTempMasuk;
 use App\Models\ModelPart;
+use App\Models\ModelSupplier;
 
 class TransaksiMasuk extends BaseController
 {
@@ -30,7 +31,7 @@ class TransaksiMasuk extends BaseController
             ];
 
             $json = [
-                'data' => view('transaksi_masuk/datatemp',$data)
+                'data' => view('transaksi_masuk/datatemp', $data)
             ];
             echo json_encode($json);
         } else {
@@ -38,8 +39,9 @@ class TransaksiMasuk extends BaseController
         }
     }
 
-    function ambilDataBarang(){
-        if($this->request->isAJAX()){
+    function ambilDataBarang()
+    {
+        if ($this->request->isAJAX()) {
             $id_part = $this->request->getPost('id_part');
 
             $modelPart = new ModelPart();
@@ -55,7 +57,34 @@ class TransaksiMasuk extends BaseController
             ];
 
             echo json_encode($json);
+        } else {
+            exit('Tidak bisa dipanggil');
+        }
+    }
 
+    public function ambilDataSupplier()
+    {
+        if ($this->request->isAJAX()) {
+            $id_supplier = $this->request->getPost('id_supplier');
+
+            $modelSupplier = new ModelSupplier();
+            $ambilData = $modelSupplier->find($id_supplier);
+
+            if ($ambilData) {
+                $data = [
+                    'nama_supplier' => $ambilData['nama_supplier']
+                ];
+
+                $json = [
+                    'sukses' => $data
+                ];
+            } else {
+                $json = [
+                    'error' => 'Supplier tidak ditemukan'
+                ];
+            }
+
+            echo json_encode($json);
         } else {
             exit('Tidak bisa dipanggil');
         }

@@ -22,11 +22,11 @@ class TransaksiKeluar extends Migration
                 'type' => 'varchar',
                 'constraint' => '8',
             ],
-            'besar_dikson' => [
-                'type' => 'double',
-                'constraint' => '11,2',
-                'default' => 0.00
-            ],
+            // 'besar_dikson' => [
+            //     'type' => 'double',
+            //     'constraint' => '11,2',
+            //     'default' => 0.00
+            // ],
             'uang_diskon' => [
                 'type' => 'double',
                 'constraint' => '11,2',

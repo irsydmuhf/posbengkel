@@ -47,14 +47,20 @@ class TransaksiMasuk extends BaseController
             $modelPart = new ModelPart();
             $ambilData = $modelPart->find($id_part);
 
-            $data = [
-                'nama_part' => $ambilData['nama_part'],
-                'harga_jual' => $ambilData['harga_jual']
-            ];
+            if (empty($ambilData)) {
+                $json = [
+                    'error' => 'Data barang tidak ditemukan'
+                ];
+            } else {
+                $data = [
+                    'nama_part' => $ambilData['nama_part'],
+                    'harga_jual' => $ambilData['harga_jual']
+                ];
 
-            $json = [
-                'sukses' => $data
-            ];
+                $json = [
+                    'sukses' => $data
+                ];
+            }
 
             echo json_encode($json);
         } else {
@@ -70,17 +76,17 @@ class TransaksiMasuk extends BaseController
             $modelSupplier = new ModelSupplier();
             $ambilData = $modelSupplier->find($id_supplier);
 
-            if ($ambilData) {
+            if (empty($ambilData)) {
+                $json = [
+                    'error' => 'Data supplier tidak ditemukan'
+                ];
+            } else {
                 $data = [
                     'nama_supplier' => $ambilData['nama_supplier']
                 ];
 
                 $json = [
                     'sukses' => $data
-                ];
-            } else {
-                $json = [
-                    'error' => 'Supplier tidak ditemukan'
                 ];
             }
 

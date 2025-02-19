@@ -30,3 +30,17 @@ in APPPATH\Views\part\v_part.php on line 101.
 12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
 14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-18 13:37:15 --> Invalid file: transaksi/v_keluar.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('transaksi/v_keluar.php')
+ 2 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi/v_keluar', [], true)
+ 3 APPPATH\Views\v_template.php(213): view('transaksi/v_keluar')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 7 APPPATH\Controllers\TransaksiKeluar.php(32): view('v_template', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->index()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

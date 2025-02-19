@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ModelTransaksiKeluar;
+use App\Models\ModelPelanggan;
 use App\Models\ModelJasa;
 use App\Models\ModelPart;
 
@@ -21,15 +22,41 @@ class TransaksiKeluar extends BaseController
         $modeljasa = new ModelJasa();
 
         $data = [
-            'judul' => 'Master Data',
-            'subjudul' => 'Transaksi',
-            'menu' => 'masterdata',
+            'judul' => 'Transaksi',
+            'subjudul' => '',
+            'menu' => 'transaksi',
             'submenu' => 'Transaksi Keluar',
-            'page' => 'transaksi/v_keluar',
+            'page' => 'transaksi_keluar/v_keluar',
             'datapart' => $modelpart->AllData(),
             'datajasa' => $modeljasa->AllData(),
         ];
         return view('v_template', $data);
     }
+    public function ambilDataPelanggan()
+    {
+        if ($this->request->isAJAX()) {
+            $id_pelanggan = $this->request->getPost('id_pelanggan');
 
+            $modelPelanggan = new ModelPelanggan();
+            $ambilData = $modelPelanggan->find($id_pelanggan);
+
+            if ($ambilData) {
+                $data = [
+                    'nama_pelanggan' => $ambilData['nama_pelanggan']
+                ];
+
+                $json = [
+                    'sukses' => $data
+                ];
+            } else {
+                $json = [
+                    'error' => 'Pelanggan tidak ditemukan'
+                ];
+            }
+
+            echo json_encode($json);
+        } else {
+            exit('Tidak bisa dipanggil');
+        }
+    }
 }

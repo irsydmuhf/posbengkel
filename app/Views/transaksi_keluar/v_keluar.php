@@ -57,7 +57,7 @@
                         <label for="">Harga Beli</label>
                         <input type="number" class="form-control" id="id_part" readonly>
                     </div>
-                    <div class="form-group col-md-1">000
+                    <div class="form-group col-md-1">
                         <label for="">Jumlah</label>
                         <input type="number" class="form-control" id="id_part">
                     </div>
@@ -74,6 +74,39 @@
                     </div>
                 </div>
             </div>
+            <div class="row" id="tampilDataTemp"></div>
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function() {
+        dataTemp();
+        $('#id_pelanggan').keydown(function(e) {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                let id_pelanggan = $('#id_pelanggan').val();
+
+                $.ajax({
+                    type: "post",
+                    url: "/transaksikeluar/ambilDataPelanggan",
+                    data: {
+                        id_pelanggan: id_pelanggan
+                    },
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.sukses) {
+                            $('#nama_pelanggan').val(response.sukses.nama_pelanggan);
+                        } else {
+                            alert(response.error);
+                            $('#nama_pelanggan').val('');
+                        }
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        alert(xhr.status + '\n' + thrownError);
+                    }
+                });
+            }
+        });
+
+    });
+</script>

@@ -17,7 +17,7 @@
                     <div class="input-group">
                         <input type="text" class="form-control" id="id_supplier">
                         <div class="input-group-append">
-                            <button class="btn btn-sm btn-primary" type="button">
+                            <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#modalcarisupplier">
                                 <i class="fa fa-search"></i>
                             </button>
                         </div>
@@ -39,7 +39,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control" id="id_part">
                             <div class="input-group-append">
-                                <button class="btn btn-sm btn-primary" type="button">
+                                <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#modalcaribarang">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </div>
@@ -78,6 +78,56 @@
         </div>
     </div>
 </div>
+<!-- modal cari barang -->
+<div class="modal fade" id="modalcaribarang">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <h4 class="modal-title">Cari Part Berdasarkan Nama</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Cari Berdasarkan Kode atau Nama Part" id="caripart">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="button" id="btnCari">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- modal cari Supplier -->
+<div class="modal fade" id="modalcarisupplier">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <h4 class="modal-title">Cari Supplier</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Cari Berdasarkan Nama Supplier" id="carisupplier">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
 <script>
     function dataTemp() {
         let faktur = $('#faktur').val();
@@ -99,6 +149,32 @@
             }
         });
     }
+    $('#id_supplier').keydown(function(e) {
+        if (e.keyCode == 13) {
+            e.preventDefault();
+            let id_supplier = $('#id_supplier').val();
+
+            $.ajax({
+                type: "post",
+                url: "/transaksimasuk/ambilDataSupplier",
+                data: {
+                    id_supplier: id_supplier
+                },
+                dataType: "json",
+                success: function(response) {
+                    if (response.sukses) {
+                        $('#nama_supplier').val(response.sukses.nama_supplier);
+                    } else {
+                        alert(response.error);
+                        $('#nama_supplier').val('');
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status + '\n' + thrownError);
+                }
+            });
+        }
+    });
 
     function kosong() {
         $('#id_part').val('');
@@ -143,33 +219,6 @@
             };
         });
 
-        $('#id_supplier').keydown(function(e) {
-            if (e.keyCode == 13) {
-                e.preventDefault();
-                let id_supplier = $('#id_supplier').val();
-
-                $.ajax({
-                    type: "post",
-                    url: "/transaksimasuk/ambilDataSupplier",
-                    data: {
-                        id_supplier: id_supplier
-                    },
-                    dataType: "json",
-                    success: function(response) {
-                        if (response.sukses) {
-                            $('#nama_supplier').val(response.sukses.nama_supplier);
-                        } else {
-                            alert(response.error);
-                            $('#nama_supplier').val('');
-                        }
-
-                    },
-                    error: function(xhr, ajaxOptions, thrownError) {
-                        alert(xhr.status + '\n' + thrownError);
-                    }
-                });
-            }
-        });
 
 
         $('#tombolTambahItem').click(function(e) {
@@ -189,5 +238,37 @@
                 alert('Jumlah belum diisi');
             };
         });
+        e.preventDefault();
+        $.ajax({
+            url: "/TransaksiMasuk/cariDataBarang",
+            dataType: "json",
+            success: function(response) {
+                if (response.data) {
+                    $('.modalcaribarang').html(response.data).show();
+                    $('#modalcaribarang').modal('show');
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + '\n' + thrownError);
+            }
+        });
     });
+
+    function cariDataBarang() {
+        let caripart = $('#cariPart').val()
+        $.ajax({
+            type: "post",
+            url: "/transaksimasuk/detailCariBarang",
+            data: {
+                caripart: caripart
+            },
+            dataType: "json",
+            success: function(response) {
+
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + '\n' + thrownError);
+            }
+        });
+    }
 </script>

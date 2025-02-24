@@ -95,4 +95,14 @@ class TransaksiMasuk extends BaseController
             exit('Tidak bisa dipanggil');
         }
     }
+    function detailCariBarang()
+    {
+        if ($this->request->isAJAX()) {
+            $caripart = $this->request->getPost('caripart');
+
+            $modalPart = new ModelPart();
+        } else {
+            exit('Tidak bisa dipanggil');
+        }
+    }
 }

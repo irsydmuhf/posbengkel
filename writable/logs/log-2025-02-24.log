@@ -1,0 +1,232 @@
+ERROR - 2025-02-24 09:05:01 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:170
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(170): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'posbengkel', 3306, '', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempMasuk.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(30): App\Models\ModelTempMasuk->tampilDataTemp('2025-02-24')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\posbengkel\app\Models\ModelTempMasuk.php(18): CodeIgniter\Model->__call('get', Array)
+#5 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(30): App\Models\ModelTempMasuk->tampilDataTemp('2025-02-24')
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-02-24 09:05:01 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_masuk`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 3 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Models\ModelTempMasuk.php(18): CodeIgniter\Model->__call('get', [])
+ 5 APPPATH\Controllers\TransaksiMasuk.php(30): App\Models\ModelTempMasuk->tampilDataTemp('2025-02-24')
+ 6 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-24 09:05:06 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:170
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(170): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'posbengkel', 3306, '', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(181): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\system\BaseModel.php(523): CodeIgniter\Model->doFind(true, '1')
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(77): CodeIgniter\BaseModel->find('1')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->ambilDataSupplier()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\posbengkel\system\Model.php(181): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\posbengkel\system\BaseModel.php(523): CodeIgniter\Model->doFind(true, '1')
+#5 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(77): CodeIgniter\BaseModel->find('1')
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->ambilDataSupplier()
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-02-24 09:05:06 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `supplier`
+WHERE `supplier`.`id_supplier` = :supplier.id_supplier:', [...], false)
+ 3 SYSTEMPATH\Model.php(181): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(523): CodeIgniter\Model->doFind(true, '1')
+ 5 APPPATH\Controllers\TransaksiMasuk.php(77): CodeIgniter\BaseModel->find('1')
+ 6 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->ambilDataSupplier()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-24 09:05:11 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:170
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(170): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'posbengkel', 3306, '', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(181): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\system\BaseModel.php(523): CodeIgniter\Model->doFind(true, '1')
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(77): CodeIgniter\BaseModel->find('1')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->ambilDataSupplier()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\posbengkel\system\Model.php(181): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\posbengkel\system\BaseModel.php(523): CodeIgniter\Model->doFind(true, '1')
+#5 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(77): CodeIgniter\BaseModel->find('1')
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->ambilDataSupplier()
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-02-24 09:05:11 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `supplier`
+WHERE `supplier`.`id_supplier` = :supplier.id_supplier:', [...], false)
+ 3 SYSTEMPATH\Model.php(181): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(523): CodeIgniter\Model->doFind(true, '1')
+ 5 APPPATH\Controllers\TransaksiMasuk.php(77): CodeIgniter\BaseModel->find('1')
+ 6 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->ambilDataSupplier()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-24 09:22:42 --> Invalid file: v_masuk/modalcaribarang.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('v_masuk/modalcaribarang.php')
+ 2 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_masuk/modalcaribarang', [], true)
+ 3 APPPATH\Controllers\TransaksiMasuk.php(102): view('v_masuk/modalcaribarang')
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->cariDataBarang()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-24 09:22:45 --> Invalid file: v_masuk/modalcaribarang.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('v_masuk/modalcaribarang.php')
+ 2 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_masuk/modalcaribarang', [], true)
+ 3 APPPATH\Controllers\TransaksiMasuk.php(102): view('v_masuk/modalcaribarang')
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->cariDataBarang()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-24 09:22:48 --> Invalid file: v_masuk/modalcaribarang.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('v_masuk/modalcaribarang.php')
+ 2 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_masuk/modalcaribarang', [], true)
+ 3 APPPATH\Controllers\TransaksiMasuk.php(102): view('v_masuk/modalcaribarang')
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->cariDataBarang()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-24 09:23:11 --> Invalid file: v_masuk/modalcaribarang.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('v_masuk/modalcaribarang.php')
+ 2 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_masuk/modalcaribarang', [], true)
+ 3 APPPATH\Controllers\TransaksiMasuk.php(102): view('v_masuk/modalcaribarang')
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->cariDataBarang()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-24 09:23:15 --> Invalid file: v_masuk/modalcaribarang.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('v_masuk/modalcaribarang.php')
+ 2 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_masuk/modalcaribarang', [], true)
+ 3 APPPATH\Controllers\TransaksiMasuk.php(102): view('v_masuk/modalcaribarang')
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->cariDataBarang()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-24 09:24:07 --> Invalid file: v_masuk/modalcaribarang.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('v_masuk/modalcaribarang.php')
+ 2 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_masuk/modalcaribarang', [], true)
+ 3 APPPATH\Controllers\TransaksiMasuk.php(102): view('v_masuk/modalcaribarang')
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->cariDataBarang()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-24 09:24:13 --> Invalid file: v_masuk/modalcaribarang.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('v_masuk/modalcaribarang.php')
+ 2 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_masuk/modalcaribarang', [], true)
+ 3 APPPATH\Controllers\TransaksiMasuk.php(102): view('v_masuk/modalcaribarang')
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->cariDataBarang()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-24 09:25:14 --> Invalid file: v_masuk/modalcaribarang.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('v_masuk/modalcaribarang.php')
+ 2 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_masuk/modalcaribarang', [], true)
+ 3 APPPATH\Controllers\TransaksiMasuk.php(102): view('v_masuk/modalcaribarang')
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->cariDataBarang()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-24 09:27:36 --> Undefined variable $value
+in APPPATH\Views\transaksi_masuk\v_masuk.php on line 95.
+ 1 APPPATH\Views\transaksi_masuk\v_masuk.php(95): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $value', 'APPPATH\\Views\\transaksi_masuk\\v_masuk.php', 95)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\transaksi_masuk\\v_masuk.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi_masuk/v_masuk', [], true)
+ 5 APPPATH\Views\v_template.php(213): view('transaksi_masuk/v_masuk')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\TransaksiMasuk.php(21): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\ModelTempMasuk;
 use App\Models\ModelPart;
 use App\Models\ModelSupplier;
+use CodeIgniter\Database\Query;
 
 class TransaksiMasuk extends BaseController
 {
@@ -101,6 +102,30 @@ class TransaksiMasuk extends BaseController
             $caripart = $this->request->getPost('caripart');
 
             $modalPart = new ModelPart();
+        } else {
+            exit('Tidak bisa dipanggil');
+        }
+    }
+
+    public function buatFaktur()
+    {
+        if ($this->request->isAJAX()) {
+            $tgl = $this->request->getPost('tglfaktur');
+            $db = db_connect();
+
+            $query = $db->query("SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_masuk WHERE DATE_FORMAT(tgl_beli, '%Y-%m-%d') = ?", [$tgl]);
+            $hasil = $query->getRowArray();
+
+            if (!$hasil['nofaktur']) {
+                $fakturBeli = 'B' . date('dmy', strtotime($tgl)) . '0001';
+            } else {
+                $lastNoUrut = substr($hasil['nofaktur'], -4);
+                $nextNoUrut = intval($lastNoUrut) + 1;
+                $fakturBeli = 'B' . date('dmy', strtotime($tgl)) . sprintf('%04d', $nextNoUrut);
+            }
+
+            $msg = ['fakturbeli' => $fakturBeli];
+            echo json_encode($msg);
         } else {
             exit('Tidak bisa dipanggil');
         }

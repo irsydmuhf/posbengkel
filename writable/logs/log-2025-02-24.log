@@ -230,3 +230,47 @@ in APPPATH\Views\transaksi_masuk\v_masuk.php on line 95.
 12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
 14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-24 10:53:55 --> strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated
+in APPPATH\Controllers\TransaksiMasuk.php on line 119.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated', 'APPPATH\\Controllers\\TransaksiMasuk.php', 119)
+ 2 APPPATH\Controllers\TransaksiMasuk.php(119): strtotime(null)
+ 3 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->buatFaktur()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-24 10:54:13 --> strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated
+in APPPATH\Controllers\TransaksiMasuk.php on line 119.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated', 'APPPATH\\Controllers\\TransaksiMasuk.php', 119)
+ 2 APPPATH\Controllers\TransaksiMasuk.php(119): strtotime(null)
+ 3 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->buatFaktur()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-24 10:54:53 --> Undefined variable $db
+in APPPATH\Controllers\TransaksiMasuk.php on line 115.
+ 1 APPPATH\Controllers\TransaksiMasuk.php(115): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $db', 'APPPATH\\Controllers\\TransaksiMasuk.php', 115)
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->buatFaktur()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-24 10:56:08 --> strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated
+in APPPATH\Controllers\TransaksiMasuk.php on line 119.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated', 'APPPATH\\Controllers\\TransaksiMasuk.php', 119)
+ 2 APPPATH\Controllers\TransaksiMasuk.php(119): strtotime(null)
+ 3 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->buatFaktur()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-24 10:58:58 --> strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated
+in APPPATH\Controllers\TransaksiMasuk.php on line 119.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated', 'APPPATH\\Controllers\\TransaksiMasuk.php', 119)
+ 2 APPPATH\Controllers\TransaksiMasuk.php(119): strtotime(null)
+ 3 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->buatFaktur()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

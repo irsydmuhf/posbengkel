@@ -4,7 +4,7 @@
             <div class="form-row">
                 <div class="form-group col-md">
                     <label for="">No Faktur</label>
-                    <input type="text" class="form-control" value="<?= date('Y-m-d') ?>" id="faktur">
+                    <input type="text" class="form-control" style="font-weight: bold; color:blue" id="faktur" readonly>
                 </div>
                 <div class="form-group col-md ">
                     <label for="">Tanggal</label>
@@ -75,6 +75,12 @@
                 </div>
             </div>
             <div class="row" id="tampilDataTemp"></div>
+            <div class="card-tools">
+                <button type="button" class="btn btn-md btn-success" id="tobolSelesaiTransaks">
+                    <i class="fas fa-save"></i>
+                    Selesai Transaksi
+                </button>
+            </div>
         </div>
     </div>
 </div>
@@ -129,6 +135,25 @@
     <!-- /.modal-dialog -->
 </div>
 <script>
+    function buatFaktur() {
+        $.ajax({
+            type: "post",
+            url: "<?= site_url('transaksimasuk/buatFaktur') ?>",
+            data: {
+                tglfaktur: $('#tglfaktur').val()
+            },
+            dataType: "json",
+            success: function(response) {
+                if (response.fakturbeli) {
+                    $('#faktur').val(response.fakturbeli)
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + '\n' + thrownError);
+            }
+        });
+    }
+
     function dataTemp() {
         let faktur = $('#faktur').val();
 
@@ -185,6 +210,7 @@
 
     $(document).ready(function() {
         dataTemp();
+        buatFaktur();
 
         $('#id_part').keydown(function(e) {
             if (e.keyCode == 13) {
@@ -219,8 +245,6 @@
             };
         });
 
-
-
         $('#tombolTambahItem').click(function(e) {
             e.preventDefault();
             let id_part = $('#id_part').val();
@@ -239,19 +263,6 @@
             };
         });
         e.preventDefault();
-        $.ajax({
-            url: "/TransaksiMasuk/cariDataBarang",
-            dataType: "json",
-            success: function(response) {
-                if (response.data) {
-                    $('.modalcaribarang').html(response.data).show();
-                    $('#modalcaribarang').modal('show');
-                }
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-                alert(xhr.status + '\n' + thrownError);
-            }
-        });
     });
 
     function cariDataBarang() {
@@ -268,6 +279,31 @@
             },
             error: function(xhr, ajaxOptions, thrownError) {
                 alert(xhr.status + '\n' + thrownError);
+            }
+        });
+
+        $('#tombolSelesaiTransaksi').click(function(e) {
+            e.preventDefault();
+            let faktur = $('#faktur').val();
+
+            if (faktur.length !== 0) {
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your file has been deleted.",
+                            icon: "success"
+                        });
+                    }
+                });
             }
         });
     }

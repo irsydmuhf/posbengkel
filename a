@@ -1,0 +1,416 @@
+[1mdiff --git a/app/Controllers/TransaksiKeluar.php b/app/Controllers/TransaksiKeluar.php[m
+[1mdeleted file mode 100644[m
+[1mindex 824aed7..0000000[m
+[1m--- a/app/Controllers/TransaksiKeluar.php[m
+[1m+++ /dev/null[m
+[36m@@ -1,62 +0,0 @@[m
+[31m-<?php[m
+[31m-[m
+[31m-namespace App\Controllers;[m
+[31m-[m
+[31m-use App\Controllers\BaseController;[m
+[31m-use App\Models\ModelTransaksiKeluar;[m
+[31m-use App\Models\ModelPelanggan;[m
+[31m-use App\Models\ModelJasa;[m
+[31m-use App\Models\ModelPart;[m
+[31m-[m
+[31m-class TransaksiKeluar extends BaseController[m
+[31m-{[m
+[31m-    protected $ModelTransaksiKeluar;[m
+[31m-[m
+[31m-    public function __construct()[m
+[31m-    {[m
+[31m-        $this->ModelTransaksiKeluar = new ModelTransaksiKeluar();[m
+[31m-    }[m
+[31m-    public function index()[m
+[31m-    {[m
+[31m-        $modelpart = new ModelPart();[m
+[31m-        $modeljasa = new ModelJasa();[m
+[31m-[m
+[31m-        $data = [[m
+[31m-            'judul' => 'Transaksi',[m
+[31m-            'subjudul' => '',[m
+[31m-            'menu' => 'transaksi',[m
+[31m-            'submenu' => 'Transaksi Keluar',[m
+[31m-            'page' => 'transaksi_keluar/v_keluar',[m
+[31m-            'datapart' => $modelpart->AllData(),[m
+[31m-            'datajasa' => $modeljasa->AllData(),[m
+[31m-        ];[m
+[31m-        return view('v_template', $data);[m
+[31m-    }[m
+[31m-    public function ambilDataPelanggan()[m
+[31m-    {[m
+[31m-        if ($this->request->isAJAX()) {[m
+[31m-            $id_pelanggan = $this->request->getPost('id_pelanggan');[m
+[31m-[m
+[31m-            $modelPelanggan = new ModelPelanggan();[m
+[31m-            $ambilData = $modelPelanggan->find($id_pelanggan);[m
+[31m-[m
+[31m-            if ($ambilData) {[m
+[31m-                $data = [[m
+[31m-                    'nama_pelanggan' => $ambilData['nama_pelanggan'][m
+[31m-                ];[m
+[31m-[m
+[31m-                $json = [[m
+[31m-                    'sukses' => $data[m
+[31m-                ];[m
+[31m-            } else {[m
+[31m-                $json = [[m
+[31m-                    'error' => 'Pelanggan tidak ditemukan'[m
+[31m-                ];[m
+[31m-            }[m
+[31m-[m
+[31m-            echo json_encode($json);[m
+[31m-        } else {[m
+[31m-            exit('Tidak bisa dipanggil');[m
+[31m-        }[m
+[31m-    }[m
+[31m-}[m
+[1mdiff --git a/app/Controllers/TransaksiMasuk.php b/app/Controllers/TransaksiMasuk.php[m
+[1mindex e7fd871..475187b 100644[m
+[1m--- a/app/Controllers/TransaksiMasuk.php[m
+[1m+++ b/app/Controllers/TransaksiMasuk.php[m
+[36m@@ -6,6 +6,8 @@[m [muse App\Controllers\BaseController;[m
+ use App\Models\ModelTempMasuk;[m
+ use App\Models\ModelPart;[m
+ use App\Models\ModelSupplier;[m
+[32m+[m[32muse App\Models\ModelTransaksiMasuk;[m
+[32m+[m[32muse App\Models\ModelDetailTransaksiMasuk;[m
+ use CodeIgniter\Database\Query;[m
+ [m
+ class TransaksiMasuk extends BaseController[m
+[36m@@ -109,25 +111,104 @@[m [mclass TransaksiMasuk extends BaseController[m
+ [m
+     public function buatFaktur()[m
+     {[m
+[31m-        if ($this->request->isAJAX()) {[m
+[31m-            $tgl = $this->request->getPost('tglfaktur');[m
+[31m-            $db = db_connect();[m
+[31m-[m
+[31m-            $query = $db->query("SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_masuk WHERE DATE_FORMAT(tgl_beli, '%Y-%m-%d') = ?", [$tgl]);[m
+[31m-            $hasil = $query->getRowArray();[m
+[32m+[m[32m        $tgl = date('Y-m-d');[m
+[32m+[m[32m        $modelTransaksiKeluar = new ModelTransaksiMasuk();[m
+ [m
+[31m-            if (!$hasil['nofaktur']) {[m
+[31m-                $fakturBeli = 'B' . date('dmy', strtotime($tgl)) . '0001';[m
+[31m-            } else {[m
+[31m-                $lastNoUrut = substr($hasil['nofaktur'], -4);[m
+[31m-                $nextNoUrut = intval($lastNoUrut) + 1;[m
+[31m-                $fakturBeli = 'B' . date('dmy', strtotime($tgl)) . sprintf('%04d', $nextNoUrut);[m
+[31m-            }[m
+[32m+[m[32m        $hasil = $modelTransaksiKeluar->noFaktur($tgl)->getRowArray();[m
+[32m+[m[32m        $data = $hasil['nofaktur'];[m
+ [m
+[31m-            $msg = ['fakturbeli' => $fakturBeli];[m
+[31m-            echo json_encode($msg);[m
+[32m+[m[32m        if (!$hasil['nofaktur']) {[m
+[32m+[m[32m            $fakturBeli = 'B' . date('dmy', strtotime($tgl)) . '0001';[m
+         } else {[m
+[31m-            exit('Tidak bisa dipanggil');[m
+[32m+[m[32m            $lastNoUrut = substr($data, -4);[m
+[32m+[m[32m            $nextNoUrut = intval($lastNoUrut) + 1;[m
+[32m+[m[32m            $fakturBeli = 'B' . date('dmy', strtotime($tgl)) . sprintf('%04d', $nextNoUrut);[m
+         }[m
+[32m+[m
+[32m+[m[32m        $msg = ['fakturbeli' => $fakturBeli];[m
+[32m+[m[32m        echo json_encode($msg);[m
+     }[m
+[32m+[m
+[32m+[m[32m    public function simpanTemp()[m
+[32m+[m[32m    {[m
+[32m+[m[32m        if ($this->request->isAJAX()) {[m
+[32m+[m[32m            try {[m
+[32m+[m[32m                $faktur = $this->request->getPost('faktur');[m
+[32m+[m[32m                $id_part = $this->request->getPost('id_part');[m
+[32m+[m[32m                $harga_beli = (float)$this->request->getPost('harga_beli');[m
+[32m+[m[32m                $jml_item = (int)$this->request->getPost('jml_item');[m
+[32m+[m
+[32m+[m[32m                // Validasi input[m
+[32m+[m[32m                if (empty($faktur) || empty($id_part) || $harga_beli <= 0 || $jml_item <= 0) {[m
+[32m+[m[32m                    throw new \Exception('Invalid input data');[m
+[32m+[m[32m                }[m
+[32m+[m
+[32m+[m[32m                $modelPart = new ModelPart();[m
+[32m+[m[32m                $modelTemp = new ModelTempMasuk();[m
+[32m+[m
+[32m+[m[32m                // Cek apakah part ada di database[m
+[32m+[m[32m                if (!$modelPart->find($id_part)) {[m
+[32m+[m[32m                    throw new \Exception('Part tidak ditemukan');[m
+[32m+[m[32m                }[m
+[32m+[m
+[32m+[m[32m                // Cek duplikasi item[m
+[32m+[m[32m                if ($modelTemp->cekItem($id_part, $faktur) > 0) {[m
+[32m+[m[32m                    throw new \Exception('Item sudah ada dalam transaksi');[m
+[32m+[m[32m                }[m
+[32m+[m
+[32m+[m[32m                // Insert data[m
+[32m+[m[32m                $modelTemp->insert([[m
+[32m+[m[32m                    'faktur_detbeli' => $faktur,[m
+[32m+[m[32m                    'id_part_detbeli' => $id_part,[m
+[32m+[m[32m                    'harga_detbeli' => $harga_beli,[m
+[32m+[m[32m                    'jumlah_detbeli' => $jml_item,[m
+[32m+[m[32m                    'subtotal_detbeli' => $harga_beli * $jml_item[m
+[32m+[m[32m                ]);[m
+[32m+[m
+[32m+[m[32m                return $this->response->setJSON(['sukses' => 'Item berhasil ditambahkan']);[m
+[32m+[m[32m            } catch (\Exception $e) {[m
+[32m+[m[32m                log_message('error', $e->getMessage());[m
+[32m+[m[32m                return $this->response->setStatusCode(500)->setJSON(['error' => $e->getMessage()]);[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    // function simpanTransaksi()[m
+[32m+[m[32m    // {[m
+[32m+[m[32m    //     if ($this->request->isAJAX()) {[m
+[32m+[m[32m    //         $faktur_beli = $this->request->getPost('faktur');[m
+[32m+[m[32m    //         $tglfaktur = $this->request->getPost('tglfaktur');[m
+[32m+[m
+[32m+[m[32m    //         $modelTemp = new ModelTempMasuk();[m
+[32m+[m[32m    //         $dataTemp = $modelTemp->getWhere(['faktur_detbeli' => $faktur_beli]);[m
+[32m+[m
+[32m+[m[32m    //         if ($dataTemp->getNumRows() == 0) {[m
+[32m+[m[32m    //             $json = [[m
+[32m+[m[32m    //                 'error' => 'Maaf, data item untuk faktur ini belum ada'[m
+[32m+[m[32m    //             ];[m
+[32m+[m[32m    //         } else {[m
+[32m+[m[32m    //             // simpan ke transaksi masuk[m
+[32m+[m[32m    //             $modelTransaksiMasuk = new ModelTransaksiMasuk();[m
+[32m+[m[32m    //             $totalSubtotal = 0;[m
+[32m+[m[32m    //             foreach ($dataTemp->getResultArray() as $total) {[m
+[32m+[m[32m    //                 $totalSubtotal += intval($total['subtotal_detbeli']);[m
+[32m+[m[32m    //             }[m
+[32m+[m
+[32m+[m[32m    //             $modelTransaksiMasuk->insert([[m
+[32m+[m[32m    //                 'faktur_beli' => $faktur,[m
+[32m+[m[32m    //                 'tgl_beli' => $tgl_faktur,[m
+[32m+[m[32m    //                 'id_supp_beli' => $id_supplier,[m
+[32m+[m[32m    //                 'total_beli' => $totalSubtotal[m
+[32m+[m[32m    //             ]);[m
+[32m+[m
+[32m+[m[32m    //             $json = [[m
+[32m+[m[32m    //                 'sukses' => 'Transaksi Berhasil Disimpan'[m
+[32m+[m[32m    //             ];[m
+[32m+[m[32m    //         }[m
+[32m+[m
+[32m+[m[32m    //         echo json_encode($json);[m
+[32m+[m[32m    //     } else {[m
+[32m+[m[32m    //         exit('Maaf tidak bisa dipanggil');[m
+[32m+[m[32m    //     }[m
+[32m+[m[32m    // }[m
+ }[m
+[1mdiff --git a/app/Models/ModelTempKeluar.php b/app/Models/ModelTempKeluar.php[m
+[1mdeleted file mode 100644[m
+[1mindex 9ea4bfc..0000000[m
+[1m--- a/app/Models/ModelTempKeluar.php[m
+[1m+++ /dev/null[m
+[36m@@ -1,20 +0,0 @@[m
+[31m-<?php[m
+[31m-[m
+[31m-namespace App\Models;[m
+[31m-[m
+[31m-use CodeIgniter\Model;[m
+[31m-[m
+[31m-class ModelTempKeluar extends Model[m
+[31m-{[m
+[31m-    protected $table            = 'temp_trans_keluar';[m
+[31m-    protected $primaryKey       = 'id_detbeli';[m
+[31m-    protected $allowedFields    = [[m
+[31m-        'id_detbeli', 'faktur_detbeli', 'id_part_detbeli',[m
+[31m-        'hargabeli_detbeli', 'hargajual_detbeli', 'jml_detbeli', 'subtotal_detbeli'[m
+[31m-    ];[m
+[31m-[m
+[31m-    public function tampilDataTemp($faktur) {[m
+[31m-        return $this->table('temp_trans_keluar')->join('part', 'id_part=id_part_detbeli')[m
+[31m-        ->where(['faktur_detbeli' => $faktur])->get();[m
+[31m-    }[m
+[31m-}[m
+[1mdiff --git a/app/Models/ModelTransaksiKeluar.php b/app/Models/ModelTransaksiKeluar.php[m
+[1mdeleted file mode 100644[m
+[1mindex c0c28d7..0000000[m
+[1m--- a/app/Models/ModelTransaksiKeluar.php[m
+[1m+++ /dev/null[m
+[36m@@ -1,36 +0,0 @@[m
+[31m-<?php[m
+[31m-[m
+[31m-namespace App\Models;[m
+[31m-[m
+[31m-use CodeIgniter\Model;[m
+[31m-[m
+[31m-class ModelTransaksiKeluar extends Model[m
+[31m-{[m
+[31m-    protected $table            = 'transaksi_keluar';[m
+[31m-    protected $primaryKey       = 'faktur';[m
+[31m-    protected $allowedFields    = [];[m
+[31m-[m
+[31m-    // Dates[m
+[31m-    protected $useTimestamps = false;[m
+[31m-    protected $dateFormat    = 'datetime';[m
+[31m-    protected $createdField  = 'created_at';[m
+[31m-    protected $updatedField  = 'updated_at';[m
+[31m-    protected $deletedField  = 'deleted_at';[m
+[31m-[m
+[31m-    // Validation[m
+[31m-    protected $validationRules      = [];[m
+[31m-    protected $validationMessages   = [];[m
+[31m-    protected $skipValidation       = false;[m
+[31m-    protected $cleanValidationRules = true;[m
+[31m-[m
+[31m-    // Callbacks[m
+[31m-    protected $allowCallbacks = true;[m
+[31m-    protected $beforeInsert   = [];[m
+[31m-    protected $afterInsert    = [];[m
+[31m-    protected $beforeUpdate   = [];[m
+[31m-    protected $afterUpdate    = [];[m
+[31m-    protected $beforeFind     = [];[m
+[31m-    protected $afterFind      = [];[m
+[31m-    protected $beforeDelete   = [];[m
+[31m-    protected $afterDelete    = [];[m
+[31m-}[m
+[1mdiff --git a/app/Models/ModelTransaksiMasuk.php b/app/Models/ModelTransaksiMasuk.php[m
+[1mindex 092638f..8d0f0c8 100644[m
+[1m--- a/app/Models/ModelTransaksiMasuk.php[m
+[1m+++ b/app/Models/ModelTransaksiMasuk.php[m
+[36m@@ -12,5 +12,7 @@[m [mclass ModelTransaksiMasuk extends Model[m
+         'faktur_beli', 'tgl_beli', 'id_supp_beli', 'total_beli'[m
+     ];[m
+ [m
+[31m-   [m
+[32m+[m[32m   public function noFaktur($tgl)  {[m
+[32m+[m[32m    return $this->table('transaksi_masuk ')->SELECT('MAX(faktur_beli) AS nofaktur')->WHERE ('tgl_beli' , $tgl)->get();[m
+[32m+[m[32m   }[m
+ }[m
+[1mdiff --git a/app/Views/transaksi_keluar/v_keluar.php b/app/Views/transaksi_keluar/v_keluar.php[m
+[1mindex 5b40c26..072f3ae 100644[m
+[1m--- a/app/Views/transaksi_keluar/v_keluar.php[m
+[1m+++ b/app/Views/transaksi_keluar/v_keluar.php[m
+[36m@@ -1,10 +1,10 @@[m
+ <div class="col-md-12">[m
+     <div class="card">[m
+[31m-        <div class="card-header">[m
+[32m+[m[32m        <div class="card-header">Transaksi Keluar[m
+             <div class="form-row">[m
+                 <div class="form-group col-md">[m
+                     <label for="">No Faktur</label>[m
+[31m-                    <input type="text" class="form-control" value="<?= date('Y-m-d') ?>" id="faktur">[m
+[32m+[m[32m                    <input type="text" class="form-control" style="font-weight: bold; color:blue" id="faktur" readonly>[m
+                 </div>[m
+                 <div class="form-group col-md ">[m
+                     <label for="">Tanggal</label>[m
+[36m@@ -15,9 +15,9 @@[m
+                 <div class="form-group col-md">[m
+                     <label for="">Kode Pelanggan</label>[m
+                     <div class="input-group">[m
+[31m-                        <input type="text" class="form-control" id="id_pelanggan">[m
+[32m+[m[32m                        <input type="text" class="form-control" id="nopol">[m
+                         <div class="input-group-append">[m
+[31m-                            <button class="btn btn-sm btn-primary" type="button">[m
+[32m+[m[32m                            <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#modalcaripelanggan">[m
+                                 <i class="fa fa-search"></i>[m
+                             </button>[m
+                         </div>[m
+[36m@@ -31,15 +31,15 @@[m
+             </div>[m
+             <div class="card">[m
+                 <div class="card-header bg-primary">[m
+[31m-                    Cari Data Part dan Jasa[m
+[32m+[m[32m                    Cari Data Part[m
+                 </div>[m
+                 <div class="card-body form-row">[m
+                     <div class="form-group col-md">[m
+[31m-                        <label for="">Kode Part / Jasa</label>[m
+[32m+[m[32m                        <label for="">Kode Part</label>[m
+                         <div class="input-group">[m
+                             <input type="text" class="form-control" id="id_part">[m
+                             <div class="input-group-append">[m
+[31m-                                <button class="btn btn-sm btn-primary" type="button">[m
+[32m+[m[32m                                <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#modalcaribarang">[m
+                                     <i class="fa fa-search"></i>[m
+                                 </button>[m
+                             </div>[m
+[36m@@ -47,66 +47,266 @@[m
+                     </div>[m
+                     <div class="form-group col">[m
+                         <label for="">Nama Item</label>[m
+[31m-                        <input type="text" class="form-control" id="id_part" readonly>[m
+[32m+[m[32m                        <input type="text" class="form-control" id="nama_part" readonly>[m
+                     </div>[m
+                     <div class="form-group col">[m
+                         <label for="">Harga Jual</label>[m
+[31m-                        <input type="number" class="form-control" id="id_part" readonly>[m
+[32m+[m[32m                        <input type="number" class="form-control" id="harga_jual" readonly>[m
+                     </div>[m
+                     <div class="form-group col">[m
+                         <label for="">Harga Beli</label>[m
+[31m-                        <input type="number" class="form-control" id="id_part" readonly>[m
+[32m+[m[32m                        <input type="number" class="form-control" id="harga_beli">[m
+                     </div>[m
+                     <div class="form-group col-md-1">[m
+                         <label for="">Jumlah</label>[m
+[31m-                        <input type="number" class="form-control" id="id_part">[m
+[32m+[m[32m                        <input type="number" class="form-control" id="jml_item">[m
+                     </div>[m
+                     <div class="form-group col-md-1">[m
+                         <label for="">Aksi</label>[m
+                         <div class="input-group">[m
+                             <button class="btn btn-sm btn-info">[m
+[31m-                                <i class="fa fa-plus-square"></i>[m
+[32m+[m[32m                                <i class="fa fa-plus-square" id="tombolTambahItem"></i>[m
+                             </button> &nbsp;[m
+                             <button class="btn btn-sm btn-warning">[m
+[31m-                                <i class="fa fa-sync-alt"></i>[m
+[32m+[m[32m                                <i class="fa fa-sync-alt" id="tombolReload"></i>[m
+                             </button>[m
+                         </div>[m
+                     </div>[m
+                 </div>[m
+             </div>[m
+             <div class="row" id="tampilDataTemp"></div>[m
+[32m+[m[32m            <div class="card-tools">[m
+[32m+[m[32m                <button type="button" class="btn btn-md btn-success" id="tobolSelesaiTransaks">[m
+[32m+[m[32m                    <i class="fas fa-save"></i>[m
+[32m+[m[32m                    Selesai Transaksi[m
+[32m+[m[32m                </button>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m</div>[m
+[32m+[m[32m<!-- modal cari barang -->[m
+[32m+[m[32m<div class="modal fade" id="modalcaribarang">[m
+[32m+[m[32m    <div class="modal-dialog modal-xl">[m
+[32m+[m[32m        <div class="modal-content">[m
+[32m+[m[32m            <div class="modal-header bg-primary">[m
+[32m+[m[32m                <h4 class="modal-title">Cari Part Berdasarkan Nama</h4>[m
+[32m+[m[32m                <button type="button" class="close" data-dismiss="modal" aria-label="Close">[m
+[32m+[m[32m                    <span aria-hidden="true">&times;</span>[m
+[32m+[m[32m                </button>[m
+[32m+[m[32m            </div>[m
+[32m+[m
+[32m+[m[32m            <div class="modal-body">[m
+[32m+[m[32m                <div class="input-group mb-3">[m
+[32m+[m[32m                    <input type="text" class="form-control" placeholder="Cari Berdasarkan Kode atau Nama Part" id="caripart">[m
+[32m+[m[32m                    <div class="input-group-append">[m
+[32m+[m[32m                        <button class="btn btn-outline-primary" type="button" id="btnCari">[m
+[32m+[m[32m                            <i class="fa fa-search"></i>[m
+[32m+[m[32m                        </button>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m            </div>[m
+         </div>[m
+[32m+[m[32m        <!-- /.modal-content -->[m
+     </div>[m
+[32m+[m[32m    <!-- /.modal-dialog -->[m
+[32m+[m[32m</div>[m
+[32m+[m[32m<!-- modal cari Pelanggan -->[m
+[32m+[m[32m<div class="modal fade" id="modalcaripelanggan">[m
+[32m+[m[32m    <div class="modal-dialog modal-xl">[m
+[32m+[m[32m        <div class="modal-content">[m
+[32m+[m[32m            <div class="modal-header bg-primary">[m
+[32m+[m[32m                <h4 class="modal-title">Cari Pelanggan</h4>[m
+[32m+[m[32m                <button type="button" class="close" data-dismiss="modal" aria-label="Close">[m
+[32m+[m[32m                    <span aria-hidden="true">&times;</span>[m
+[32m+[m[32m                </button>[m
+[32m+[m[32m            </div>[m
+[32m+[m
+[32m+[m[3

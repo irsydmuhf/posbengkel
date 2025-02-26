@@ -28,13 +28,14 @@ class Supplier extends BaseController
     public function InsertData()
     {
         $data = [
-            'nama_supplier' => $this->request->getPost('nama_supplier'),    
-            'alamat_supplier' => $this->request->getPost('alamat_supplier'),    
-            'telp_supplier' => $this->request->getPost('telp_supplier')    
-    ];
+            'nama_supplier' => $this->request->getPost('nama_supplier'),
+            'alamat_supplier' => $this->request->getPost('alamat_supplier'),
+            'telp_supplier' => $this->request->getPost('telp_supplier')
+        ];
+
         $this->ModelSupplier->InsertData($data);
-        session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan!');
-        return redirect()->to('Supplier');
+
+        return $this->response->setJSON(['status' => 'success', 'message' => 'Data Berhasil Ditambahkan!']);
     }
     public function UpdateData($id_supplier)
     {

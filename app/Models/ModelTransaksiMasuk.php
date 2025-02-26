@@ -12,5 +12,7 @@ class ModelTransaksiMasuk extends Model
         'faktur_beli', 'tgl_beli', 'id_supp_beli', 'total_beli'
     ];
 
-   
+   public function noFaktur($tgl)  {
+    return $this->table('transaksi_masuk ')->SELECT('MAX(faktur_beli) AS nofaktur')->WHERE ('tgl_beli' , $tgl)->get();
+   }
 }

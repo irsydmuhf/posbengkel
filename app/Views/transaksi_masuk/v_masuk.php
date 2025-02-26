@@ -1,6 +1,6 @@
 <div class="col-md-12">
     <div class="card">
-        <div class="card-header">
+        <div class="card-header">Transaksi Masuk
             <div class="form-row">
                 <div class="form-group col-md">
                     <label for="">No Faktur</label>
@@ -20,6 +20,9 @@
                             <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#modalcarisupplier">
                                 <i class="fa fa-search"></i>
                             </button>
+                            <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#tambahsupplier">
+                                <i class="fa fa-plus"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -31,7 +34,7 @@
             </div>
             <div class="card">
                 <div class="card-header bg-primary">
-                    Cari Data Part dan Jasa
+                    Cari Data Part
                 </div>
                 <div class="card-body form-row">
                     <div class="form-group col-md">
@@ -47,7 +50,7 @@
                     </div>
                     <div class="form-group col">
                         <label for="">Nama Item</label>
-                        <input type="text" class="form-control" id="nama_part" readonly>
+                        <input type="text" class="form-control" id="nama_part" name="nama_part" readonly>
                     </div>
                     <div class="form-group col">
                         <label for="">Harga Jual</label>
@@ -76,10 +79,43 @@
             </div>
             <div class="row" id="tampilDataTemp"></div>
             <div class="card-tools">
-                <button type="button" class="btn btn-md btn-success" id="tobolSelesaiTransaks">
+                <button type="button" class="btn btn-md btn-success" data-toggle="modal" data-target="#modalselesai">
                     <i class="fas fa-save"></i>
                     Selesai Transaksi
                 </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- MODAL -->
+<!-- modal tambah supplier -->
+<div class="modal fade" id="tambahsupplier" tabindex="-1" aria-labelledby="modalSupplierLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <h5 class="modal-title" id="modalSupplierLabel">Tambah Supplier</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="">Nama Supplier</label>
+                    <input name="nama_supplier" class="form-control" placeholder="Masukkan Nama Supplier" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Alamat Supplier</label>
+                    <input name="alamat_supplier" class="form-control" placeholder="Masukkan Alamat Supplier" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Telp. Supplier</label>
+                    <input type="number" name="telp_supplier" class="form-control" placeholder="Gunakan Awalan 62" required>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <div></div> <button type="submit" class="btn btn-primary btn-flat">Save</button>
             </div>
         </div>
     </div>
@@ -116,7 +152,7 @@
         <div class="modal-content">
             <div class="modal-header bg-primary">
                 <h4 class="modal-title">Cari Supplier</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -125,7 +161,9 @@
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Cari Berdasarkan Nama Supplier" id="carisupplier">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                        <button class="btn btn-outline-primary" type="button" id="btnCariSupp">
+                            <i class="fa fa-search"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -134,8 +172,31 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
+<!-- modal selesai -->
+<div class="modal fade" id="modalselesai">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Konfirmasi</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Apakah Anda Yakin Menyimpan Transaksi</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                <a class="btn btn-danger btn-flat" id="tombolSimpanTransaksi">Simpan</a>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
 <script>
     function buatFaktur() {
+        let tgl = $('#tglfaktur').val();
         $.ajax({
             type: "post",
             url: "<?= site_url('transaksimasuk/buatFaktur') ?>",
@@ -205,13 +266,80 @@
         $('#id_part').val('');
         $('#nama_part').val('');
         $('#harga_jual').val('');
+        $('#jml_item').val(1);
         $('#id_part').focus();
+
+    }
+
+    function simpanTemp() {
+
+        let faktur = $("#faktur").val();
+        let id_part = $("#id_part").val();
+        let harga_beli = $("#harga_beli").val();
+        let harga_jual = $("#harga_jual").val();
+        let jml_item = $("#jml_item").val();
+        let id_supplier = $("#id_supplier").val();
+        let nama_part = $("#nama_part").val();
+
+
+        if (id_supplier.length == 0) {
+            alert('Supplier belum diisi');
+            return;
+        } else if (id_part.length == 0) {
+            alert('Belum memilih barang');
+            return;
+        } else if (harga_beli == '') {
+            alert('Harga beli belum diisi');
+            return;
+        } else if (jml_item == '') {
+            alert('Jumlah belum diisi');
+            return;
+        } else {
+            $.ajax({
+                type: "post",
+                url: "/transaksimasuk/simpanTemp",
+                data: {
+                    faktur: faktur,
+                    id_part: id_part,
+                    nama_part: nama_part,
+                    harga_jual: harga_jual,
+                    harga_beli: harga_beli,
+                    jml_item: jml_item
+                },
+                dataType: "json",
+                success: function(response) {
+                    if (response.sukses) {
+                        dataTemp();
+                        kosong();
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status + '\n' + thrownError);
+                }
+            });
+        }
     }
 
     $(document).ready(function() {
         dataTemp();
         buatFaktur();
 
+        $('#formSupplier').submit(function(e) {
+            e.preventDefault()
+
+            $.ajax({
+                type: 'POST',
+                url: '<?= base_url("Supplier/InsertData") ?>',
+                data: $(this).serialize(),
+                dataType: 'json',
+                success: function(response) {
+                    if (response.status == 'success') {
+                        $('#modalSupplier').modal('hide');
+                        location.reload();
+                    }
+                }
+            });
+        });
         $('#id_part').keydown(function(e) {
             if (e.keyCode == 13) {
                 e.preventDefault();
@@ -229,6 +357,7 @@
                             let data = response.sukses;
                             $('#nama_part').val(data.nama_part);
                             $('#harga_jual').val(data.harga_jual);
+                            $('#jml_item').val(data.jml_item);
 
                             $('#harga_beli').focus();
                         }
@@ -247,22 +376,8 @@
 
         $('#tombolTambahItem').click(function(e) {
             e.preventDefault();
-            let id_part = $('#id_part').val();
-            let harga_beli = $('#harga_beli').val();
-            let jml_item = $('#jml_item').val();
-            let id_supplier = $('#id_supplier').val();
-
-            if (id_supplier.length == 0) {
-                alert('Supplier belum diisi');
-            } else if (id_part.length == 0) {
-                alert('Belum memilih barang');
-            } else if (harga_beli == '') {
-                alert('Harga beli belum diisi');
-            } else if (jml_item == '') {
-                alert('Jumlah belum diisi');
-            };
+            simpanTemp()
         });
-        e.preventDefault();
     });
 
     function cariDataBarang() {
@@ -281,30 +396,39 @@
                 alert(xhr.status + '\n' + thrownError);
             }
         });
+    }
 
-        $('#tombolSelesaiTransaksi').click(function(e) {
-            e.preventDefault();
-            let faktur = $('#faktur').val();
+    $('#tombolSimpanTransaksi').click(function(e) {
+        e.preventDefault();
+        let faktur = $('#faktur').val();
+        let id_supplier = $('#id_supplier').val();
+        let tglfaktur = $('#tglfaktur').val();
 
-            if (faktur.length !== 0) {
-                Swal.fire({
-                    title: "Are you sure?",
-                    text: "You won't be able to revert this!",
-                    icon: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "Yes, delete it!"
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        Swal.fire({
-                            title: "Deleted!",
-                            text: "Your file has been deleted.",
-                            icon: "success"
-                        });
-                    }
-                });
+        if (id_supplier === '') {
+            alert('Supplier belum dipilih');
+            return;
+        }
+
+        $.ajax({
+            type: "post",
+            url: "/transaksimasuk/simpanTransaksi",
+            data: {
+                faktur: faktur,
+                tglfaktur: tglfaktur,
+                id_supplier: id_supplier
+            },
+            dataType: "json",
+            success: function(response) {
+                if (response.error) {
+                    alert(response.error);
+                } else {
+                    alert(response.sukses);
+                    window.location.reload();
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + '\n' + thrownError);
             }
         });
-    }
+    });
 </script>

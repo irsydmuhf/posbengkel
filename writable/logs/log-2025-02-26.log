@@ -1,0 +1,1841 @@
+ERROR - 2025-02-26 08:35:38 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:170
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(170): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'posbengkel', 3306, '', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempMasuk.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(31): App\Models\ModelTempMasuk->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\posbengkel\app\Models\ModelTempMasuk.php(18): CodeIgniter\Model->__call('get', Array)
+#5 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(31): App\Models\ModelTempMasuk->tampilDataTemp('')
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-02-26 08:35:38 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_masuk`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 3 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Models\ModelTempMasuk.php(18): CodeIgniter\Model->__call('get', [])
+ 5 APPPATH\Controllers\TransaksiMasuk.php(31): App\Models\ModelTempMasuk->tampilDataTemp('ROOTPATH\\public')
+ 6 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 08:35:42 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:170
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(170): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'posbengkel', 3306, '', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#3 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->buatFaktur()
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2025-02-26 08:35:42 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\TransaksiMasuk.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_masuk WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->buatFaktur()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 08:35:47 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:170
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(170): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'posbengkel', 3306, '', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\app\Models\ModelPart.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(30): App\Models\ModelPart->AllData()
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->index()
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\posbengkel\app\Models\ModelPart.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(30): App\Models\ModelPart->AllData()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->index()
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2025-02-26 08:35:47 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `part`
+JOIN `kategori` ON `id_kategori_part`=`id_kategori`
+JOIN `satuan` ON `id_satuan_part`=`id_satuan`', [], false)
+ 3 APPPATH\Models\ModelPart.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\TransaksiKeluar.php(30): App\Models\ModelPart->AllData()
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->index()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 08:51:54 --> mysqli_sql_exception: Unknown column 'faktur_jual' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(68): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 08:51:54 --> Unknown column 'faktur_jual' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_jual, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_jual, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_jual, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(68): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_jual, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 08:52:48 --> mysqli_sql_exception: Unknown column 'faktur_jual' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(68): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 08:52:48 --> Unknown column 'faktur_jual' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_jual, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_jual, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_jual, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(68): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_jual, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 08:55:04 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(42): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 08:55:04 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(42): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 08:55:04 --> mysqli_sql_exception: Unknown column 'faktur_beli' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(127): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 08:55:04 --> Unknown column 'faktur_beli' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(127): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 08:55:56 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(42): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 08:55:56 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(42): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 08:55:56 --> mysqli_sql_exception: Unknown column 'faktur_beli' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(127): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 08:55:56 --> Unknown column 'faktur_beli' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(127): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 08:57:15 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(42): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 08:57:15 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(42): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 08:57:15 --> mysqli_sql_exception: Unknown column 'faktur_beli' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(127): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 08:57:15 --> Unknown column 'faktur_beli' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(127): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 08:57:20 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(42): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 08:57:20 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(42): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 08:57:20 --> mysqli_sql_exception: Unknown column 'faktur_beli' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(127): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 08:57:20 --> Unknown column 'faktur_beli' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(127): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:03:42 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(40): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 09:03:42 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(40): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:03:42 --> mysqli_sql_exception: Unknown column 'faktur_beli' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(125): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 09:03:42 --> Unknown column 'faktur_beli' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(125): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:05:08 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(33): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 09:05:08 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(33): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:05:08 --> mysqli_sql_exception: Unknown column 'faktur_beli' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(118): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 09:05:08 --> Unknown column 'faktur_beli' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(118): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-26 09:07:42 --> Invalid file: transaksi_keluar/v_masuk.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('transaksi_keluar/v_masuk.php')
+ 2 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi_keluar/v_masuk', [], true)
+ 3 APPPATH\Views\v_template.php(213): view('transaksi_keluar/v_masuk')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 7 APPPATH\Controllers\TransaksiKeluar.php(22): view('v_template', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->index()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:07:59 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 09:07:59 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:08:00 --> mysqli_sql_exception: Unknown column 'faktur_jual' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 09:08:00 --> Unknown column 'faktur_jual' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:11:23 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 09:11:23 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:11:23 --> mysqli_sql_exception: Unknown column 'faktur_jual' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 09:11:23 --> Unknown column 'faktur_jual' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:11:31 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 09:11:31 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:11:32 --> mysqli_sql_exception: Unknown column 'faktur_jual' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 09:11:32 --> Unknown column 'faktur_jual' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:13:36 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 09:13:36 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:13:36 --> mysqli_sql_exception: Unknown column 'faktur_jual' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 09:13:36 --> Unknown column 'faktur_jual' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:13:41 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 09:13:41 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:13:41 --> mysqli_sql_exception: Unknown column 'faktur_jual' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 09:13:41 --> Unknown column 'faktur_jual' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:19:15 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 09:19:15 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:19:15 --> mysqli_sql_exception: Unknown column 'faktur_jual' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 09:19:15 --> Unknown column 'faktur_jual' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:23:10 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 09:23:10 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:23:10 --> mysqli_sql_exception: Unknown column 'faktur_jual' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 09:23:10 --> Unknown column 'faktur_jual' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:25:02 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 09:25:02 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:25:02 --> mysqli_sql_exception: Unknown column 'faktur_jual' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 09:25:02 --> Unknown column 'faktur_jual' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:28:45 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 09:28:45 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:28:45 --> mysqli_sql_exception: Unknown column 'faktur_jual' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 09:28:45 --> Unknown column 'faktur_jual' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_jual) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:31:06 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 09:31:06 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:31:07 --> mysqli_sql_exception: Unknown column 'faktur_beli' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 09:31:07 --> Unknown column 'faktur_beli' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:31:26 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 09:31:26 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:31:26 --> mysqli_sql_exception: Unknown column 'faktur_beli' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 09:31:26 --> Unknown column 'faktur_beli' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:32:42 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 09:32:42 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:32:43 --> mysqli_sql_exception: Unknown column 'faktur_beli' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 09:32:43 --> Unknown column 'faktur_beli' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:33:03 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 09:33:03 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:33:03 --> mysqli_sql_exception: Unknown column 'faktur_beli' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 09:33:03 --> Unknown column 'faktur_beli' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:33:40 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 09:33:40 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:33:40 --> mysqli_sql_exception: Unknown column 'faktur_beli' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 09:33:40 --> Unknown column 'faktur_beli' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:34:12 --> mysqli_sql_exception: Table 'posbengkel.temp_trans_keluar' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-26 09:34:12 --> Table 'posbengkel.temp_trans_keluar' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_keluar`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\ModelTempKeluar.php(18): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\TransaksiKeluar.php(31): App\Models\ModelTempKeluar->tampilDataTemp('ROOTPATH\\public')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->dataTemp()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 09:34:12 --> mysqli_sql_exception: Unknown column 'faktur_beli' in 'field list' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(fakt...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(fakt...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(fakt...')
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2025-02-26 09:34:12 --> Unknown column 'faktur_beli' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = \'2025-02-26\'')
+ 4 APPPATH\Controllers\TransaksiKeluar.php(116): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_keluar WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiKeluar->buatFaktur()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiKeluar))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 19:12:05 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:170
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(170): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'posbengkel', 3306, '', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempMasuk.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(33): App\Models\ModelTempMasuk->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\posbengkel\app\Models\ModelTempMasuk.php(18): CodeIgniter\Model->__call('get', Array)
+#5 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(33): App\Models\ModelTempMasuk->tampilDataTemp('')
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-02-26 19:12:05 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_masuk`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 3 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Models\ModelTempMasuk.php(18): CodeIgniter\Model->__call('get', [])
+ 5 APPPATH\Controllers\TransaksiMasuk.php(33): App\Models\ModelTempMasuk->tampilDataTemp('ROOTPATH\\public')
+ 6 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 19:12:10 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:170
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(170): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'posbengkel', 3306, '', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(118): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(118): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#3 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->buatFaktur()
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2025-02-26 19:12:10 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\TransaksiMasuk.php(118): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_masuk WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->buatFaktur()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 19:12:15 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:170
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(170): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'posbengkel', 3306, '', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempMasuk.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(33): App\Models\ModelTempMasuk->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\posbengkel\app\Models\ModelTempMasuk.php(18): CodeIgniter\Model->__call('get', Array)
+#5 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(33): App\Models\ModelTempMasuk->tampilDataTemp('')
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-02-26 19:12:15 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_masuk`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 3 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Models\ModelTempMasuk.php(18): CodeIgniter\Model->__call('get', [])
+ 5 APPPATH\Controllers\TransaksiMasuk.php(33): App\Models\ModelTempMasuk->tampilDataTemp('ROOTPATH\\public')
+ 6 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 19:12:20 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:170
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(170): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'posbengkel', 3306, '', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(118): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->buatFaktur()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(118): CodeIgniter\Database\BaseConnection->query('SELECT MAX(fakt...', Array)
+#3 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->buatFaktur()
+#4 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2025-02-26 19:12:20 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\TransaksiMasuk.php(118): CodeIgniter\Database\BaseConnection->query('SELECT MAX(faktur_beli) AS nofaktur FROM transaksi_masuk WHERE DATE_FORMAT(tgl_beli, \'%Y-%m-%d\') = ?', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->buatFaktur()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 19:14:51 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:170
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(170): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'posbengkel', 3306, '', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Models\ModelTempMasuk.php(18): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(33): App\Models\ModelTempMasuk->tampilDataTemp('')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\posbengkel\system\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\posbengkel\app\Models\ModelTempMasuk.php(18): CodeIgniter\Model->__call('get', Array)
+#5 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(33): App\Models\ModelTempMasuk->tampilDataTemp('')
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-02-26 19:14:51 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `temp_trans_masuk`
+JOIN `part` ON `id_part`=`id_part_detbeli`
+WHERE `faktur_detbeli` = :faktur_detbeli:', [...], false)
+ 3 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Models\ModelTempMasuk.php(18): CodeIgniter\Model->__call('get', [])
+ 5 APPPATH\Controllers\TransaksiMasuk.php(33): App\Models\ModelTempMasuk->tampilDataTemp('ROOTPATH\\public')
+ 6 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-26 19:19:20 --> Call to undefined method App\Models\ModelTempMasuk::cekItem
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\TransaksiMasuk.php(150): CodeIgniter\Model->__call('cekItem', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->simpanTemp()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-26 19:21:52 --> Call to undefined method App\Models\ModelTempMasuk::cekItem
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\TransaksiMasuk.php(150): CodeIgniter\Model->__call('cekItem', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->simpanTemp()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-26 19:22:07 --> Call to undefined method App\Models\ModelTempMasuk::cekItem
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\TransaksiMasuk.php(150): CodeIgniter\Model->__call('cekItem', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->simpanTemp()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-26 19:44:30 --> Call to undefined method App\Models\ModelTempMasuk::cekItem
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\TransaksiMasuk.php(150): CodeIgniter\Model->__call('cekItem', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->simpanTemp()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-26 19:44:33 --> Call to undefined method App\Models\ModelTempMasuk::cekItem
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\TransaksiMasuk.php(150): CodeIgniter\Model->__call('cekItem', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->simpanTemp()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 19:50:18 --> Call to undefined method App\Models\ModelTempMasuk::cekItem
+ERROR - 2025-02-26 19:50:20 --> Call to undefined method App\Models\ModelTempMasuk::cekItem
+ERROR - 2025-02-26 20:31:47 --> Call to undefined method App\Models\ModelTempMasuk::cekItem
+CRITICAL - 2025-02-26 21:12:14 --> Undefined variable $part
+in APPPATH\Views\transaksi_masuk\data_masuk.php on line 43.
+ 1 APPPATH\Views\transaksi_masuk\data_masuk.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $part', 'APPPATH\\Views\\transaksi_masuk\\data_masuk.php', 43)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\transaksi_masuk\\data_masuk.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi_masuk/data_masuk', [], true)
+ 5 APPPATH\Views\v_template.php(215): view('transaksi_masuk/data_masuk')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\TransaksiMasuk.php(24): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-26 21:21:18 --> Invalid file: transaksi_masuk/v_maasuk.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('transaksi_masuk/v_maasuk.php')
+ 2 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi_masuk/v_maasuk', [], true)
+ 3 APPPATH\Views\v_template.php(215): view('transaksi_masuk/v_maasuk')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 7 APPPATH\Controllers\TransaksiMasuk.php(52): view('v_template', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->input()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-26 21:21:43 --> Undefined variable $menu
+in APPPATH\Views\v_template.php on line 89.
+ 1 APPPATH\Views\v_template.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $menu', 'APPPATH\\Views\\v_template.php', 89)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 5 APPPATH\Controllers\TransaksiMasuk.php(48): view('v_template', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->input()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-26 21:21:46 --> Undefined variable $menu
+in APPPATH\Views\v_template.php on line 89.
+ 1 APPPATH\Views\v_template.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $menu', 'APPPATH\\Views\\v_template.php', 89)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 5 APPPATH\Controllers\TransaksiMasuk.php(48): view('v_template', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->input()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-26 21:31:32 --> substr(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH\Controllers\TransaksiMasuk.php on line 35.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'substr(): Passing null to parameter #1 ($string) of type string is deprecated', 'APPPATH\\Controllers\\TransaksiMasuk.php', 35)
+ 2 APPPATH\Controllers\TransaksiMasuk.php(35): substr(null, -4)
+ 3 APPPATH\Controllers\TransaksiMasuk.php(23): App\Controllers\TransaksiMasuk->buatFaktur()
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->index()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-02-26 22:59:08 --> Call to undefined method App\Models\ModelTempMasuk::cekItem

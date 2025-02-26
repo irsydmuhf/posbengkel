@@ -1,0 +1,24 @@
+CRITICAL - 2025-02-27 00:52:02 --> Undefined variable $part
+in APPPATH\Views\transaksi_masuk\datatemp.php on line 57.
+ 1 APPPATH\Views\transaksi_masuk\datatemp.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $part', 'APPPATH\\Views\\transaksi_masuk\\datatemp.php', 57)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\transaksi_masuk\\datatemp.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi_masuk/datatemp', [], true)
+ 5 APPPATH\Controllers\TransaksiMasuk.php(38): view('transaksi_masuk/datatemp', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-02-27 00:53:40 --> Undefined variable $value
+in APPPATH\Views\transaksi_masuk\datatemp.php on line 47.
+ 1 APPPATH\Views\transaksi_masuk\datatemp.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $value', 'APPPATH\\Views\\transaksi_masuk\\datatemp.php', 47)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\transaksi_masuk\\datatemp.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi_masuk/datatemp', [], true)
+ 5 APPPATH\Controllers\TransaksiMasuk.php(38): view('transaksi_masuk/datatemp', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataTemp()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

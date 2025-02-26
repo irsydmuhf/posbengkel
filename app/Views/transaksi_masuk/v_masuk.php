@@ -1,6 +1,6 @@
 <div class="col-md-12">
     <div class="card">
-        <div class="card-header">Transaksi Masuk
+        <div class="card-header">
             <div class="form-row">
                 <div class="form-group col-md">
                     <label for="">No Faktur</label>
@@ -266,6 +266,7 @@
         $('#id_part').val('');
         $('#nama_part').val('');
         $('#harga_jual').val('');
+        $('#harga_beli').val('');
         $('#jml_item').val(1);
         $('#id_part').focus();
 
@@ -311,6 +312,8 @@
                     if (response.sukses) {
                         dataTemp();
                         kosong();
+                    } else if (response.error) {
+                        alert(response.error);
                     }
                 },
                 error: function(xhr, ajaxOptions, thrownError) {
@@ -321,6 +324,7 @@
     }
 
     $(document).ready(function() {
+        $("body").addClass("sidebar-collapse");
         dataTemp();
         buatFaktur();
 
@@ -374,7 +378,7 @@
             };
         });
 
-        $('#tombolTambahItem').click(function(e) {
+        $("#tombolTambahItem").off().on("click", function(e) {
             e.preventDefault();
             simpanTemp()
         });

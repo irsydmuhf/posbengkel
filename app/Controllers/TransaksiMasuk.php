@@ -99,15 +99,33 @@ class TransaksiMasuk extends BaseController
             exit('Tidak bisa dipanggil');
         }
     }
-    function detailCariBarang()
+
+    function cariDataPart()
     {
         if ($this->request->isAJAX()) {
-            $caripart = $this->request->getPost('caripart');
-
-            $modalPart = new ModelPart();
+            $json = [
+                'data' => view('transaksi_masuk/modalcaripart')
+            ];
+            echo json_encode($json);
         } else {
             exit('Tidak bisa dipanggil');
         }
+    }
+    function detailCariPart()
+    {
+        if ($this->request->isAJAX()) {
+            $caripart = $this->request->getPost('caripart');
+            $modelPart = new ModelPart();
+            $data = $modelPart->tampildata_cari($caripart);
+
+            return $this->response->setJSON([
+                'data' => view('transaksi_masuk/detaildatapart', [
+                    'tampildata' => $data
+                ])
+            ]);
+        }
+
+        exit('Tidak bisa dipanggil');
     }
 
     public function buatFaktur()

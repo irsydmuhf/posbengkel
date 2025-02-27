@@ -33,11 +33,17 @@ class ModelPart extends Model
         return $this->update($data['id_part'], $data);
     }
 
-    public function tampildata_search($search) {
-        return $this->table('part')
-        ->join('kategori','id_kategori_part=id_kategori')
-        ->orlike('id_part', $search)
-        ->orlike('nama_part', $search)
-        ->orlike('nama_kategori', $search);
+    public function tampildata_cari($caripart)
+    {
+        return $this->db->table('part')
+            ->join('kategori', 'id_kategori_part = id_kategori')
+            ->join('satuan', 'id_satuan_part = id_satuan')
+            ->groupStart()
+            ->like('id_part', $caripart)
+            ->orLike('nama_part', $caripart)
+            ->orLike('nama_kategori', $caripart)
+            ->groupEnd()
+            ->get()
+            ->getResultArray();
     }
 }

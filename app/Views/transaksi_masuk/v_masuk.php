@@ -42,7 +42,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control" id="id_part">
                             <div class="input-group-append">
-                                <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#modalcaribarang">
+                                <button class="btn btn-outline-primary" type="button" id="tombolCariPart">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </div>
@@ -121,38 +121,14 @@
     </div>
 </div>
 <!-- modal cari barang -->
-<div class="modal fade" id="modalcaribarang">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header bg-primary">
-                <h4 class="modal-title">Cari Part Berdasarkan Nama</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Cari Berdasarkan Kode atau Nama Part" id="caripart">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-primary" type="button" id="btnCari">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
+<div class="modalcaripart" style="display: none"></div>
 <!-- modal cari Supplier -->
 <div class="modal fade" id="modalcarisupplier">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header bg-primary">
                 <h4 class="modal-title">Cari Supplier</h4>
-                <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -323,6 +299,36 @@
         }
     }
 
+    function ambilDataPart() {
+        let id_part = $('#id_part').val();
+
+        $.ajax({
+            type: "post",
+            url: "/transaksimasuk/ambilDataBarang",
+            data: {
+                id_part: id_part
+            },
+            dataType: "json",
+            success: function(response) {
+                if (response.sukses) {
+                    let data = response.sukses;
+                    $('#nama_part').val(data.nama_part);
+                    $('#harga_jual').val(data.harga_jual);
+                    $('#jml_item').val(data.jml_item);
+
+                    $('#harga_beli').focus();
+                }
+
+                if (response.error) {
+                    alert(response.error);
+                    kosong();
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + '\n' + thrownError);
+            }
+        });
+    }
     $(document).ready(function() {
         $("body").addClass("sidebar-collapse");
         dataTemp();
@@ -347,34 +353,7 @@
         $('#id_part').keydown(function(e) {
             if (e.keyCode == 13) {
                 e.preventDefault();
-                let id_part = $('#id_part').val();
-
-                $.ajax({
-                    type: "post",
-                    url: "/transaksimasuk/ambilDataBarang",
-                    data: {
-                        id_part: id_part
-                    },
-                    dataType: "json",
-                    success: function(response) {
-                        if (response.sukses) {
-                            let data = response.sukses;
-                            $('#nama_part').val(data.nama_part);
-                            $('#harga_jual').val(data.harga_jual);
-                            $('#jml_item').val(data.jml_item);
-
-                            $('#harga_beli').focus();
-                        }
-
-                        if (response.error) {
-                            alert(response.error);
-                            kosong();
-                        }
-                    },
-                    error: function(xhr, ajaxOptions, thrownError) {
-                        alert(xhr.status + '\n' + thrownError);
-                    }
-                });
+                ambilDataPart();
             };
         });
 
@@ -382,25 +361,28 @@
             e.preventDefault();
             simpanTemp()
         });
+
+        $('#tombolCariPart').click(function(e) {
+            e.preventDefault();
+            $.ajax({
+                url: "/transaksimasuk/cariDataPart",
+                dataType: "json",
+                success: function(response) {
+                    if (response.data) {
+                        $('.modalcaripart').html(response.data).show();
+                        $('#modalcaripart').modal('show');
+
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status + '\n' + thrownError);
+                }
+
+            });
+        });
     });
 
-    function cariDataBarang() {
-        let caripart = $('#cariPart').val()
-        $.ajax({
-            type: "post",
-            url: "/transaksimasuk/detailCariBarang",
-            data: {
-                caripart: caripart
-            },
-            dataType: "json",
-            success: function(response) {
 
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-                alert(xhr.status + '\n' + thrownError);
-            }
-        });
-    }
 
     $('#tombolSimpanTransaksi').click(function(e) {
         e.preventDefault();

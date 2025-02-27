@@ -128,6 +128,34 @@ class TransaksiMasuk extends BaseController
         exit('Tidak bisa dipanggil');
     }
 
+    function cariDataSupplier()
+    {
+        if ($this->request->isAJAX()) {
+            $json = [
+                'data' => view('transaksi_masuk/modalcarisupplier')
+            ];
+            echo json_encode($json);
+        } else {
+            exit('Tidak bisa dipanggil');
+        }
+    }
+    function detailCariSupplier()
+    {
+        if ($this->request->isAJAX()) {
+            $carisupplier = $this->request->getPost('carisupplier');
+            $modelSupplier = new ModelSupplier();
+            $data = $modelSupplier->tampildata_cari($carisupplier);
+
+            return $this->response->setJSON([
+                'data' => view('transaksi_masuk/detaildatasupplier', [
+                    'tampildata' => $data
+                ])
+            ]);
+        }
+        exit('Tidak bisa dipanggil');
+    }
+
+
     public function buatFaktur()
     {
         $tgl = date('Y-m-d');

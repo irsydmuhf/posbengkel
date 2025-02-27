@@ -17,7 +17,7 @@
                     <div class="input-group">
                         <input type="text" class="form-control" id="id_supplier">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#modalcarisupplier">
+                        <button class="btn btn-outline-primary" type="button" id="tombolCariSupplier">
                                 <i class="fa fa-search"></i>
                             </button>
                             <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#tambahsupplier">
@@ -123,31 +123,7 @@
 <!-- modal cari barang -->
 <div class="modalcaripart" style="display: none"></div>
 <!-- modal cari Supplier -->
-<div class="modal fade" id="modalcarisupplier">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header bg-primary">
-                <h4 class="modal-title">Cari Supplier</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Cari Berdasarkan Nama Supplier" id="carisupplier">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-primary" type="button" id="btnCariSupp">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
+<div class="modalcarisupplier" style="display: none"></div>
 <!-- modal selesai -->
 <div class="modal fade" id="modalselesai">
     <div class="modal-dialog">
@@ -211,32 +187,6 @@
             }
         });
     }
-    $('#id_supplier').keydown(function(e) {
-        if (e.keyCode == 13) {
-            e.preventDefault();
-            let id_supplier = $('#id_supplier').val();
-
-            $.ajax({
-                type: "post",
-                url: "/transaksimasuk/ambilDataSupplier",
-                data: {
-                    id_supplier: id_supplier
-                },
-                dataType: "json",
-                success: function(response) {
-                    if (response.sukses) {
-                        $('#nama_supplier').val(response.sukses.nama_supplier);
-                    } else {
-                        alert(response.error);
-                        $('#nama_supplier').val('');
-                    }
-                },
-                error: function(xhr, ajaxOptions, thrownError) {
-                    alert(xhr.status + '\n' + thrownError);
-                }
-            });
-        }
-    });
 
     function kosong() {
         $('#id_part').val('');
@@ -299,6 +249,30 @@
         }
     }
 
+    function ambilDataSupplier() {
+        let id_supplier = $('#id_supplier').val();
+
+        $.ajax({
+            type: "post",
+            url: "/transaksimasuk/ambilDataSupplier",
+            data: {
+                id_supplier: id_supplier
+            },
+            dataType: "json",
+            success: function(response) {
+                if (response.sukses) {
+                    $('#nama_supplier').val(response.sukses.nama_supplier);
+                } else {
+                    alert(response.error);
+                    $('#nama_supplier').val('');
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + '\n' + thrownError);
+            }
+        });
+    }
+
     function ambilDataPart() {
         let id_part = $('#id_part').val();
 
@@ -357,6 +331,13 @@
             };
         });
 
+        $('#id_supplier').keydown(function(e) {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                ambilDataSupplier();
+            }
+        });
+
         $("#tombolTambahItem").off().on("click", function(e) {
             e.preventDefault();
             simpanTemp()
@@ -371,6 +352,24 @@
                     if (response.data) {
                         $('.modalcaripart').html(response.data).show();
                         $('#modalcaripart').modal('show');
+
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status + '\n' + thrownError);
+                }
+
+            });
+        });
+        $('#tombolCariSupplier').click(function(e) {
+            e.preventDefault();
+            $.ajax({
+                url: "/transaksimasuk/cariDataSupplier",
+                dataType: "json",
+                success: function(response) {
+                    if (response.data) {
+                        $('.modalcarisupplier').html(response.data).show();
+                        $('#modalcarisupplier').modal('show');
 
                     }
                 },

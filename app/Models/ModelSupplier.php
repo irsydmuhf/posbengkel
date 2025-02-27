@@ -26,13 +26,26 @@ class ModelSupplier extends Model
     public function UpdateData($data)
     {
         $this->db->table('supplier')
-        ->where('id_supplier', $data['id_supplier'])
-        ->update($data);
+            ->where('id_supplier', $data['id_supplier'])
+            ->update($data);
     }
     public function DeleteData($data)
     {
         $this->db->table('supplier')
-        ->where('id_supplier', $data['id_supplier'])
-        ->delete($data);
+            ->where('id_supplier', $data['id_supplier'])
+            ->delete($data);
+    }
+
+    public function tampildata_cari($carisupplier)
+    {
+        return $this->db->table('supplier')
+            ->groupStart()
+            ->like('id_supplier', $carisupplier)
+            ->orLike('nama_supplier', $carisupplier)
+            ->orLike('alamat_supplier', $carisupplier)
+            ->orLike('telp_supplier', $carisupplier)
+            ->groupEnd()
+            ->get()
+            ->getResultArray();
     }
 }

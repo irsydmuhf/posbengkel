@@ -100,6 +100,24 @@ class TransaksiMasuk extends BaseController
         }
     }
 
+    function hapus()
+    {
+        if ($this->request->isAJAX()) {
+            $id = $this->request->getPost('id');
+
+            $ModelTempMasuk = new ModelTempMasuk();
+            $ModelTempMasuk->delete($id);
+
+            $json = [
+                'sukses' => 'Item berhasil dihapus'
+            ];
+
+            echo json_encode($json);
+        } else {
+            exit('Tidak bisa dipanggil');
+        }
+    }
+
     function cariDataPart()
     {
         if ($this->request->isAJAX()) {
@@ -180,6 +198,7 @@ class TransaksiMasuk extends BaseController
         if ($this->request->isAJAX()) {
             $faktur = $this->request->getPost('faktur');
             $id_part = $this->request->getPost('id_part');
+            $id_supplier = $this->request->getPost('id_supplier');
             $nama_part = $this->request->getPost('nama_part');
             $harga_jual = $this->request->getPost('harga_jual');
             $harga_beli = $this->request->getPost('harga_beli');
@@ -198,10 +217,11 @@ class TransaksiMasuk extends BaseController
                 $modelTemp->insert([
                     'faktur_detbeli' => $faktur,
                     'id_part_detbeli' => $id_part,
+                    'id_supp_detbeli' => $id_supplier,
                     'nama_part_detbeli' => $nama_part,
                     'hargabeli_detbeli' => $harga_beli,
                     'hargajual_detbeli' => $harga_jual,
-                    'jumlah_detbeli' => $jml_item,
+                    'jml_detbeli' => $jml_item,
                     'subtotal_detbeli' => intval($harga_beli) * intval($jml_item)
                 ]);
 
@@ -257,43 +277,62 @@ class TransaksiMasuk extends BaseController
         // }
 
 
-        // function simpanTransaksi()
-        // {
-        //     if ($this->request->isAJAX()) {
-        //         $faktur_beli = $this->request->getPost('faktur');
-        //         $tglfaktur = $this->request->getPost('tglfaktur');
 
-        //         $modelTemp = new ModelTempMasuk();
-        //         $dataTemp = $modelTemp->getWhere(['faktur_detbeli' => $faktur_beli]);
 
-        //         if ($dataTemp->getNumRows() == 0) {
-        //             $json = [
-        //                 'error' => 'Maaf, data item untuk faktur ini belum ada'
-        //             ];
-        //         } else {
-        //             // simpan ke transaksi masuk
-        //             $modelTransaksiMasuk = new ModelTransaksiMasuk();
-        //             $totalSubtotal = 0;
-        //             foreach ($dataTemp->getResultArray() as $total) {
-        //                 $totalSubtotal += intval($total['subtotal_detbeli']);
-        //             }
+    }
+    function simpanTransaksi()
+    {
+        if ($this->request->isAJAX()) {
+            $faktur = $this->request->getPost('faktur');
+            $tgl = $this->request->getPost('tglfaktur');
+            $id_supplier = $this->request->getPost('id_supplier');
 
-        //             $modelTransaksiMasuk->insert([
-        //                 'faktur_beli' => $faktur,
-        //                 'tgl_beli' => $tgl_faktur,
-        //                 'id_supp_beli' => $id_supplier,
-        //                 'total_beli' => $totalSubtotal
-        //             ]);
+            $modelTemp = new ModelTempMasuk();
+            $dataTemp = $modelTemp->getWhere(['faktur_detbeli' => $faktur]);
 
-        //             $json = [
-        //                 'sukses' => 'Transaksi Berhasil Disimpan'
-        //             ];
-        //         }
+            if ($dataTemp->getNumRows() == 0) {
+                $json = [
+                    'error' => 'Maaf, data item untuk faktur ini belum ada'
+                ];
+            } else {
+                // simpan ke transaksi masuk
+                $modelTransaksiMasuk = new ModelTransaksiMasuk();
+                $totalSubtotal = 0;
+                foreach ($dataTemp->getResultArray() as $total) {
+                    $totalSubtotal += intval($total['subtotal_detbeli']);
+                }
 
-        //         echo json_encode($json);
-        //     } else {
-        //         exit('Maaf tidak bisa dipanggil');
-        //     }
-        // }
+                $modelTransaksiMasuk->insert([
+                    'faktur_beli' => $faktur,
+                    'tgl_beli' => $tgl,
+                    'id_supp_beli' => $id_supplier,
+                    'total_beli' => $totalSubtotal
+                ]);
+                // simpan ke detail barang masuk
+                $modelDetailTransaksiMasuk = new ModelDetailTransaksiMasuk();
+                $totalSubtotal = 0;
+                foreach ($dataTemp->getResultArray() as $row) {
+                    $modelDetailTransaksiMasuk->insert([
+                        'faktur_detbeli' => $row['faktur_detbeli'],
+                        'id_part_detbeli' => $row['id_part_detbeli'],
+                        'hargajual_detbeli' => $row['hargajual_detbeli'],
+                        'hargabeli_detbeli' => $row['hargabeli_detbeli'],
+                        'jml_detbeli' => $row['jml_detbeli'],
+                        'subtotal_detbeli' => $row['subtotal_detbeli'],
+                    ]);
+                }
+                // hapus data yg ada di tabel temp
+                $modelTemp->emptyTable();
+
+
+                $json = [
+                    'sukses' => 'Transaksi Berhasil Disimpan'
+                ];
+            }
+
+            echo json_encode($json);
+        } else {
+            exit('Maaf tidak bisa dipanggil');
+        }
     }
 }

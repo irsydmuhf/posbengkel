@@ -16,10 +16,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="/assets/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/assets/dist/css/adminlte.min.css">
+    
+    <link rel="stylesheet" href="/assets/plugins/sweetalert2/sweetalert2.min.css"></link>
     <!-- jQuery -->
     <script src="/assets/plugins/jquery/jquery.min.js"></script>
-    <!-- swalert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
+    <script src="/assets/plugins/sweetalert2/sweetalert2.min.js"></script>
 
 
 </head>

@@ -17,7 +17,7 @@
                     <div class="input-group">
                         <input type="text" class="form-control" id="id_supplier">
                         <div class="input-group-append">
-                        <button class="btn btn-outline-primary" type="button" id="tombolCariSupplier">
+                            <button class="btn btn-outline-primary" type="button" id="tombolCariSupplier">
                                 <i class="fa fa-search"></i>
                             </button>
                             <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#tambahsupplier">
@@ -79,7 +79,7 @@
             </div>
             <div class="row" id="tampilDataTemp"></div>
             <div class="card-tools">
-                <button type="button" class="btn btn-md btn-success" data-toggle="modal" data-target="#modalselesai">
+                <button type="button" class="btn btn-md btn-success" id="tombolSimpanTransaksi">
                     <i class="fas fa-save"></i>
                     Selesai Transaksi
                 </button>
@@ -125,27 +125,6 @@
 <!-- modal cari Supplier -->
 <div class="modalcarisupplier" style="display: none"></div>
 <!-- modal selesai -->
-<div class="modal fade" id="modalselesai">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Konfirmasi</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Apakah Anda Yakin Menyimpan Transaksi</p>
-            </div>
-            <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
-                <a class="btn btn-danger btn-flat" id="tombolSimpanTransaksi">Simpan</a>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
 <script>
     function buatFaktur() {
         let tgl = $('#tglfaktur').val();
@@ -167,8 +146,19 @@
         });
     }
 
+    function kosong() {
+        $('#id_part').val('');
+        $('#nama_part').val('');
+        $('#harga_jual').val('');
+        $('#harga_beli').val('');
+        $('#jml_item').val(1);
+        $('#id_part').focus();
+
+    }
+
     function dataTemp() {
         let faktur = $('#faktur').val();
+        kosong();
 
         $.ajax({
             type: "post",
@@ -188,16 +178,6 @@
         });
     }
 
-    function kosong() {
-        $('#id_part').val('');
-        $('#nama_part').val('');
-        $('#harga_jual').val('');
-        $('#harga_beli').val('');
-        $('#jml_item').val(1);
-        $('#id_part').focus();
-
-    }
-
     function simpanTemp() {
 
         let faktur = $("#faktur").val();
@@ -208,19 +188,30 @@
         let id_supplier = $("#id_supplier").val();
         let nama_part = $("#nama_part").val();
 
-
-        if (id_supplier.length == 0) {
-            alert('Supplier belum diisi');
-            return;
-        } else if (id_part.length == 0) {
-            alert('Belum memilih barang');
-            return;
+        if (id_part.length == 0) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Barang Belum Dipilih!",
+            });
         } else if (harga_beli == '') {
-            alert('Harga beli belum diisi');
-            return;
-        } else if (jml_item == '') {
-            alert('Jumlah belum diisi');
-            return;
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Harga Beli Belum Diisi!",
+            });
+        } else if (harga_beli >= harga_jual) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Harga Beli Harus Lebih Rendah Dari Harga Jual",
+            });
+        } else if (jml_item == '' && jml_item <= 0) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Jumlah Item Belum Diisi!",
+            });
         } else {
             $.ajax({
                 type: "post",
@@ -228,6 +219,7 @@
                 data: {
                     faktur: faktur,
                     id_part: id_part,
+                    id_supplier: id_supplier,
                     nama_part: nama_part,
                     harga_jual: harga_jual,
                     harga_beli: harga_beli,
@@ -263,7 +255,11 @@
                 if (response.sukses) {
                     $('#nama_supplier').val(response.sukses.nama_supplier);
                 } else {
-                    alert(response.error);
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Supplier Tidak Ditemukan",
+                    });
                     $('#nama_supplier').val('');
                 }
             },
@@ -288,13 +284,17 @@
                     let data = response.sukses;
                     $('#nama_part').val(data.nama_part);
                     $('#harga_jual').val(data.harga_jual);
-                    $('#jml_item').val(data.jml_item);
+                    $('#jml_item').val(1);
 
                     $('#harga_beli').focus();
                 }
 
                 if (response.error) {
-                    alert(response.error);
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Part Tidak Ditemukan!",
+                    });
                     kosong();
                 }
             },
@@ -340,10 +340,10 @@
 
         $("#tombolTambahItem").off().on("click", function(e) {
             e.preventDefault();
-            simpanTemp()
+            simpanTemp();
         });
 
-        $('#tombolReload').click(function (e) { 
+        $('#tombolReload').off().on("click", function(e) {
             e.preventDefault();
             dataTemp();
         });
@@ -384,41 +384,69 @@
 
             });
         });
-    });
 
+        $('#tombolSimpanTransaksi').click(function(e) {
+            e.preventDefault();
+            let faktur = $('#faktur').val();
+            let id_supplier = $('#id_supplier').val();
+            let tglfaktur = $('#tglfaktur').val();
 
-
-    $('#tombolSimpanTransaksi').click(function(e) {
-        e.preventDefault();
-        let faktur = $('#faktur').val();
-        let id_supplier = $('#id_supplier').val();
-        let tglfaktur = $('#tglfaktur').val();
-
-        if (id_supplier === '') {
-            alert('Supplier belum dipilih');
-            return;
-        }
-
-        $.ajax({
-            type: "post",
-            url: "/transaksimasuk/simpanTransaksi",
-            data: {
-                faktur: faktur,
-                tglfaktur: tglfaktur,
-                id_supplier: id_supplier
-            },
-            dataType: "json",
-            success: function(response) {
-                if (response.error) {
-                    alert(response.error);
-                } else {
-                    alert(response.sukses);
-                    window.location.reload();
-                }
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-                alert(xhr.status + '\n' + thrownError);
+            if (id_supplier === '') {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Supplier Belum Diisi!",
+                });
+                return;
             }
+
+            Swal.fire({
+                title: "Yakin Selesai Transaksi?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Ya, Simpan Transaksi!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/transaksimasuk/simpanTransaksi",
+                        data: {
+                            faktur: faktur,
+                            tglfaktur: tglfaktur,
+                            id_supplier: id_supplier
+                        },
+                        dataType: "json",
+                        success: function(response) {
+                            if (response.sukses) {
+                                Swal.fire({
+                                    title: "Berhasil!",
+                                    text: response.sukses,
+                                    icon: "success"
+                                }).then(() => {
+                                    window.location.reload();
+                                });
+                            } else {
+                                Swal.fire({
+                                    title: "Gagal!",
+                                    text: response.error,
+                                    icon: "error"
+                                });
+                            }
+                        },
+                        error: function(xhr) {
+                            Swal.fire({
+                                title: "Error!",
+                                text: `Terjadi kesalahan: ${xhr.status} - ${xhr.responseText}`,
+                                icon: "error"
+                            });
+                            console.error("Error:", xhr.responseText);
+                        }
+                    });
+                }
+            });
         });
+
     });
 </script>

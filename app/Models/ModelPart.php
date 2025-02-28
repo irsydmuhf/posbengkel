@@ -14,7 +14,6 @@ class ModelPart extends Model
         'id_kategori_part',
         'id_satuan_part',
         'harga_jual',
-        'harga_beli',
         'stok'
     ];
     public function AllData()

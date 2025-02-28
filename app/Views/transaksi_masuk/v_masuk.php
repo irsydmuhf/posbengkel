@@ -343,6 +343,11 @@
             simpanTemp()
         });
 
+        $('#tombolReload').click(function (e) { 
+            e.preventDefault();
+            dataTemp();
+        });
+
         $('#tombolCariPart').click(function(e) {
             e.preventDefault();
             $.ajax({

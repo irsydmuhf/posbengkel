@@ -25,9 +25,6 @@ class Part extends Migration
                 'type' => 'int',
                 'unsigned' => true
             ],
-            'harga_beli' => [
-                'type' => 'double',
-            ],
             'harga_jual' => [
                 'type' => 'double',
             ],

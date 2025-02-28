@@ -82,10 +82,6 @@
                                     <td><?= $value['nama_kategori'] ?></td>
                                 </tr>
                                 <tr>
-                                    <th>Harga Beli</th>
-                                    <td>Rp <?= number_format($value['harga_beli'], 0, ',', '.') ?></td>
-                                </tr>
-                                <tr>
                                     <th>Harga Jual</th>
                                     <td>Rp <?= number_format($value['harga_jual'], 0, ',', '.') ?></td>
                                 </tr>
@@ -162,18 +158,11 @@
                         </div>
 
                         <div class="row">
-                            <!-- Harga Beli -->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="harga_beli">Harga Beli</label>
-                                    <input type="number" name="harga_beli" id="harga_beli" class="form-control" placeholder="Harga Beli" required>
-                                </div>
-                            </div>
                             <!-- Harga Jual -->
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="harga_jual">Harga Jual</label>
-                                    <input type="number" name="harga_jual" class="form-control" placeholder="Harga Jual" required>
+                                    <label for="harga_jual">Harga Beli</label>
+                                    <input type="number" name="harga_jual" id="harga_jual" class="form-control" placeholder="Harga Jual" required>
                                 </div>
                             </div>
                         </div>
@@ -256,12 +245,6 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="harga_beli">Harga Beli</label>
-                                        <input type="number" name="harga_beli" value="<?= $value['harga_beli'] ?>" class="form-control" required>
-                                    </div>
-                                </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="harga_jual">Harga Jual</label>

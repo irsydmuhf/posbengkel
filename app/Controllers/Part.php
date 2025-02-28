@@ -46,7 +46,6 @@ class Part extends BaseController
             'nama_part' => $this->request->getPost('nama_part'),
             'id_kategori_part' => $this->request->getPost('kategori'),
             'id_satuan_part' => $this->request->getPost('satuan'),
-            'harga_beli' => $this->request->getPost('harga_beli'),
             'harga_jual' => $this->request->getPost('harga_jual'),
             'stok' => $this->request->getPost('stok'),
         ];
@@ -62,7 +61,6 @@ class Part extends BaseController
             'nama_part' => $this->request->getPost('nama_part'),
             'id_kategori_part' => $this->request->getPost('kategori'),
             'id_satuan_part' => $this->request->getPost('satuan'),
-            'harga_beli' => $this->request->getPost('harga_beli'),
             'harga_jual' => $this->request->getPost('harga_jual'),
             'stok' => $this->request->getPost('stok'),
         ];

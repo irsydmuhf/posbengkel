@@ -12,13 +12,14 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
+            
             <!-- searhcing -->
-            <!-- <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Cari Berdasarkan Kode, Nama Part atau Kategori" name="search" autofocus>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Cari Berdasarkan Kode, Nama Part atau Kategori" name="search" autofocus="true">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search" name="tombolsearch"></i></button>
+                    <button class="btn btn-outline-primary" type="button"><i class="fa fa-search" name="tombolcaripart"></i></button>
                 </div>
-            </div> -->
+            </div>
             <?php
             if (session()->getFlashData('pesan')) {
                 echo '<div class="alert alert-success alert-dismissible">

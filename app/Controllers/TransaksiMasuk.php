@@ -231,54 +231,6 @@ class TransaksiMasuk extends BaseController
                 echo json_encode($json);
             }
         }
-
-        // public function simpanTemp()
-        // {
-        //     if ($this->request->isAJAX()) {
-        //         try {
-        //             $faktur = $this->request->getPost('faktur');
-        //             $id_part = $this->request->getPost('id_part');
-        //             $nama_part = $this->request->getPost('nama_part');
-        //             $harga_jual = $this->request->getPost('harga_jual');
-        //             $harga_beli = $this->request->getPost('harga_beli');
-        //             $jml_item = $this->request->getPost('jml_item');
-
-        //             $modelTemp = new ModelTempMasuk();
-
-        //             if ($modelTemp->cekItem($id_part, $faktur) > 0) {
-        //                 return $this->response->setJSON([
-        //                     'error' => 'Item sudah ada dalam transaksi'
-        //                 ]);
-        //             }
-
-        //             $modelTemp->insert([
-        //                 'faktur_detbeli' => $faktur,
-        //                 'id_part_detbeli' => $id_part,
-        //                 'nama_part_detbeli' => $id_part,
-        //                 'hargabeli_detbeli' => $harga_beli,
-        //                 'hargajual_detbeli' => $harga_jual,
-        //                 'jumlah_detbeli' => $jml_item,
-        //                 'subtotal_detbeli' => $harga_beli * $jml_item
-        //             ]);
-
-        //             return $this->response->setJSON([
-        //                 'sukses' => 'Item berhasil ditambahkan'
-        //             ]);
-        //         } catch (\Exception $e) {
-        //             return $this->response->setJSON([
-        //                 'error' => 'Terjadi kesalahan: ' . $e->getMessage()
-        //             ]);
-        //         }
-        //     } else {
-        //         return $this->response->setJSON([
-        //             'error' => 'Request harus menggunakan AJAX'
-        //         ]);
-        //     }
-        // }
-
-
-
-
     }
     function simpanTransaksi()
     {
@@ -335,4 +287,53 @@ class TransaksiMasuk extends BaseController
             exit('Maaf tidak bisa dipanggil');
         }
     }
+
+    public function dataMasuk()
+    {
+        $modelTransaksiMasuk = new ModelTransaksiMasuk();
+        $data = [
+            'judul' => 'Transaksi',
+            'subjudul' => 'Transaksi Masuk',
+            'menu' => 'transaksi',
+            'submenu' => 'Masuk',
+            'page' => 'transaksi_masuk/data_transaksi',
+            'transaksi' => $modelTransaksiMasuk->getTransaksiMasuk()
+        ];
+        return view('v_template', $data);
+    }
+
+    public function cariDataMasuk()
+    {
+        $keyword = $this->request->getPost('keyword');
+        $modelTransaksiMasuk = new ModelTransaksiMasuk();
+        $data = $modelTransaksiMasuk->getTransaksiMasuk($keyword);
+        return $this->response->setJSON($data);
+    }
+    // $tombolCariTransaksi = $this->request->getPost('tombolCariTransaksi');
+
+    // if(isset($tombolCariTransaksi)){
+    //     $cariTransaksi = $this->request->getPost('cariTransaksi');
+    //     session()->set('cari_transaksi, $cariTransaksi');
+    //     redirect()->to('/transaksimasuk/dataMasuk');
+    // } else {
+    //     $cariTransaksi = session()->get('cari_transaksi');
+    // }
+
+
+    // function tampilTransaksi() {
+    //     if ($this->request->isAJAX()) {
+    //         $caritransaksi = $this->request->getPost('tombolCariTransaksi');
+    //         $modelTransaksiMasuk = new ModelTransaksiMasuk();
+    //         $data = $modelTransaksiMasuk->tampildata_cari($caritransaksi);
+
+    //         return $this->response->setJSON([
+    //             'data' => view('transaksi_masuk/detaildatatransaksi', [
+    //                 'tampildata' => $data
+    //             ])
+    //         ]);
+    //     }
+    //     exit('Tidak bisa dipanggil');
+    // }
+
+
 }

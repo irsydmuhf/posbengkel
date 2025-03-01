@@ -1,6 +1,14 @@
 <div class="col-md-12">
     <div class="card">
         <div class="card-header">
+            <div class="card-tools">
+                <a href="<?= base_url('TransaksiMasuk/dataMasuk')  ?>" class="btn btn-sm btn-warning">
+                    <i class="fa fa-backward"></i>
+                    Kembali
+                </a>
+            </div>
+        </div>
+        <div class="card-body">
             <div class="form-row">
                 <div class="form-group col-md">
                     <label for="">No Faktur</label>
@@ -30,7 +38,6 @@
                     <label for="">Nama Supplier</label>
                     <input type="text" class="form-control" id="nama_supplier" readonly>
                 </div>
-
             </div>
             <div class="card">
                 <div class="card-header bg-primary">
@@ -78,8 +85,8 @@
                 </div>
             </div>
             <div class="row" id="tampilDataTemp"></div>
-            <div class="card-tools">
-                <button type="button" class="btn btn-md btn-success" id="tombolSimpanTransaksi">
+            <div class="card-tools" style="text-align: end;">
+                <button type="button" class="btn btn-sm btn-success" id="tombolSimpanTransaksi">
                     <i class="fas fa-save"></i>
                     Selesai Transaksi
                 </button>
@@ -87,7 +94,6 @@
         </div>
     </div>
 </div>
-
 
 <!-- MODAL -->
 <!-- modal tambah supplier -->
@@ -301,8 +307,7 @@
             error: function(xhr, ajaxOptions, thrownError) {
                 alert(xhr.status + '\n' + thrownError);
             }
-        });
-    }
+        });    }
     $(document).ready(function() {
         $("body").addClass("sidebar-collapse");
         dataTemp();
@@ -399,7 +404,6 @@
                 });
                 return;
             }
-
             Swal.fire({
                 title: "Yakin Selesai Transaksi?",
                 icon: "warning",
@@ -425,7 +429,7 @@
                                     text: response.sukses,
                                     icon: "success"
                                 }).then(() => {
-                                    window.location.reload();
+                                    window.location.href = "<?= base_url('transaksimasuk/dataMasuk') ?>";
                                 });
                             } else {
                                 Swal.fire({

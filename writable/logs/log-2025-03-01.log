@@ -1,0 +1,64 @@
+ERROR - 2025-03-01 15:52:37 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:170
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(170): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'posbengkel', 3306, '', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\app\Models\ModelPart.php(22): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Controllers\Part.php(32): App\Models\ModelPart->AllData()
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\Part->index()
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\posbengkel\app\Models\ModelPart.php(22): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\posbengkel\app\Controllers\Part.php(32): App\Models\ModelPart->AllData()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\Part->index()
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2025-03-01 15:52:37 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `part`
+JOIN `kategori` ON `id_kategori_part`=`id_kategori`
+JOIN `satuan` ON `id_satuan_part`=`id_satuan`', [], false)
+ 3 APPPATH\Models\ModelPart.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\Part.php(32): App\Models\ModelPart->AllData()
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-01 16:05:23 --> Too few arguments to function App\Controllers\Part::DeleteData(), 0 passed in C:\xampp\htdocs\posbengkel\system\CodeIgniter.php on line 898 and exactly 1 expected
+in APPPATH\Controllers\Part.php on line 72.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->DeleteData()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-01 16:07:14 --> Too few arguments to function App\Controllers\Part::DeleteData(), 0 passed in C:\xampp\htdocs\posbengkel\system\CodeIgniter.php on line 898 and exactly 1 expected
+in APPPATH\Controllers\Part.php on line 72.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->DeleteData()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-01 16:07:48 --> Too few arguments to function App\Controllers\Part::DeleteData(), 0 passed in C:\xampp\htdocs\posbengkel\system\CodeIgniter.php on line 898 and exactly 1 expected
+in APPPATH\Controllers\Part.php on line 72.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->DeleteData()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

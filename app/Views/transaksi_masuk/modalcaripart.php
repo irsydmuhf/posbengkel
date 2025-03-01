@@ -29,7 +29,7 @@
         let caripart = $('#caripart').val()
         $.ajax({
             type: "post",
-            url: "<?= site_url('transaksimasuk/detailCariPart') ?>",
+            url: "transaksimasuk/detailCariPart",
             data: {
                 caripart: caripart
             },

@@ -15,13 +15,17 @@ class Kategori extends BaseController
     }
     public function index()
     {
+        $nohalaman = $this->request->getVar('page_kategori') ? $this->request->getVar('page_kategori') : 1;
         $data = [
             'judul' => 'MasterData',
             'subjudul' => 'Kategori',
             'menu' => 'masterdata',
             'submenu' => 'kategori',
             'page' => 'v_kategori',
-            'kategori' => $this->ModelKategori->AllData(),
+            // 'kategori' => $this->ModelKategori->AllData(),
+            'kategori' => $this->ModelKategori->paginate(5, 'kategori'),
+            'pager' => $this->ModelKategori->pager,
+            'nohalaman' => $nohalaman
         ];
         return view('v_template', $data);
     }

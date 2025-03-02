@@ -1,0 +1,469 @@
+ERROR - 2025-03-02 10:41:07 --> mysqli_sql_exception: Unknown column 'faktur' in 'on clause' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\app\Models\ModelTransaksiMasuk.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(301): App\Models\ModelTransaksiMasuk->AllData()
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-03-02 10:41:07 --> Unknown column 'faktur' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `transaksi_masuk`
+JOIN `det_transaksi_masuk` ON `faktur_detbeli`=`faktur`
+JOIN `supplier` ON `id_supp_beli`=`id_supplier`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `transaksi_masuk`
+JOIN `det_transaksi_masuk` ON `faktur_detbeli`=`faktur`
+JOIN `supplier` ON `id_supp_beli`=`id_supplier`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `transaksi_masuk`
+JOIN `det_transaksi_masuk` ON `faktur_detbeli`=`faktur`
+JOIN `supplier` ON `id_supp_beli`=`id_supplier`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `transaksi_masuk`
+JOIN `det_transaksi_masuk` ON `faktur_detbeli`=`faktur`
+JOIN `supplier` ON `id_supp_beli`=`id_supplier`', [], false)
+ 5 APPPATH\Models\ModelTransaksiMasuk.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\TransaksiMasuk.php(301): App\Models\ModelTransaksiMasuk->AllData()
+ 7 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+ 8 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-02 10:41:53 --> Undefined array key "jumlah_item"
+in APPPATH\Views\transaksi_masuk\data_transaksi.php on line 42.
+ 1 APPPATH\Views\transaksi_masuk\data_transaksi.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "jumlah_item"', 'APPPATH\\Views\\transaksi_masuk\\data_transaksi.php', 42)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\transaksi_masuk\\data_transaksi.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi_masuk/data_transaksi', [], true)
+ 5 APPPATH\Views\v_template.php(213): view('transaksi_masuk/data_transaksi')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\TransaksiMasuk.php(304): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-02 10:42:26 --> Undefined array key "jml_item"
+in APPPATH\Views\transaksi_masuk\data_transaksi.php on line 42.
+ 1 APPPATH\Views\transaksi_masuk\data_transaksi.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "jml_item"', 'APPPATH\\Views\\transaksi_masuk\\data_transaksi.php', 42)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\transaksi_masuk\\data_transaksi.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi_masuk/data_transaksi', [], true)
+ 5 APPPATH\Views\v_template.php(213): view('transaksi_masuk/data_transaksi')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\TransaksiMasuk.php(304): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-02 10:42:31 --> Undefined array key "jml_item"
+in APPPATH\Views\transaksi_masuk\data_transaksi.php on line 42.
+ 1 APPPATH\Views\transaksi_masuk\data_transaksi.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "jml_item"', 'APPPATH\\Views\\transaksi_masuk\\data_transaksi.php', 42)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\transaksi_masuk\\data_transaksi.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi_masuk/data_transaksi', [], true)
+ 5 APPPATH\Views\v_template.php(213): view('transaksi_masuk/data_transaksi')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\TransaksiMasuk.php(304): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-03-02 10:48:00 --> mysqli_sql_exception: Unknown column 'transaksi_masuk.id_transaksi' in 'group statement' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `transak...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transak...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transak...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `transak...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\app\Models\ModelTransaksiMasuk.php(26): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(301): App\Models\ModelTransaksiMasuk->AllData()
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-03-02 10:48:00 --> Unknown column 'transaksi_masuk.id_transaksi' in 'group statement'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `transaksi_masuk`.*, COUNT(det_transaksi_masuk.id_detbeli) as jumlah_item
+FROM `transaksi_masuk`
+JOIN `det_transaksi_masuk` ON `transaksi_masuk`.`faktur_beli` = `det_transaksi_masuk`.`faktur_detbeli`
+JOIN `supplier` ON `transaksi_masuk`.`id_supp_beli` = `supplier`.`id_supplier`
+GROUP BY `transaksi_masuk`.`id_transaksi`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transaksi_masuk`.*, COUNT(det_transaksi_masuk.id_detbeli) as jumlah_item
+FROM `transaksi_masuk`
+JOIN `det_transaksi_masuk` ON `transaksi_masuk`.`faktur_beli` = `det_transaksi_masuk`.`faktur_detbeli`
+JOIN `supplier` ON `transaksi_masuk`.`id_supp_beli` = `supplier`.`id_supplier`
+GROUP BY `transaksi_masuk`.`id_transaksi`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transaksi_masuk`.*, COUNT(det_transaksi_masuk.id_detbeli) as jumlah_item
+FROM `transaksi_masuk`
+JOIN `det_transaksi_masuk` ON `transaksi_masuk`.`faktur_beli` = `det_transaksi_masuk`.`faktur_detbeli`
+JOIN `supplier` ON `transaksi_masuk`.`id_supp_beli` = `supplier`.`id_supplier`
+GROUP BY `transaksi_masuk`.`id_transaksi`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `transaksi_masuk`.*, COUNT(det_transaksi_masuk.id_detbeli) as jumlah_item
+FROM `transaksi_masuk`
+JOIN `det_transaksi_masuk` ON `transaksi_masuk`.`faktur_beli` = `det_transaksi_masuk`.`faktur_detbeli`
+JOIN `supplier` ON `transaksi_masuk`.`id_supp_beli` = `supplier`.`id_supplier`
+GROUP BY `transaksi_masuk`.`id_transaksi`', [], false)
+ 5 APPPATH\Models\ModelTransaksiMasuk.php(26): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\TransaksiMasuk.php(301): App\Models\ModelTransaksiMasuk->AllData()
+ 7 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+ 8 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-02 10:48:54 --> Undefined array key "nama_supplier"
+in APPPATH\Views\transaksi_masuk\data_transaksi.php on line 40.
+ 1 APPPATH\Views\transaksi_masuk\data_transaksi.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_supplier"', 'APPPATH\\Views\\transaksi_masuk\\data_transaksi.php', 40)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\transaksi_masuk\\data_transaksi.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi_masuk/data_transaksi', [], true)
+ 5 APPPATH\Views\v_template.php(213): view('transaksi_masuk/data_transaksi')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\TransaksiMasuk.php(304): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-02 11:01:21 --> foreach() argument must be of type array|object, null given
+in APPPATH\Views\transaksi_masuk\data_transaksi.php on line 36.
+ 1 APPPATH\Views\transaksi_masuk\data_transaksi.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'APPPATH\\Views\\transaksi_masuk\\data_transaksi.php', 36)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\transaksi_masuk\\data_transaksi.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi_masuk/data_transaksi', [], true)
+ 5 APPPATH\Views\v_template.php(213): view('transaksi_masuk/data_transaksi')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\TransaksiMasuk.php(304): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-02 11:04:46 --> foreach() argument must be of type array|object, null given
+in APPPATH\Views\transaksi_masuk\data_transaksi.php on line 36.
+ 1 APPPATH\Views\transaksi_masuk\data_transaksi.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'APPPATH\\Views\\transaksi_masuk\\data_transaksi.php', 36)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\transaksi_masuk\\data_transaksi.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi_masuk/data_transaksi', [], true)
+ 5 APPPATH\Views\v_template.php(213): view('transaksi_masuk/data_transaksi')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\TransaksiMasuk.php(304): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-02 11:04:48 --> foreach() argument must be of type array|object, null given
+in APPPATH\Views\transaksi_masuk\data_transaksi.php on line 36.
+ 1 APPPATH\Views\transaksi_masuk\data_transaksi.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'APPPATH\\Views\\transaksi_masuk\\data_transaksi.php', 36)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\transaksi_masuk\\data_transaksi.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi_masuk/data_transaksi', [], true)
+ 5 APPPATH\Views\v_template.php(213): view('transaksi_masuk/data_transaksi')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\TransaksiMasuk.php(304): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-02 11:09:43 --> Undefined array key "nama_supplier"
+in APPPATH\Views\transaksi_masuk\data_transaksi.php on line 40.
+ 1 APPPATH\Views\transaksi_masuk\data_transaksi.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_supplier"', 'APPPATH\\Views\\transaksi_masuk\\data_transaksi.php', 40)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\transaksi_masuk\\data_transaksi.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi_masuk/data_transaksi', [], true)
+ 5 APPPATH\Views\v_template.php(213): view('transaksi_masuk/data_transaksi')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\TransaksiMasuk.php(304): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-03-02 11:14:46 --> mysqli_sql_exception: Table 'posbengkel.transouksi_masuk' doesn't exist in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `transak...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transak...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transak...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `transak...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\app\Models\ModelTransaksiMasuk.php(29): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(301): App\Models\ModelTransaksiMasuk->AllData()
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-03-02 11:14:46 --> Table 'posbengkel.transouksi_masuk' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `transaksi_masuk`.*, `supplier`.`nama_supplier`, COUNT(det_transaksi_masuk.id_detbeli) as jumlah_item
+FROM `transouksi_masuk`
+JOIN `det_transaksi_masuk` ON `transaksi_masuk`.`faktur_beli` = `det_transaksi_masuk`.`faktur_detbeli`
+JOIN `supplier` ON `transaksi_masuk`.`id_supp_beli` = `supplier`.`id_supplier`
+WHERE   (
+`transaksi_masuk`.`faktur_beli` LIKE \'%cari%\' ESCAPE \'!\'
+OR  `supplier`.`nama_supplier` LIKE \'%cari%\' ESCAPE \'!\'
+ )
+GROUP BY `transaksi_masuk`.`faktur_beli`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transaksi_masuk`.*, `supplier`.`nama_supplier`, COUNT(det_transaksi_masuk.id_detbeli) as jumlah_item
+FROM `transouksi_masuk`
+JOIN `det_transaksi_masuk` ON `transaksi_masuk`.`faktur_beli` = `det_transaksi_masuk`.`faktur_detbeli`
+JOIN `supplier` ON `transaksi_masuk`.`id_supp_beli` = `supplier`.`id_supplier`
+WHERE   (
+`transaksi_masuk`.`faktur_beli` LIKE \'%cari%\' ESCAPE \'!\'
+OR  `supplier`.`nama_supplier` LIKE \'%cari%\' ESCAPE \'!\'
+ )
+GROUP BY `transaksi_masuk`.`faktur_beli`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transaksi_masuk`.*, `supplier`.`nama_supplier`, COUNT(det_transaksi_masuk.id_detbeli) as jumlah_item
+FROM `transouksi_masuk`
+JOIN `det_transaksi_masuk` ON `transaksi_masuk`.`faktur_beli` = `det_transaksi_masuk`.`faktur_detbeli`
+JOIN `supplier` ON `transaksi_masuk`.`id_supp_beli` = `supplier`.`id_supplier`
+WHERE   (
+`transaksi_masuk`.`faktur_beli` LIKE \'%cari%\' ESCAPE \'!\'
+OR  `supplier`.`nama_supplier` LIKE \'%cari%\' ESCAPE \'!\'
+ )
+GROUP BY `transaksi_masuk`.`faktur_beli`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `transaksi_masuk`.*, `supplier`.`nama_supplier`, COUNT(det_transaksi_masuk.id_detbeli) as jumlah_item
+FROM `transouksi_masuk`
+JOIN `det_transaksi_masuk` ON `transaksi_masuk`.`faktur_beli` = `det_transaksi_masuk`.`faktur_detbeli`
+JOIN `supplier` ON `transaksi_masuk`.`id_supp_beli` = `supplier`.`id_supplier`
+WHERE   (
+`transaksi_masuk`.`faktur_beli` LIKE :transaksi_masuk.faktur_beli: ESCAPE \'!\'
+OR  `supplier`.`nama_supplier` LIKE :supplier.nama_supplier: ESCAPE \'!\'
+ )
+GROUP BY `transaksi_masuk`.`faktur_beli`', [...], false)
+ 5 APPPATH\Models\ModelTransaksiMasuk.php(29): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\TransaksiMasuk.php(301): App\Models\ModelTransaksiMasuk->AllData()
+ 7 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+ 8 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-03-02 11:15:38 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'GROUP BY `transaksi_masuk`.`faktur_beli`' at line 6 in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `transak...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transak...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transak...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `transak...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\app\Models\ModelTransaksiMasuk.php(26): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(301): App\Models\ModelTransaksiMasuk->AllData()
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-03-02 11:15:38 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'GROUP BY `transaksi_masuk`.`faktur_beli`' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `transaksi_masuk`.*, `supplier`.`nama_supplier`, COUNT(det_transaksi_masuk.id_detbeli) as jumlah_item
+FROM `transaksi_masuk`
+JOIN `det_transaksi_masuk` ON `transaksi_masuk`.`faktur_beli` = `det_transaksi_masuk`.`faktur_detbeli`
+JOIN `supplier` ON `transaksi_masuk`.`id_supp_beli` = `supplier`.`id_supplier`
+WHERE   (
+GROUP BY `transaksi_masuk`.`faktur_beli`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transaksi_masuk`.*, `supplier`.`nama_supplier`, COUNT(det_transaksi_masuk.id_detbeli) as jumlah_item
+FROM `transaksi_masuk`
+JOIN `det_transaksi_masuk` ON `transaksi_masuk`.`faktur_beli` = `det_transaksi_masuk`.`faktur_detbeli`
+JOIN `supplier` ON `transaksi_masuk`.`id_supp_beli` = `supplier`.`id_supplier`
+WHERE   (
+GROUP BY `transaksi_masuk`.`faktur_beli`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transaksi_masuk`.*, `supplier`.`nama_supplier`, COUNT(det_transaksi_masuk.id_detbeli) as jumlah_item
+FROM `transaksi_masuk`
+JOIN `det_transaksi_masuk` ON `transaksi_masuk`.`faktur_beli` = `det_transaksi_masuk`.`faktur_detbeli`
+JOIN `supplier` ON `transaksi_masuk`.`id_supp_beli` = `supplier`.`id_supplier`
+WHERE   (
+GROUP BY `transaksi_masuk`.`faktur_beli`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `transaksi_masuk`.*, `supplier`.`nama_supplier`, COUNT(det_transaksi_masuk.id_detbeli) as jumlah_item
+FROM `transaksi_masuk`
+JOIN `det_transaksi_masuk` ON `transaksi_masuk`.`faktur_beli` = `det_transaksi_masuk`.`faktur_detbeli`
+JOIN `supplier` ON `transaksi_masuk`.`id_supp_beli` = `supplier`.`id_supplier`
+WHERE   (
+GROUP BY `transaksi_masuk`.`faktur_beli`', [], false)
+ 5 APPPATH\Models\ModelTransaksiMasuk.php(26): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\TransaksiMasuk.php(301): App\Models\ModelTransaksiMasuk->AllData()
+ 7 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+ 8 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-02 11:20:30 --> Undefined array key "nama_supplier"
+in APPPATH\Views\transaksi_masuk\data_transaksi.php on line 40.
+ 1 APPPATH\Views\transaksi_masuk\data_transaksi.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_supplier"', 'APPPATH\\Views\\transaksi_masuk\\data_transaksi.php', 40)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\transaksi_masuk\\data_transaksi.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi_masuk/data_transaksi', [], true)
+ 5 APPPATH\Views\v_template.php(213): view('transaksi_masuk/data_transaksi')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\TransaksiMasuk.php(304): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-02 11:20:31 --> Undefined array key "nama_supplier"
+in APPPATH\Views\transaksi_masuk\data_transaksi.php on line 40.
+ 1 APPPATH\Views\transaksi_masuk\data_transaksi.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_supplier"', 'APPPATH\\Views\\transaksi_masuk\\data_transaksi.php', 40)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\transaksi_masuk\\data_transaksi.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('transaksi_masuk/data_transaksi', [], true)
+ 5 APPPATH\Views\v_template.php(213): view('transaksi_masuk/data_transaksi')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\TransaksiMasuk.php(304): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-02 16:25:43 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 872.
+ 1 SYSTEMPATH\Model.php(586): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(550): CodeIgniter\Model->builder()
+ 3 SYSTEMPATH\BaseModel.php(1085): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\Kategori.php(25): CodeIgniter\BaseModel->paginate(5, 'kategori')
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Kategori->index()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kategori))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-02 16:26:35 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 872.
+ 1 SYSTEMPATH\Model.php(586): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(550): CodeIgniter\Model->builder()
+ 3 SYSTEMPATH\BaseModel.php(1085): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\Kategori.php(25): CodeIgniter\BaseModel->paginate(5, 'Kategori')
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Kategori->index()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kategori))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-02 16:33:01 --> Invalid file: App\Views\pagniation\custom_page.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('App\\Views\\pagniation\\custom_page.php')
+ 2 SYSTEMPATH\Pager\Pager.php(126): CodeIgniter\View\View->render('App\\Views\\pagniation\\custom_page', null, false)
+ 3 SYSTEMPATH\Pager\Pager.php(83): CodeIgniter\Pager\Pager->displayLinks('kategori', 'paging')
+ 4 APPPATH\Views\v_kategori.php(48): CodeIgniter\Pager\Pager->links('kategori', 'paging')
+ 5 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_kategori.php')
+ 6 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_kategori', [], true)
+ 8 APPPATH\Views\v_template.php(213): view('v_kategori')
+ 9 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+10 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+11 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+12 APPPATH\Controllers\Kategori.php(28): view('v_template', [...])
+13 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Kategori->index()
+14 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kategori))
+15 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-02 17:05:02 --> Undefined array key "nama_kategori"
+in APPPATH\Views\part\v_part.php on line 92.
+ 1 APPPATH\Views\part\v_part.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kategori"', 'APPPATH\\Views\\part\\v_part.php', 92)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(213): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(39): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-02 17:05:47 --> Undefined array key "nama_kategori"
+in APPPATH\Views\part\v_part.php on line 92.
+ 1 APPPATH\Views\part\v_part.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kategori"', 'APPPATH\\Views\\part\\v_part.php', 92)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(213): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(39): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-02 17:06:26 --> Undefined array key "nama_kategori"
+in APPPATH\Views\part\v_part.php on line 92.
+ 1 APPPATH\Views\part\v_part.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kategori"', 'APPPATH\\Views\\part\\v_part.php', 92)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(213): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(39): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-02 17:07:32 --> Undefined array key "id_kategori"
+in APPPATH\Views\part\v_part.php on line 232.
+ 1 APPPATH\Views\part\v_part.php(232): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_kategori"', 'APPPATH\\Views\\part\\v_part.php', 232)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(213): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(39): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-02 17:07:45 --> Undefined array key "nama_kategori"
+in APPPATH\Views\part\v_part.php on line 92.
+ 1 APPPATH\Views\part\v_part.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kategori"', 'APPPATH\\Views\\part\\v_part.php', 92)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(213): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(39): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

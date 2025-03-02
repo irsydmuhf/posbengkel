@@ -291,22 +291,25 @@ class TransaksiMasuk extends BaseController
     public function dataMasuk()
     {
         $modelTransaksiMasuk = new ModelTransaksiMasuk();
+        $modelSupplier = new ModelSupplier();
         $data = [
             'judul' => 'Transaksi',
             'subjudul' => 'Transaksi Masuk',
             'menu' => 'transaksi',
             'submenu' => 'Masuk',
             'page' => 'transaksi_masuk/data_transaksi',
-            'transaksi' => $modelTransaksiMasuk->getTransaksiMasuk()
+            'transaksi' => $modelTransaksiMasuk->AllData(),
+            'supplier' => $modelSupplier->AllData()
         ];
         return view('v_template', $data);
     }
+    
 
     public function cariDataMasuk()
     {
         $keyword = $this->request->getPost('keyword');
         $modelTransaksiMasuk = new ModelTransaksiMasuk();
-        $data = $modelTransaksiMasuk->getTransaksiMasuk($keyword);
+        $data = $modelTransaksiMasuk->AllData($keyword);
         return $this->response->setJSON($data);
     }
     // $tombolCariTransaksi = $this->request->getPost('tombolCariTransaksi');

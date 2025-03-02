@@ -6,6 +6,13 @@ use CodeIgniter\Model;
 
 class ModelKategori extends Model
 {
+
+    protected $table            = 'kategori';
+    protected $primaryKey       = 'id_kategori';
+    protected $allowedFields    = [
+        'id_kategori',
+        'nama_kategori',
+    ];
     public function AllData()
     {
         return $this->db->table('kategori')->get()->getResultArray();
@@ -18,13 +25,13 @@ class ModelKategori extends Model
     public function UpdateData($data)
     {
         $this->db->table('kategori')
-        ->where('id_kategori', $data['id_kategori'])
-        ->update($data);
+            ->where('id_kategori', $data['id_kategori'])
+            ->update($data);
     }
     public function DeleteData($data)
     {
         $this->db->table('kategori')
-        ->where('id_kategori', $data['id_kategori'])
-        ->delete($data);
+            ->where('id_kategori', $data['id_kategori'])
+            ->delete($data);
     }
 }

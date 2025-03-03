@@ -21,8 +21,8 @@ class DetailMasuk extends Migration
             'id_part_detbeli' => [
                 'type'        => 'char',
                 'constraint' => '50',
-                'null' => true,
-
+                'null' => true
+            ],
             'nama_part_detbeli' => [
                 'type' => 'varchar',
                 'constraint' => '100'

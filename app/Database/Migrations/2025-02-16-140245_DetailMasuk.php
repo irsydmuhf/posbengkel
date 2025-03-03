@@ -21,21 +21,12 @@ class DetailMasuk extends Migration
             'id_part_detbeli' => [
                 'type'        => 'char',
                 'constraint' => '50',
-                'null' => true
-<<<<<<< HEAD
-=======
-            ],
-            'nama_part' => [
-                'type' => 'varchar',
-                'constraint' => '100'
->>>>>>> 5fba8374d417af574a3a4c127161e8378830b650
-            ],
+                'null' => true,
+
             'nama_part_detbeli' => [
                 'type' => 'varchar',
                 'constraint' => '100'
-
             ],
-
             'hargabeli_detbeli' => [
                 'type' => 'double',
                 'constraint' => '11,2',
@@ -60,11 +51,8 @@ class DetailMasuk extends Migration
 
         $this->forge->addPrimaryKey('id_detbeli');
         $this->forge->addForeignKey('faktur_detbeli', 'transaksi_masuk', 'faktur_beli', 'cascade');
-<<<<<<< HEAD
         $this->forge->addForeignKey('id_part_detbeli', 'part', 'id_part',  'set_null', 'cascade');
-=======
-        $this->forge->addForeignKey('id_part_detbeli', 'part', 'id_part', 'SET NULL', 'cascade');
->>>>>>> 5fba8374d417af574a3a4c127161e8378830b650
+
         $this->forge->createTable('det_transaksi_masuk');
     }
 

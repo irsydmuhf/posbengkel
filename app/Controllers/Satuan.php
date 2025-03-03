@@ -16,12 +16,8 @@ class Satuan extends BaseController
     {
         $data = [
             'icon' => 'fas fa-ruler',
-            'judul' => 'Master Data',
-<<<<<<< HEAD
+            'judul' => 'Master Data',    
             'subjudul' => 'Satuan',
-=======
-            'subjudul' => ' Satuan',
->>>>>>> 5fba8374d417af574a3a4c127161e8378830b650
             'menu' => 'masterdata',
             'submenu' => 'satuan',
             'page' => 'v_satuan',

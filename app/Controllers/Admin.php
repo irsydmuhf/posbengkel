@@ -9,6 +9,7 @@ class Admin extends BaseController
     public function index()
     {
         $data = [
+            'icon' => '',
             'judul' => 'Dashboard',
             'subjudul' => '',
             'menu' => 'dashboard',

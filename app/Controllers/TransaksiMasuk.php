@@ -18,7 +18,7 @@ class TransaksiMasuk extends BaseController
         $data = [
             'icon' => 'fas fa-cash-register',
             'judul' => 'Transaksi',
-            'subjudul' => 'Transaksi Masuk',
+            'subjudul' => 'Masuk',
             'menu' => 'transaksi',
             'submenu' => 'Masuk',
             'page' => 'transaksi_masuk/v_masuk',
@@ -299,7 +299,7 @@ class TransaksiMasuk extends BaseController
         $data = [
             'icon' => 'fas fa-cash-register',
             'judul' => 'Transaksi',
-            'subjudul' => 'Transaksi Masuk',
+            'subjudul' => 'Masuk',
             'menu' => 'transaksi',
             'submenu' => 'Masuk',
             'page' => 'transaksi_masuk/data_transaksi',

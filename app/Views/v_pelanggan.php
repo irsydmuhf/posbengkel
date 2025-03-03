@@ -22,7 +22,7 @@
               </div>';
             }
             ?>
-            <table class="table table-bordered">
+            <table class="table table-sm table-striped table-bordered">
                 <thead>
                     <tr>
                         <th width="50px">No</th>
@@ -61,7 +61,7 @@
                         </div>
 
                         <div class="modal-body">
-                            <table class="table table-bordered table-striped">
+                            <table class="table table-sm table-striped table-bordered table-striped">
                                 <tr>
                                     <th style="width: 30%;">Nopol Pelanggan</th>
                                     <td><?= $value['nopol'] ?></td>

@@ -19,14 +19,23 @@ class Part extends BaseController
         $this->ModelPart = new ModelPart();
     }
     public function index()
-    {        ('tombolcari');
+    {
         $modelkategori = new ModelKategori();
         $modelsatuan = new ModelSatuan();
 
+        $tombolcaripart  = $this->request->getPost('tombolcaripart');
+
+        if (isset($tombolcaripart)) {
+            $caripart = $this->request->getPost('caripart');
+            session()->set('cari_part' . $caripart);
+            return redirect()->to('/part/index');
+        } else {
+            $caripart = session()->get('cari_part');
+        }
         $data = [
             'icon' => 'fas fa-cube',
             'judul' => 'Master Data',
-            'subjudul' => 'Part',
+            'subjudul' => ' Part',
             'menu' => 'masterdata',
             'submenu' => 'part',
             'page' => 'part/v_part',
@@ -37,6 +46,14 @@ class Part extends BaseController
             'datasatuan' => $modelsatuan->AllData(),
         ];
         return view('v_template', $data);
+    }
+
+    public function cariDataPart()
+    {
+        $keyword = $this->request->getPost('keyword');
+        $modelPart = new ModelPart();
+        $data = $modelPart->AllData($keyword);
+        return $this->response->setJSON($data);
     }
 
     public function InsertData()
@@ -50,7 +67,7 @@ class Part extends BaseController
             'harga_jual' => $this->request->getPost('harga_jual'),
             'stok' => $this->request->getPost('stok'),
         ];
-         
+
         $this->ModelPart->InsertData($data);
         session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan!');
         return redirect()->to('Part');

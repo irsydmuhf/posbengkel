@@ -9,8 +9,9 @@ class User extends BaseController
     public function index()
     {
         $data = [
-            'judul' => 'MasterData',
-            'subjudul' => 'User',
+            'icon' => 'fas fa-user',
+            'judul' => 'Master Data',
+            'subjudul' => ' User',
             'menu' => 'masterdata',
             'submenu' => 'user',
             'page' => 'v_user',

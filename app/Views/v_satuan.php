@@ -1,7 +1,6 @@
 <div class="col-md-12">
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title mt-2"><?= $subjudul ?></h3>
             <div class="card-tools">
                 <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#add-data">
                     <i class="fas fa-plus-circle"></i>
@@ -22,7 +21,7 @@
               </div>';
             }
             ?>
-            <table class="table table-bordered">
+            <table class="table table-sm table-striped table-bordered">
                 <thead>
                     <tr>
                         <th width="50px">No</th>

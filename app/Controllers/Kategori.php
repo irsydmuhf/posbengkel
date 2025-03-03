@@ -17,9 +17,15 @@ class Kategori extends BaseController
     {
         $nohalaman = $this->request->getVar('page_kategori') ? $this->request->getVar('page_kategori') : 1;
         $data = [
+<<<<<<< HEAD
             'icon' => 'fas fa-th-list',
             'judul' => 'Master Data',
             'subjudul' => 'Kategori',
+=======
+            'icon' => 'fas fa-cube',
+            'judul' => 'Master Data',
+            'subjudul' => ' Kategori',
+>>>>>>> 5fba8374d417af574a3a4c127161e8378830b650
             'menu' => 'masterdata',
             'submenu' => 'kategori',
             'page' => 'v_kategori',

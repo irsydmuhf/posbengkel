@@ -18,7 +18,11 @@ class Pelanggan extends BaseController
         $data = [
             'icon' => 'fas fa-users',
             'judul' => 'Master Data',
+<<<<<<< HEAD
             'subjudul' => 'Pelanggan',
+=======
+            'subjudul' => ' Pelanggan',
+>>>>>>> 5fba8374d417af574a3a4c127161e8378830b650
             'menu' => 'masterdata',
             'submenu' => 'pelanggan',
             'page' => 'v_pelanggan',

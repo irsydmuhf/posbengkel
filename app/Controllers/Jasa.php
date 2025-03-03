@@ -17,7 +17,11 @@ class Jasa extends BaseController
         $data = [
             'icon' => 'fas fa-tools',
             'judul' => 'Master Data',
+<<<<<<< HEAD
             'subjudul' => 'Jasa',
+=======
+            'subjudul' => ' Jasa',
+>>>>>>> 5fba8374d417af574a3a4c127161e8378830b650
             'menu' => 'masterdata',
             'submenu' => 'jasa',
             'page' => 'jasa/v_jasa',

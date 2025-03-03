@@ -36,8 +36,8 @@ class Supplier extends BaseController
 
         $this->ModelSupplier->InsertData($data);
 
-        return $this->response->setJSON(['status' => 'success', 'message' => 'Data Berhasil Ditambahkan!']);
-    }
+        session()->setFlashdata('pesan', 'Data Berhasil Ditambah!');
+        return redirect()->to('Supplier');    }
     public function UpdateData($id_supplier)
     {
         $data = [

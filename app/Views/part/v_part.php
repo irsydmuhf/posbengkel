@@ -1,7 +1,6 @@
 <div class="col-md-12">
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title mt-2"><?= $subjudul ?></h3>
             <div class="card-tools">
                 <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#add-data">
                     <i class="fas fa-plus-circle"></i>
@@ -15,7 +14,7 @@
 
             <!-- searhcing -->
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Cari Berdasarkan Kode, Nama Part atau Kategori" name="search" autofocus="true">
+                <input type="text" class="form-control" placeholder="Cari Berdasarkan Kode, Nama Part atau Kategori" name="caripart" autofocus="true">
                 <div class="input-group-append">
                     <button class="btn btn-outline-primary" type="button"><i class="fa fa-search" name="tombolcaripart"></i></button>
                 </div>
@@ -30,7 +29,7 @@
               </div>';
             }
             ?>
-            <table class="table table-bordered table-striped table-hover">
+            <table class="table  table-sm table-bordered table-striped table-hover">
                 <thead>
                     <tr>
                         <th width="2%">No</th>
@@ -309,3 +308,57 @@
         <!-- /.modal-dialog -->
     </div>
 <?php } ?>
+<script>
+    $(document).ready(function() {
+        function loadData(keyword = '') {
+            $.ajax({
+                url: ('/part/cariDataPart'),
+                method: 'post',
+                data: {
+                    keyword: keyword
+                },
+                dataType: 'json',
+                success: function(response) {
+                    let html = '';
+                    let no = 1;
+                    for (const item of response) {
+                        html += `
+                            <tr>
+                            <td>${no++}</td>
+                            <td>${item.id_part}</td>
+                            <td>${item.nama_part}</td>
+                            <td>
+                                <button class="btn btn-sm btn-primary">
+                                <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-warning" onclick="detailTransaksi">
+                                <i class="fas fa-pencil-alt"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                            </tr>
+                        `;
+                    }
+                    $('tbody').html(html);
+                }
+            });
+        }
+
+        loadData();
+
+        $('#tombolcaripart').click(function() {
+            var keyword = $('#caripart').val();
+            loadData(keyword);
+        });
+
+        $('#caripart').keypress(function(e) {
+            if (e.which == 13) {
+                var keyword = $(this).val();
+                loadData(keyword);
+                return false;
+            }
+        });
+    });
+</script>

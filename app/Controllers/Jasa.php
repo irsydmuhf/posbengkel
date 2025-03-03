@@ -15,8 +15,9 @@ class Jasa extends BaseController
     public function index()
     {
         $data = [
-            'judul' => 'MasterData',
-            'subjudul' => 'Jasa',
+            'icon' => 'fas fa-tools',
+            'judul' => 'Master Data',
+            'subjudul' => ' Jasa',
             'menu' => 'masterdata',
             'submenu' => 'jasa',
             'page' => 'jasa/v_jasa',

@@ -15,8 +15,9 @@ class Satuan extends BaseController
     public function index()
     {
         $data = [
-            'judul' => 'MasterData',
-            'subjudul' => 'Satuan',
+            'icon' => 'fas fa-ruler',
+            'judul' => 'Master Data',
+            'subjudul' => ' Satuan',
             'menu' => 'masterdata',
             'submenu' => 'satuan',
             'page' => 'v_satuan',

@@ -16,11 +16,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="/assets/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/assets/dist/css/adminlte.min.css">
-    
-    <link rel="stylesheet" href="/assets/plugins/sweetalert2/sweetalert2.min.css"></link>
+
+    <link rel="stylesheet" href="/assets/plugins/sweetalert2/sweetalert2.min.css">
+    </link>
     <!-- jQuery -->
     <script src="/assets/plugins/jquery/jquery.min.js"></script>
-   
+
     <script src="/assets/plugins/sweetalert2/sweetalert2.min.js"></script>
 
 
@@ -190,7 +191,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0"><?= $judul ?></h1>
+                            <h1 class="m-0"> <i class="<?= $icon ?>"></i>
+                                <?= $judul . $subjudul ?></h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">

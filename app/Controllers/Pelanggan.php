@@ -16,8 +16,9 @@ class Pelanggan extends BaseController
     public function index()
     {
         $data = [
-            'judul' => 'MasterData',
-            'subjudul' => 'Pelanggan',
+            'icon' => 'fas fa-users',
+            'judul' => 'Master Data',
+            'subjudul' => ' Pelanggan',
             'menu' => 'masterdata',
             'submenu' => 'pelanggan',
             'page' => 'v_pelanggan',

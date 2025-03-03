@@ -16,6 +16,7 @@ class TransaksiMasuk extends BaseController
     public function index()
     {
         $data = [
+            'icon' => 'fas fa-cash-register',
             'judul' => 'Transaksi',
             'subjudul' => 'Transaksi Masuk',
             'menu' => 'transaksi',
@@ -204,6 +205,8 @@ class TransaksiMasuk extends BaseController
             $harga_beli = $this->request->getPost('harga_beli');
             $jml_item = $this->request->getPost('jml_item');
 
+            log_message('debug', 'Data diterima: ' . json_encode($_POST));
+
             $modelTemp = new ModelTempMasuk();
             $isExist = $modelTemp->where('faktur_detbeli', $faktur)
                 ->where('id_part_detbeli', $id_part)
@@ -267,6 +270,7 @@ class TransaksiMasuk extends BaseController
                     $modelDetailTransaksiMasuk->insert([
                         'faktur_detbeli' => $row['faktur_detbeli'],
                         'id_part_detbeli' => $row['id_part_detbeli'],
+                        'nama_part_detbeli' => $row['nama_part_detbeli'],
                         'hargajual_detbeli' => $row['hargajual_detbeli'],
                         'hargabeli_detbeli' => $row['hargabeli_detbeli'],
                         'jml_detbeli' => $row['jml_detbeli'],
@@ -293,6 +297,7 @@ class TransaksiMasuk extends BaseController
         $modelTransaksiMasuk = new ModelTransaksiMasuk();
         $modelSupplier = new ModelSupplier();
         $data = [
+            'icon' => 'fas fa-cash-register',
             'judul' => 'Transaksi',
             'subjudul' => 'Transaksi Masuk',
             'menu' => 'transaksi',
@@ -303,7 +308,7 @@ class TransaksiMasuk extends BaseController
         ];
         return view('v_template', $data);
     }
-    
+
 
     public function cariDataMasuk()
     {

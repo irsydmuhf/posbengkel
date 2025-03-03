@@ -16,7 +16,8 @@ class Supplier extends BaseController
     public function index()
     {
         $data = [
-            'judul' => 'MasterData',
+            'icon' => 'fas fa-truck',
+            'judul' => 'Master Data',
             'subjudul' => 'Supplier',
             'menu' => 'masterdata',
             'submenu' => 'supplier',

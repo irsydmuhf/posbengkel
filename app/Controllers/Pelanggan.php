@@ -16,7 +16,8 @@ class Pelanggan extends BaseController
     public function index()
     {
         $data = [
-            'judul' => 'MasterData',
+            'icon' => 'fas fa-users',
+            'judul' => 'Master Data',
             'subjudul' => 'Pelanggan',
             'menu' => 'masterdata',
             'submenu' => 'pelanggan',
@@ -28,12 +29,12 @@ class Pelanggan extends BaseController
     public function InsertData()
     {
         $data = [
-            'nopol' => $this->request->getPost('nopol'),    
-            'nama_pelanggan' => $this->request->getPost('nama_pelanggan'),    
-            'mobil_pelanggan' => $this->request->getPost('mobil_pelanggan'),    
-            'alamat_pelanggan' => $this->request->getPost('alamat_pelanggan'),    
-            'telp_pelanggan' => $this->request->getPost('telp_pelanggan')    
-    ];
+            'nopol' => $this->request->getPost('nopol'),
+            'nama_pelanggan' => $this->request->getPost('nama_pelanggan'),
+            'mobil_pelanggan' => $this->request->getPost('mobil_pelanggan'),
+            'alamat_pelanggan' => $this->request->getPost('alamat_pelanggan'),
+            'telp_pelanggan' => $this->request->getPost('telp_pelanggan')
+        ];
         $this->ModelPelanggan->InsertData($data);
         session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan!');
         return redirect()->to('Pelanggan');

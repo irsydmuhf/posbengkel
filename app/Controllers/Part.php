@@ -24,6 +24,7 @@ class Part extends BaseController
         $modelsatuan = new ModelSatuan();
 
         $data = [
+            'icon' => 'fas fa-cube',
             'judul' => 'Master Data',
             'subjudul' => 'Part',
             'menu' => 'masterdata',

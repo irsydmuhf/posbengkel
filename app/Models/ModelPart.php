@@ -16,8 +16,11 @@ class ModelPart extends Model
         'harga_jual',
         'stok'
     ];
-    public function AllData($keyword = null)
+    public function AllData($keyword = null, $page = 1)
     {
+        $perPage = 10;
+        $offset = ($page - 1) * $perPage;
+
         $builder = $this->db->table('part')
             ->join('kategori', 'id_kategori_part = id_kategori')
             ->join('satuan', 'id_satuan_part = id_satuan')
@@ -25,10 +28,13 @@ class ModelPart extends Model
 
         if (!empty($keyword)) {
             $builder->groupStart()
-                ->like('part.nama_part', $keyword)
+                ->like('part.id_part', $keyword)
+                ->orLike('part.nama_part', $keyword)
                 ->orLike('kategori.nama_kategori', $keyword)
                 ->groupEnd();
         }
+
+        $builder->limit($perPage, $offset);
 
         return $builder->get()->getResultArray();
     }

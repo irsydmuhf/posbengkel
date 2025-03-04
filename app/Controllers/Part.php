@@ -32,6 +32,8 @@ class Part extends BaseController
         } else {
             $caripart = session()->get('cari_part');
         }
+        $nohalaman = $this->request->getVar('page_part') ?? 1;
+
         $data = [
             'icon' => 'fas fa-cube',
             'judul' => 'Master Data',
@@ -39,9 +41,10 @@ class Part extends BaseController
             'menu' => 'masterdata',
             'submenu' => 'part',
             'page' => 'part/v_part',
-            'part' => $this->ModelPart->AllData(),
-            // 'part' => $this->ModelPart->paginate(10),
-            // 'pager' => $this->ModelPart->pager,
+            // 'part' => $this->ModelPart->AllData(),
+            'part' => $this->ModelPart->paginate(10, 'part'),
+            'pager' => $this->ModelPart->pager,
+            'nohalaman' => $nohalaman,
             'datakategori' => $modelkategori->AllData(),
             'datasatuan' => $modelsatuan->AllData(),
         ];

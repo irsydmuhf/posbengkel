@@ -191,7 +191,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0"><i class="<?= $icon ?>"></i> <?= $judul ?> <?= $subjudul?></h1>
+                            <h3 class="m-0" style="color:darkblue;"><i class="<?= $icon ?>"></i> <?= $judul ?> <?= $subjudul?></h3>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">

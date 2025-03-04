@@ -30,7 +30,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $no = 1 + (($nohalaman -1) * 5);
+                    <?php $no = 1 + (($nohalaman - 1) * 5);
                     foreach ($kategori as $key => $value) { ?>
                         <tr>
                             <td><?= $no++ ?></td>
@@ -44,9 +44,9 @@
                 </tbody>
             </table>
             <br>
-<div class="float-center">
-    <?= $pager->links('kategori','paging'); ?>
-</div>
+            <div class="float-center">
+                <?= $pager->links('kategori', 'paging'); ?>
+            </div>
         </div>
         <!-- /.card-body -->
     </div>

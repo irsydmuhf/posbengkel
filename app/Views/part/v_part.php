@@ -34,10 +34,10 @@
             <table class="table table-sm table-bordered table-striped table-hover">
                 <thead>
                     <tr>
-                        <th width="2%">No</th>
+                        <th width="50px">No</th>
                         <th>Kode Barang</th>
                         <th>Nama</th>
-                        <th width="15%">Aksi</th>
+                        <th width="200px">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -178,23 +178,23 @@
                     let no = 1;
                     response.forEach(item => {
                         html += `
-                    <tr>
-                        <td>${no = 1 + (($nohalaman - 1) * 10)}</td>
-                        <td>${item.id_part}</td>
-                        <td>${item.nama_part}</td>
-                        <td>
-                            <button onclick="viewPart('${item.id_part}')" class="btn btn-sm btn-primary">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                            <button onclick="editPart('${item.id_part}')" class="btn btn-sm btn-warning">
-                                <i class="fas fa-pencil-alt"></i>
-                            </button>
-                            <button onclick="deletePart('${item.id_part}')" class="btn btn-sm btn-danger">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                `;
+                        <tr>
+                            <td>${no = 1 + (($nohalaman - 1) * 10)}</td>
+                            <td>${item.id_part}</td>
+                            <td>${item.nama_part}</td>
+                            <td>
+                                <button onclick="viewPart('${item.id_part}')" class="btn btn-sm btn-primary">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button onclick="editPart('${item.id_part}')" class="btn btn-sm btn-warning">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </button>
+                                <button class="btn btn-danger btn-sm" onclick="deletePart('${item.id_part}')">
+    F                                <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    `;
                     });
                     $('tbody').html(html);
                 }
@@ -214,5 +214,21 @@
                 return false;
             }
         });
+
+        function deletePart(id) {
+            Swal.fire({
+                title: "Apakah Anda yakin?",
+                text: "Data yang dihapus tidak dapat dikembalikan!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Ya, hapus!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "<?= base_url('part/DeleteData/') ?>" + id;
+                }
+            });
+        }
     });
 </script>

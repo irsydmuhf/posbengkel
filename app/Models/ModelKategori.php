@@ -13,10 +13,10 @@ class ModelKategori extends Model
         'id_kategori',
         'nama_kategori',
     ];
-    public function AllData()
-    {
-        return $this->db->table('kategori')->get()->getResultArray();
-    }
+    // public function AllData()
+    // {
+    //     return $this->db->table('kategori')->get()->getResultArray();
+    // }
 
     public function InsertData($data)
     {
@@ -33,5 +33,10 @@ class ModelKategori extends Model
         $this->db->table('kategori')
             ->where('id_kategori', $data['id_kategori'])
             ->delete($data);
+    }
+
+    public function cariData($carikategori)
+    {
+        return $this->table('kategori')->like('nama_kategori', $carikategori);
     }
 }

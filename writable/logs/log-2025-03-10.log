@@ -1,0 +1,44 @@
+ERROR - 2025-03-10 10:38:59 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:170
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(170): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'posbengkel', 3306, '', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `transak...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\app\Models\ModelTransaksiMasuk.php(35): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(306): App\Models\ModelTransaksiMasuk->AllData()
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `transak...', Array, false)
+#3 C:\xampp\htdocs\posbengkel\app\Models\ModelTransaksiMasuk.php(35): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\posbengkel\app\Controllers\TransaksiMasuk.php(306): App\Models\ModelTransaksiMasuk->AllData()
+#5 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+#6 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2025-03-10 10:38:59 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `transaksi_masuk`.*, `supplier`.`nama_supplier`, COUNT(det_transaksi_masuk.id_detbeli) as jumlah_item
+FROM `transaksi_masuk`
+JOIN `det_transaksi_masuk` ON `transaksi_masuk`.`faktur_beli` = `det_transaksi_masuk`.`faktur_detbeli`
+JOIN `supplier` ON `transaksi_masuk`.`id_supp_beli` = `supplier`.`id_supplier`
+GROUP BY `transaksi_masuk`.`faktur_beli`, `supplier`.`nama_supplier`', [], false)
+ 3 APPPATH\Models\ModelTransaksiMasuk.php(35): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\TransaksiMasuk.php(306): App\Models\ModelTransaksiMasuk->AllData()
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiMasuk->dataMasuk()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiMasuk))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

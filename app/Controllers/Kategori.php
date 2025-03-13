@@ -15,6 +15,18 @@ class Kategori extends BaseController
     }
     public function index()
     {
+        $tombolCariKategori  = $this->request->getPost('tombolCariKategori');
+
+        if (isset($tombolCariKategori)) {
+            $carikategori = $this->request->getPost('carikategori');
+            session()->set('cari_kategori', $carikategori);
+            return redirect()->to('/kategori/index');
+        } else {
+            $carikategori = session()->get('cari_kategori');
+        }
+
+        $dataKategori = $carikategori ? $this->ModelKategori->cariData($carikategori)->paginate(5, 'kategori') : $this->ModelKategori->paginate(5, 'kategori');
+
         $nohalaman = $this->request->getVar('page_kategori') ? $this->request->getVar('page_kategori') : 1;
         $data = [
             'icon' => 'fas fa-th-list',
@@ -24,7 +36,7 @@ class Kategori extends BaseController
             'submenu' => 'kategori',
             'page' => 'v_kategori',
             // 'kategori' => $this->ModelKategori->AllData(),
-            'kategori' => $this->ModelKategori->paginate(5, 'kategori'),
+            'kategori' => $dataKategori,
             'pager' => $this->ModelKategori->pager,
             'nohalaman' => $nohalaman
         ];

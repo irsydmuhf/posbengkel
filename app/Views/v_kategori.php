@@ -21,6 +21,16 @@
               </div>';
             }
             ?>
+            <?= form_open('kategori/index') ?>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Cari Berdasarkan Nama Kategori" name="carikategori" autofocus="true">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-primary" type="submit" id="tombolCariKategori" name="tombolCariKategori">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <?= form_close(); ?>
             <table class="table table-striped table-sm table-bordered">
                 <thead>
                     <tr>

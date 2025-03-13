@@ -58,3 +58,711 @@ in APPPATH\Controllers\Kategori.php on line 39.
  3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
  5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:10:25 --> Call to undefined method App\Models\ModelKategori::AllData
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Part.php(48): CodeIgniter\Model->__call('AllData', [])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:11:55 --> Call to undefined method App\Models\ModelKategori::AllData
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Part.php(48): CodeIgniter\Model->__call('AllData', [])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:13:55 --> Call to undefined method App\Models\ModelKategori::AllData
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Part.php(48): CodeIgniter\Model->__call('AllData', [])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:14:59 --> Call to undefined method App\Models\ModelKategori::AllData
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Part.php(48): CodeIgniter\Model->__call('AllData', [])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:15:02 --> Call to undefined method App\Models\ModelKategori::AllData
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Part.php(48): CodeIgniter\Model->__call('AllData', [])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:15:14 --> Call to undefined method App\Models\ModelKategori::AllData
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Part.php(48): CodeIgniter\Model->__call('AllData', [])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:15:34 --> Call to undefined method App\Models\ModelKategori::AllData
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Part.php(48): CodeIgniter\Model->__call('AllData', [])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:15:45 --> Call to undefined method App\Models\ModelKategori::AllData
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Part.php(48): CodeIgniter\Model->__call('AllData', [])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:16:10 --> Call to undefined method App\Models\ModelKategori::AllData
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Part.php(48): CodeIgniter\Model->__call('AllData', [])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:16:12 --> Call to undefined method App\Models\ModelKategori::AllData
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Part.php(48): CodeIgniter\Model->__call('AllData', [])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:16:48 --> Undefined variable $nohalaman
+in APPPATH\Views\part\v_part.php on line 43.
+ 1 APPPATH\Views\part\v_part.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nohalaman', 'APPPATH\\Views\\part\\v_part.php', 43)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(51): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:17:24 --> Undefined variable $AllData
+in APPPATH\Views\part\v_part.php on line 44.
+ 1 APPPATH\Views\part\v_part.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $AllData', 'APPPATH\\Views\\part\\v_part.php', 44)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(51): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:17:41 --> Cannot use object of type mysqli as array
+in APPPATH\Views\part\v_part.php on line 47.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 4 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 5 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 6 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 8 APPPATH\Controllers\Part.php(51): view('v_template', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+10 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:19:09 --> Cannot use object of type mysqli as array
+in APPPATH\Views\part\v_part.php on line 47.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 4 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 5 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 6 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 8 APPPATH\Controllers\Part.php(51): view('v_template', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+10 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:21:03 --> Cannot use object of type mysqli as array
+in APPPATH\Views\part\v_part.php on line 28.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 4 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 5 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 6 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 8 APPPATH\Controllers\Part.php(51): view('v_template', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+10 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:21:56 --> Cannot use object of type mysqli as array
+in APPPATH\Views\part\v_part.php on line 28.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 4 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 5 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 6 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 8 APPPATH\Controllers\Part.php(51): view('v_template', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+10 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:23:22 --> Undefined property: CodeIgniter\Database\MySQLi\Result::$getResultArray
+in APPPATH\Views\part\v_part.php on line 25.
+ 1 APPPATH\Views\part\v_part.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\Database\\MySQLi\\Result::$getResultArray', 'APPPATH\\Views\\part\\v_part.php', 25)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(51): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:23:24 --> Undefined property: CodeIgniter\Database\MySQLi\Result::$getResultArray
+in APPPATH\Views\part\v_part.php on line 25.
+ 1 APPPATH\Views\part\v_part.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\Database\\MySQLi\\Result::$getResultArray', 'APPPATH\\Views\\part\\v_part.php', 25)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(51): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:25:44 --> Undefined variable $datakategori
+in APPPATH\Views\part\v_part.php on line 82.
+ 1 APPPATH\Views\part\v_part.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datakategori', 'APPPATH\\Views\\part\\v_part.php', 82)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(51): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:26:12 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 872.
+ 1 SYSTEMPATH\Model.php(586): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(215): CodeIgniter\Model->builder()
+ 3 SYSTEMPATH\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Part.php(49): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:26:14 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 872.
+ 1 SYSTEMPATH\Model.php(586): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(215): CodeIgniter\Model->builder()
+ 3 SYSTEMPATH\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Part.php(49): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:26:54 --> Call to undefined method App\Models\ModelKategori::AllData
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Part.php(48): CodeIgniter\Model->__call('AllData', [])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:27:18 --> Undefined variable $datakategori
+in APPPATH\Views\part\v_part.php on line 82.
+ 1 APPPATH\Views\part\v_part.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datakategori', 'APPPATH\\Views\\part\\v_part.php', 82)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(51): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:32:35 --> Cannot use object of type mysqli as array
+in APPPATH\Views\part\v_part.php on line 133.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 4 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 5 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 6 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 8 APPPATH\Controllers\Part.php(51): view('v_template', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+10 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:36:04 --> Undefined array key "harga_beli"
+in APPPATH\Views\part\v_part.php on line 159.
+ 1 APPPATH\Views\part\v_part.php(159): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "harga_beli"', 'APPPATH\\Views\\part\\v_part.php', 159)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(51): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:40:50 --> Undefined array key "harga_beli"
+in APPPATH\Views\part\v_part.php on line 239.
+ 1 APPPATH\Views\part\v_part.php(239): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "harga_beli"', 'APPPATH\\Views\\part\\v_part.php', 239)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(51): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:49:39 --> Call to a member function getResultArray() on array
+in APPPATH\Views\part\v_part.php on line 45.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 4 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 5 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 6 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 8 APPPATH\Controllers\Part.php(55): view('v_template', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+10 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:50:16 --> Call to a member function getResultArray() on array
+in APPPATH\Views\part\v_part.php on line 45.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 4 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 5 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 6 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 8 APPPATH\Controllers\Part.php(55): view('v_template', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+10 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:50:45 --> Call to a member function getResultArray() on array
+in APPPATH\Views\part\v_part.php on line 152.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 4 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 5 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 6 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 8 APPPATH\Controllers\Part.php(55): view('v_template', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+10 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:50:58 --> Undefined array key "nama_kategori"
+in APPPATH\Views\part\v_part.php on line 175.
+ 1 APPPATH\Views\part\v_part.php(175): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kategori"', 'APPPATH\\Views\\part\\v_part.php', 175)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(55): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:52:20 --> Undefined array key "nama_kategori"
+in APPPATH\Views\part\v_part.php on line 175.
+ 1 APPPATH\Views\part\v_part.php(175): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kategori"', 'APPPATH\\Views\\part\\v_part.php', 175)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(55): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:53:13 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::paginate()
+in APPPATH\Controllers\Part.php on line 36.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:53:22 --> Undefined array key "nama_kategori"
+in APPPATH\Views\part\v_part.php on line 175.
+ 1 APPPATH\Views\part\v_part.php(175): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kategori"', 'APPPATH\\Views\\part\\v_part.php', 175)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(55): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:55:17 --> Undefined array key "nama_kategori"
+in APPPATH\Views\part\v_part.php on line 175.
+ 1 APPPATH\Views\part\v_part.php(175): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kategori"', 'APPPATH\\Views\\part\\v_part.php', 175)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(55): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:57:20 --> Undefined array key "nama_kategori"
+in APPPATH\Views\part\v_part.php on line 175.
+ 1 APPPATH\Views\part\v_part.php(175): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kategori"', 'APPPATH\\Views\\part\\v_part.php', 175)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(55): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:59:33 --> Undefined array key "nama_kategori"
+in APPPATH\Views\part\v_part.php on line 175.
+ 1 APPPATH\Views\part\v_part.php(175): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kategori"', 'APPPATH\\Views\\part\\v_part.php', 175)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(55): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 01:59:34 --> Undefined array key "nama_kategori"
+in APPPATH\Views\part\v_part.php on line 175.
+ 1 APPPATH\Views\part\v_part.php(175): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kategori"', 'APPPATH\\Views\\part\\v_part.php', 175)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(55): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-03-14 02:03:20 --> mysqli_sql_exception: Not unique table/alias: 'kategori' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(550): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\posbengkel\system\BaseModel.php(1085): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\Part.php(36): CodeIgniter\BaseModel->paginate(10, 'part')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\Part->index()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-03-14 02:03:20 --> Not unique table/alias: 'kategori'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `part`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+WHERE `id_part` LIKE \'%busi%\' ESCAPE \'!\'
+OR  `nama_part` LIKE \'%busi%\' ESCAPE \'!\'
+OR  `nama_kategori` LIKE \'%busi%\' ESCAPE \'!\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `part`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+WHERE `id_part` LIKE \'%busi%\' ESCAPE \'!\'
+OR  `nama_part` LIKE \'%busi%\' ESCAPE \'!\'
+OR  `nama_kategori` LIKE \'%busi%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `part`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+WHERE `id_part` LIKE \'%busi%\' ESCAPE \'!\'
+OR  `nama_part` LIKE \'%busi%\' ESCAPE \'!\'
+OR  `nama_kategori` LIKE \'%busi%\' ESCAPE \'!\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `part`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+WHERE `id_part` LIKE :id_part: ESCAPE \'!\'
+OR  `nama_part` LIKE :nama_part: ESCAPE \'!\'
+OR  `nama_kategori` LIKE :nama_kategori: ESCAPE \'!\'', [...], false)
+ 5 SYSTEMPATH\Model.php(550): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1085): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Part.php(36): CodeIgniter\BaseModel->paginate(10, 'part')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-03-14 02:03:37 --> mysqli_sql_exception: Not unique table/alias: 'kategori' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(550): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\posbengkel\system\BaseModel.php(1085): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\Part.php(36): CodeIgniter\BaseModel->paginate(10, 'part')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\Part->index()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-03-14 02:03:37 --> Not unique table/alias: 'kategori'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `part`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+WHERE `id_part` LIKE \'%bui%\' ESCAPE \'!\'
+OR  `nama_part` LIKE \'%bui%\' ESCAPE \'!\'
+OR  `nama_kategori` LIKE \'%bui%\' ESCAPE \'!\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `part`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+WHERE `id_part` LIKE \'%bui%\' ESCAPE \'!\'
+OR  `nama_part` LIKE \'%bui%\' ESCAPE \'!\'
+OR  `nama_kategori` LIKE \'%bui%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `part`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+WHERE `id_part` LIKE \'%bui%\' ESCAPE \'!\'
+OR  `nama_part` LIKE \'%bui%\' ESCAPE \'!\'
+OR  `nama_kategori` LIKE \'%bui%\' ESCAPE \'!\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `part`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+WHERE `id_part` LIKE :id_part: ESCAPE \'!\'
+OR  `nama_part` LIKE :nama_part: ESCAPE \'!\'
+OR  `nama_kategori` LIKE :nama_kategori: ESCAPE \'!\'', [...], false)
+ 5 SYSTEMPATH\Model.php(550): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1085): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Part.php(36): CodeIgniter\BaseModel->paginate(10, 'part')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-03-14 02:04:00 --> mysqli_sql_exception: Not unique table/alias: 'kategori' in C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\posbengkel\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\posbengkel\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\posbengkel\system\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\posbengkel\system\Model.php(550): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\posbengkel\system\BaseModel.php(1085): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\posbengkel\app\Controllers\Part.php(36): CodeIgniter\BaseModel->paginate(10, 'part')
+#7 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(898): App\Controllers\Part->index()
+#8 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+#9 C:\xampp\htdocs\posbengkel\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\posbengkel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\posbengkel\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-03-14 02:04:00 --> Not unique table/alias: 'kategori'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `part`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+WHERE `id_part` LIKE \'%busi%\' ESCAPE \'!\'
+OR  `nama_part` LIKE \'%busi%\' ESCAPE \'!\'
+OR  `nama_kategori` LIKE \'%busi%\' ESCAPE \'!\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `part`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+WHERE `id_part` LIKE \'%busi%\' ESCAPE \'!\'
+OR  `nama_part` LIKE \'%busi%\' ESCAPE \'!\'
+OR  `nama_kategori` LIKE \'%busi%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `part`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+WHERE `id_part` LIKE \'%busi%\' ESCAPE \'!\'
+OR  `nama_part` LIKE \'%busi%\' ESCAPE \'!\'
+OR  `nama_kategori` LIKE \'%busi%\' ESCAPE \'!\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `part`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+JOIN `kategori` ON `id_kategori_part` = `id_kategori`
+JOIN `satuan` ON `id_satuan_part` = `id_satuan`
+WHERE `id_part` LIKE :id_part: ESCAPE \'!\'
+OR  `nama_part` LIKE :nama_part: ESCAPE \'!\'
+OR  `nama_kategori` LIKE :nama_kategori: ESCAPE \'!\'', [...], false)
+ 5 SYSTEMPATH\Model.php(550): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1085): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Part.php(36): CodeIgniter\BaseModel->paginate(10, 'part')
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 02:09:39 --> Undefined array key "nama_kategori"
+in APPPATH\Views\part\v_part.php on line 52.
+ 1 APPPATH\Views\part\v_part.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kategori"', 'APPPATH\\Views\\part\\v_part.php', 52)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(55): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 02:11:10 --> Undefined array key "nama_kategori"
+in APPPATH\Views\part\v_part.php on line 52.
+ 1 APPPATH\Views\part\v_part.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kategori"', 'APPPATH\\Views\\part\\v_part.php', 52)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(55): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-03-14 02:11:17 --> Undefined array key "nama_kategori"
+in APPPATH\Views\part\v_part.php on line 52.
+ 1 APPPATH\Views\part\v_part.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kategori"', 'APPPATH\\Views\\part\\v_part.php', 52)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\part\\v_part.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('part/v_part', [], true)
+ 5 APPPATH\Views\v_template.php(214): view('part/v_part')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\Part.php(55): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Part->index()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Part))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

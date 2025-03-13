@@ -23,15 +23,19 @@ class Part extends BaseController
         $modelkategori = new ModelKategori();
         $modelsatuan = new ModelSatuan();
 
-        $tombolcaripart  = $this->request->getPost('tombolcaripart');
+        $tombolCariPart  = $this->request->getPost('tombolCariPart');
 
-        if (isset($tombolcaripart)) {
+        if (isset($tombolCariPart)) {
             $caripart = $this->request->getPost('caripart');
-            session()->set('cari_part' . $caripart);
+            session()->set('cari_part' , $caripart);
             return redirect()->to('/part/index');
         } else {
             $caripart = session()->get('cari_part');
         }
+
+        $dataPart = $caripart ? $this->ModelPart->tampildata_cari($caripart)->paginate(10, 'part') : $this->ModelPart->paginate(10, 'part');
+
+
         $nohalaman = $this->request->getVar('page_part') ?? 1;
 
         $data = [
@@ -41,8 +45,8 @@ class Part extends BaseController
             'menu' => 'masterdata',
             'submenu' => 'part',
             'page' => 'part/v_part',
-            // 'part' => $this->ModelPart->AllData(),
-            'part' => $this->ModelPart->paginate(10, 'part'),
+            'part' => $dataPart,
+            // 'part' => $this->ModelPart->paginate(10, 'part'),
             'pager' => $this->ModelPart->pager,
             'nohalaman' => $nohalaman,
             'datakategori' => $modelkategori->AllData(),
@@ -51,13 +55,13 @@ class Part extends BaseController
         return view('v_template', $data);
     }
 
-    public function cariDataPart()
-    {
-        $keyword = $this->request->getPost('keyword');
-        $modelPart = new ModelPart();
-        $data = $modelPart->AllData($keyword);
-        return $this->response->setJSON($data);
-    }
+    // public function cariDataPart()
+    // {
+    //     $keyword = $this->request->getPost('keyword');
+    //     $modelPart = new ModelPart();
+    //     $data = $modelPart->AllData($keyword);
+    //     return $this->response->setJSON($data);
+    // }
 
     public function InsertData()
     {

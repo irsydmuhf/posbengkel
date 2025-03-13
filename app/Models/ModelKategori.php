@@ -13,10 +13,10 @@ class ModelKategori extends Model
         'id_kategori',
         'nama_kategori',
     ];
-    // public function AllData()
-    // {
-    //     return $this->db->table('kategori')->get()->getResultArray();
-    // }
+    public function AllData()
+    {
+        return $this->db->table('kategori')->get()->getResultArray();
+    }
 
     public function InsertData($data)
     {

@@ -78,7 +78,6 @@
             </div>
             <?php echo form_open('Kategori/InsertData') ?>
             <div class="modal-body">
-
                 <div class="form-group">
                     <label for="">Nama Katgeori</label>
                     <input name="nama_kategori" class="form-control" placeholder="Kategori" autofocus="true" required>

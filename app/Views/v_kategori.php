@@ -40,14 +40,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $no = 1 + (($nohalaman - 1) * 5);
+                    <?php $no = 1 + (($nohalaman - 1) * 10);
                     foreach ($kategori as $key => $value) { ?>
                         <tr>
                             <td><?= $no++ ?></td>
                             <td><?= $value['nama_kategori'] ?></td>
                             <td>
-                                <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#edit-data<?= $value['id_kategori'] ?>"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-data<?= $value['id_kategori'] ?>"><i class="fas fa-trash"></i></a>
+                                <a href="#" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-data<?= $value['id_kategori'] ?>"><i class="fas fa-pencil-alt"></i></a>
+                                <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-data<?= $value['id_kategori'] ?>"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php } ?>

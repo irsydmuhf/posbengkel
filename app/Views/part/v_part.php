@@ -41,16 +41,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $no = 1 + (($nohalaman - 1) * 5);
+                    <?php $no = 1 + (($nohalaman - 1) * 10);
                     foreach ($part as $row) { ?>
                         <tr>
                             <td><?= $no++ ?></td>
                             <td><?= $row['id_part'] ?></td>
                             <td><?= $row['nama_part'] ?></td>
                             <td>
-                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#view-data<?= $row['id_part'] ?>"><i class="fas fa-eye"></i></a>
-                                <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#edit-data<?= $row['id_part'] ?>"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-data<?= $row['id_part'] ?>"><i class="fas fa-trash"></i></a>
+                                <a href="#" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#view-data<?= $row['id_part'] ?>"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-data<?= $row['id_part'] ?>"><i class="fas fa-pencil-alt"></i></a>
+                                <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-data<?= $row['id_part'] ?>"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php } ?>

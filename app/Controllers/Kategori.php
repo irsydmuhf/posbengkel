@@ -25,9 +25,9 @@ class Kategori extends BaseController
             $carikategori = session()->get('cari_kategori');
         }
 
-        $dataKategori = $carikategori ? $this->ModelKategori->cariData($carikategori)->paginate(5, 'kategori') : $this->ModelKategori->paginate(5, 'kategori');
+        $dataKategori = $carikategori ? $this->ModelKategori->cariData($carikategori)->paginate(10, 'kategori') : $this->ModelKategori->paginate(10, 'kategori');
 
-        $nohalaman = $this->request->getVar('page_kategori') ? $this->request->getVar('page_kategori') : 1;
+        $nohalaman = $this->request->getVar('page_kategori') ?? 1;
         $data = [
             'icon' => 'fas fa-th-list',
             'judul' => 'Master Data',

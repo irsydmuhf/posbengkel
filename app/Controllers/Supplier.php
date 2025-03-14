@@ -15,6 +15,20 @@ class Supplier extends BaseController
     }
     public function index()
     {
+        $tombolCariSupplier  = $this->request->getPost('tombolCariSupplier');
+
+        if (isset($tombolCariSupplier)) {
+            $carisupplier = $this->request->getPost('carisupplier');
+            session()->set('cari_supplier', $carisupplier);
+            return redirect()->to('/supplier/index');
+        } else {
+            $carisupplier = session()->get('cari_supplier');
+        }
+
+        $dataSupplier = $carisupplier ? $this->ModelSupplier->cariData($carisupplier)->paginate(10, 'supplier') : $this->ModelSupplier->paginate(10, 'supplier');
+
+        $nohalaman = $this->request->getVar('page_supplier') ?? 1;
+
         $data = [
             'icon' => 'fas fa-truck',
             'judul' => 'Master Data',
@@ -22,7 +36,9 @@ class Supplier extends BaseController
             'menu' => 'masterdata',
             'submenu' => 'supplier',
             'page' => 'v_supplier',
-            'supplier' => $this->ModelSupplier->AllData(),
+            'supplier' => $dataSupplier,
+            'pager' => $this->ModelSupplier->pager,
+            'nohalaman' => $nohalaman
         ];
         return view('v_template', $data);
     }
@@ -37,7 +53,8 @@ class Supplier extends BaseController
         $this->ModelSupplier->InsertData($data);
 
         session()->setFlashdata('pesan', 'Data Berhasil Ditambah!');
-        return redirect()->to('Supplier');    }
+        return redirect()->to('Supplier');
+    }
     public function UpdateData($id_supplier)
     {
         $data = [

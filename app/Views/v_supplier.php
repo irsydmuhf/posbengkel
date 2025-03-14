@@ -21,6 +21,16 @@
               </div>';
             }
             ?>
+            <?= form_open('supplier/index') ?>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Cari Berdasarkan Nama Supplier" name="carisupplier" autofocus="true">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-primary" type="submit" id="tombolCariSupplier" name="tombolCariSupplier">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <?= form_close(); ?>
             <table class="table table-sm table-striped table-bordered">
                 <thead>
                     <tr>
@@ -42,13 +52,17 @@
                             <td><?= $value['alamat_supplier'] ?></td>
                             <td><?= $value['telp_supplier'] ?></td>
                             <td>
-                                <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#edit-data<?= $value['id_supplier'] ?>"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-data<?= $value['id_supplier'] ?>"><i class="fas fa-trash"></i></a>
+                                <a href="#" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-data<?= $value['id_supplier'] ?>"><i class="fas fa-pencil-alt"></i></a>
+                                <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-data<?= $value['id_supplier'] ?>"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php } ?>
                 </tbody>
             </table>
+            <br>
+            <div class="float-center">
+                <?= $pager->links('supplier', 'paging'); ?>
+            </div>
         </div>
         <!-- tambah data -->
         <div class="modal fade" id="add-data">

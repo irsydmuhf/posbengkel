@@ -36,16 +36,11 @@ class ModelSupplier extends Model
             ->delete($data);
     }
 
-    public function tampildata_cari($carisupplier)
+    public function cariData($carisupplier)
     {
-        return $this->db->table('supplier')
-            ->groupStart()
-            ->like('id_supplier', $carisupplier)
-            ->orLike('nama_supplier', $carisupplier)
-            ->orLike('alamat_supplier', $carisupplier)
-            ->orLike('telp_supplier', $carisupplier)
-            ->groupEnd()
-            ->get()
-            ->getResultArray();
+        return $this->table('supplier')
+        ->like('nama_supplier', $carisupplier)
+        ->orlike('alamat_supplier', $carisupplier)
+        ->orlike('telp_supplier', $carisupplier);
     }
 }

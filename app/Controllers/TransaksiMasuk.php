@@ -135,16 +135,20 @@ class TransaksiMasuk extends BaseController
         if ($this->request->isAJAX()) {
             $caripart = $this->request->getPost('caripart');
             $modelPart = new ModelPart();
-            $data = $modelPart->tampildata_cari($caripart);
+            $data = $modelPart->tampildata_cari($caripart)->get();
 
-            return $this->response->setJSON([
-                'data' => view('transaksi_masuk/detaildatapart', [
-                    'tampildata' => $data
-                ])
-            ]);
+            if ($data != null) {
+                $json = [
+                    'data' => view('transaksi_masuk/detaildatapart', [
+                        'tampildata' => $data
+                    ])
+                ];
+
+                echo json_encode($json);
+            }
+        } else {
+            exit('Tidak bisa dipanggil');
         }
-
-        exit('Tidak bisa dipanggil');
     }
 
     function cariDataSupplier()
@@ -163,15 +167,19 @@ class TransaksiMasuk extends BaseController
         if ($this->request->isAJAX()) {
             $carisupplier = $this->request->getPost('carisupplier');
             $modelSupplier = new ModelSupplier();
-            $data = $modelSupplier->tampildata_cari($carisupplier);
+            $data = $modelSupplier->tampildata_cari($carisupplier)->get();
+            if ($data != null) {
+                $json = [
+                    'data' => view('transaksi_masuk/detaildatasupplier', [
+                        'tampildata' => $data
+                    ])
+                ];
 
-            return $this->response->setJSON([
-                'data' => view('transaksi_masuk/detaildatasupplier', [
-                    'tampildata' => $data
-                ])
-            ]);
+                echo json_encode($json);
+            }
+        } else {
+            exit('Tidak bisa dipanggil');
         }
-        exit('Tidak bisa dipanggil');
     }
 
 

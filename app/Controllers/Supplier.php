@@ -25,7 +25,7 @@ class Supplier extends BaseController
             $carisupplier = session()->get('cari_supplier');
         }
 
-        $dataSupplier = $carisupplier ? $this->ModelSupplier->cariData($carisupplier)->paginate(10, 'supplier') : $this->ModelSupplier->paginate(10, 'supplier');
+        $dataSupplier = $carisupplier ? $this->ModelSupplier->tampildata_cari($carisupplier)->paginate(10, 'supplier') : $this->ModelSupplier->paginate(10, 'supplier');
 
         $nohalaman = $this->request->getVar('page_supplier') ?? 1;
 

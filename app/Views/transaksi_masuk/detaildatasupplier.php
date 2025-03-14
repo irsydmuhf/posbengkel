@@ -10,9 +10,11 @@
         </tr>
     </thead>
     <tbody>
-        <?php if (!empty($tampildata)) {
-            $no = 1;
-            foreach ($tampildata as $row) { ?>
+        <?php
+        $no = 1;
+        if ($tampildata->getResultArray()) {
+            foreach ($tampildata->getResultArray() as $row) {
+        ?>
                 <tr>
                     <td><?= $no++; ?></td>
                     <td><?= $row['id_supplier'] ?></td>
@@ -20,25 +22,32 @@
                     <td><?= $row['alamat_supplier'] ?></td>
                     <td><?= $row['telp_supplier'] ?></td>
                     <td>
-                        <button type="button" class="btn btn-sm btn-primary" onclick="pilih('<?= $row['id_supplier'] ?>')">
+                        <button type="button" class="btn btn-sm btn-info" onclick="">
                             <i class="fa fa-check"></i> Pilih
                         </button>
                     </td>
                 </tr>
-            <?php }
-        } else { ?>
+            <?php
+            }
+        } else {
+            ?>
             <tr>
-                <td colspan="6" class="text-center">
-                    <div class="alert alert-warning">Data tidak ditemukan</div>
+                <td colspan="6" class=" text-center">
+                    <div class="alert alert-warning" role="alert">
+                        Data tidak ditemukan
+                    </div>
                 </td>
             </tr>
-        <?php } ?>
+        <?php
+        }
+        ?>
     </tbody>
+
 </table>
 <script>
     function pilih(kode) {
         $('#id_supplier').val(kode);
-        $('#modalcarisupplier').on('hidden.bs.modal', function(event){
+        $('#modalcarisupplier').on('hidden.bs.modal', function(event) {
             ambilDataSupplier();
         });
         $('#modalcarisupplier').modal('hide');

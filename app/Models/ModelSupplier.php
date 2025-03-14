@@ -36,7 +36,7 @@ class ModelSupplier extends Model
             ->delete($data);
     }
 
-    public function cariData($carisupplier)
+    public function tampildata_cari($carisupplier)
     {
         return $this->table('supplier')
         ->like('nama_supplier', $carisupplier)

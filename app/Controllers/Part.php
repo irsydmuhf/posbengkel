@@ -27,7 +27,7 @@ class Part extends BaseController
 
         if (isset($tombolCariPart)) {
             $caripart = $this->request->getPost('caripart');
-            session()->set('cari_part' , $caripart);
+            session()->set('cari_part', $caripart);
             return redirect()->to('/part/index');
         } else {
             $caripart = session()->get('cari_part');
@@ -35,7 +35,8 @@ class Part extends BaseController
 
         $dataPart = $caripart ? $this->ModelPart->tampildata_cari($caripart)->paginate(10, 'part') : $this->ModelPart->paginate(10, 'part');
 
-
+        $totaldata = $caripart ? $this->ModelPart->tampildata_cari($caripart)->countAllResults() : $this->ModelPart->AllData()->countAllResults();
+       
         $nohalaman = $this->request->getVar('page_part') ?? 1;
 
         $data = [
@@ -47,6 +48,7 @@ class Part extends BaseController
             'page' => 'part/v_part',
             'part' => $dataPart,
             // 'part' => $this->ModelPart->paginate(10, 'part'),
+            'totaldata' => $totaldata,
             'pager' => $this->ModelPart->pager,
             'nohalaman' => $nohalaman,
             'datakategori' => $modelkategori->AllData(),

@@ -22,6 +22,7 @@
             }
             ?>
             <?= form_open('part/index') ?>
+            <span class="badge badge-success">Total Data : <?= $totaldata ?></span>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Cari Berdasarkan Kode, Nama, atau Kategori" name="caripart" autofocus="true">
                 <div class="input-group-append">
@@ -143,3 +144,6 @@
         </div>
     </div>
 </div>
+
+<script>
+</script>

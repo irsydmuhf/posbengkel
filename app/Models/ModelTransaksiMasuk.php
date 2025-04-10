@@ -15,24 +15,13 @@ class ModelTransaksiMasuk extends Model
         'total_beli'
     ];
 
-    public function AllData($keyword = null)
+    public function AllData()
     {
-        $builder = $this->db
+        $this->db
             ->table('transaksi_masuk')
             ->join('det_transaksi_masuk', 'transaksi_masuk.faktur_beli = det_transaksi_masuk.faktur_detbeli')
-            ->join('supplier', 'transaksi_masuk.id_supp_beli = supplier.id_supplier')
-            ->select('transaksi_masuk.*, supplier.nama_supplier, COUNT(det_transaksi_masuk.id_detbeli) as jumlah_item')
-            ->groupBy('transaksi_masuk.faktur_beli, supplier.nama_supplier');
+            ->join('supplier', 'transaksi_masuk.id_supp_beli = supplier.id_supplier');
 
-        if (!empty($keyword)) {
-            $builder->groupStart()
-                ->like('transaksi_masuk.faktur_beli', $keyword)
-                ->orLike('transaksi_masuk.id_supp_beli', $keyword)
-                ->orLike('supplier.nama_supplier', $keyword)  // Tambahkan kolom lain jika perlu
-                ->groupEnd();
-        }
-
-        return $builder->get()->getResultArray();
     }
 
     public function noFaktur($tgl)
@@ -42,17 +31,17 @@ class ModelTransaksiMasuk extends Model
 
     public function tampildata_cari($caritransaksi)
     {
-        return $this->db->table('transaksi_masuk')
-            ->join('det_transaksi_masuk', 'faktur_detbeli = faktur')
-            ->groupStart()
-            ->like('faktur', $caritransaksi)
-            ->orlike('kode_supplier', $caritransaksi)
-            ->orLike('nama_part', $caritransaksi)
-            ->orLike('tgl_beli', $caritransaksi)
-            ->groupEnd()
-            ->get()
-            ->getResultArray();
+        return $this->table('transaksi_masuk')
+        ->join('det_transaksi_masuk', 'transaksi_masuk.faktur_beli = det_transaksi_masuk.faktur_detbeli')
+        ->join('supplier', 'transaksi_masuk.id_supp_beli = supplier.id_supplier')
+        ->like('faktur', $caritransaksi)
+        ->orLike('tgl_beli', $caritransaksi);
     }
+
+    public function getTransactionByFaktur($faktur_beli)
+{
+    return $this->where('faktur_beli', $faktur_beli)->first();
+}
 
     // public function getTransaksiMasuk($keyword = null)
     // {

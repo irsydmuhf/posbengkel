@@ -149,3 +149,9 @@
         <!-- /.modal-dialog -->
     </div>
 <?php } ?>
+<script>
+    $(selector).click(function (e) { 
+        e.preventDefault();
+        
+    });
+</script>

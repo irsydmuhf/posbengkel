@@ -22,7 +22,7 @@
                     <td><?= $row['alamat_supplier'] ?></td>
                     <td><?= $row['telp_supplier'] ?></td>
                     <td>
-                        <button type="button" class="btn btn-sm btn-info" onclick="">
+                        <button type="button" class="btn btn-sm btn-info" onclick="pilih('<?= $row['id_supplier'] ?>')">
                             <i class="fa fa-check"></i> Pilih
                         </button>
                     </td>
@@ -51,5 +51,6 @@
             ambilDataSupplier();
         });
         $('#modalcarisupplier').modal('hide');
+        $('#id_part').focus();
     }
 </script>

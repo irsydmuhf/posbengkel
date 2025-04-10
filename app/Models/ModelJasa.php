@@ -27,7 +27,14 @@ class ModelJasa extends Model
     public function DeleteData($data)
     {
         $this->db->table('jasa')
-        ->where('id_jasa', $data['id_jasa'])
-        ->delete($data);
+            ->where('id_jasa', $data['id_jasa'])
+            ->delete($data);
+    }
+
+    public function tampildata_cari($carijasa)
+    {
+        return $this->table('jasa')
+            ->like('id_jasa', $carijasa)
+            ->orLike('nama_jasa', $carijasa);
     }
 }

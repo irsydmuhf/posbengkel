@@ -35,4 +35,12 @@ class ModelPelanggan extends Model
         ->where('nopol', $data['nopol'])
         ->delete($data);
     }
+    public function tampildata_cari($caripelanggan)
+    {
+        return $this->table('pelanggan')
+        ->like('nopol', $caripelanggan)
+        ->orlike('nama_pelanggan', $caripelanggan)
+        ->orlike('alamat_pelanggan', $caripelanggan)
+        ->orlike('telp_pelanggan', $caripelanggan);
+    }
 }

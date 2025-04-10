@@ -40,8 +40,8 @@
                             <td><?= $value['nama_jasa'] ?></td>
                             <td><?= $value['harga_jasa'] ?></td>
                             <td>
-                                <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#edit-data<?= $value['id_jasa'] ?>"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-data<?= $value['id_jasa'] ?>"><i class="fas fa-trash"></i></a>
+                                <a href="#" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-data<?= $value['id_jasa'] ?>"><i class="fas fa-pencil-alt"></i></a>
+                                <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-data<?= $value['id_jasa'] ?>"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php } ?>
@@ -86,7 +86,7 @@
             <div class="modal fade" id="edit-data<?= $value['id_jasa'] ?>">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <div class="modal-header">
+                        <div class="modal-header bg-warning">
                             <h4 class="modal-title">Edit Data<?= $subjudul ?></h4>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>

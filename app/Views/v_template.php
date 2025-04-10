@@ -109,7 +109,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?= base_url('TransaksiKeluar') ?>" class="nav-link <?= $submenu == 'keluar' ? 'active' : '' ?>">
+                                    <a href="<?= base_url('TransaksiKeluar/dataKeluar') ?>" class="nav-link <?= $submenu == 'keluar' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Transaksi Keluar</p>
                                     </a>

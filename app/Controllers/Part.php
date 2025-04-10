@@ -36,7 +36,7 @@ class Part extends BaseController
         $dataPart = $caripart ? $this->ModelPart->tampildata_cari($caripart)->paginate(10, 'part') : $this->ModelPart->paginate(10, 'part');
 
         $totaldata = $caripart ? $this->ModelPart->tampildata_cari($caripart)->countAllResults() : $this->ModelPart->AllData()->countAllResults();
-       
+
         $nohalaman = $this->request->getVar('page_part') ?? 1;
 
         $data = [
@@ -96,13 +96,16 @@ class Part extends BaseController
         session()->setFlashdata('pesan', 'Data Berhasil Diupdate!');
         return redirect()->to('Part');
     }
-    public function DeleteData($id_part)
+    public function DeleteData()
     {
-        $data = [
-            'id_part' => $id_part,
-        ];
-        $this->ModelPart->DeleteData($data);
-        session()->setFlashdata('pesan', 'Data Berhasil Dihapus!');
-        return redirect()->to('Part');
+        if ($this->request->isAJAX()) {
+            $id = $this->request->getPost('id');
+            $ModelPart = new ModelPart();
+            $ModelPart->delete($id);
+            session()->setFlashdata('pesan', 'Data Berhasil Dihapus!');
+            echo json_encode(['redirect' => base_url('Part')]);
+        } else {
+            exit('Tidak bisa dipanggil');
+        }
     }
 }

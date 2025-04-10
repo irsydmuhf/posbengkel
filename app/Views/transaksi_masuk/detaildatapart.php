@@ -22,8 +22,8 @@
                     <td><?= number_format($row['harga_jual'], 0, ",", ".") ?></td>
                     <td><?= number_format($row['stok'], 0, ",", ".") ?></td>
                     <td>
-                        <button type="button" class="btn btn-sm btn-info" onclick="">
-                            Pilih
+                        <button type="button" class="btn btn-sm btn-info" onclick="pilih('<?= $row['id_part'] ?>')">
+                        Pilih
                         </button>
                     </td>
                 </tr>

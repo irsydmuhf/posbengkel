@@ -28,7 +28,7 @@
                             <button class="btn btn-outline-primary" type="button" id="tombolCariSupplier">
                                 <i class="fa fa-search"></i>
                             </button>
-                            <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#tambahsupplier">
+                            <button class="btn btn-outline-success" type="button" id="tombolTambahSupplier">
                                 <i class="fa fa-plus"></i>
                             </button>
                         </div>
@@ -96,40 +96,12 @@
 </div>
 
 <!-- MODAL -->
-<!-- modal tambah supplier -->
-<div class="modal fade" id="tambahsupplier" tabindex="-1" aria-labelledby="modalSupplierLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header bg-primary">
-                <h5 class="modal-title" id="modalSupplierLabel">Tambah Supplier</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="">Nama Supplier</label>
-                    <input name="nama_supplier" class="form-control" placeholder="Masukkan Nama Supplier" required>
-                </div>
-                <div class="form-group">
-                    <label for="">Alamat Supplier</label>
-                    <input name="alamat_supplier" class="form-control" placeholder="Masukkan Alamat Supplier" required>
-                </div>
-                <div class="form-group">
-                    <label for="">Telp. Supplier</label>
-                    <input type="number" name="telp_supplier" class="form-control" placeholder="Gunakan Awalan 62" required>
-                </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-                <div></div> <button type="submit" class="btn btn-primary btn-flat">Save</button>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- modal cari barang -->
 <div class="modalcaripart" style="display: none"></div>
 <!-- modal cari Supplier -->
 <div class="modalcarisupplier" style="display: none"></div>
+<!-- modal tambah supplier -->
+<div class="modaltambahsupplier" style="display: none"></div>
 <!-- modal selesai -->
 <script>
     function buatFaktur() {
@@ -247,6 +219,30 @@
         }
     }
 
+    function tambahSupplier() {
+        $.ajax({
+            type: "POST",
+            url: "/Supplier/InserData",
+            data: {
+                nama_supplier: $('#nama_supplier').val(),
+                alamat_supplier: $('#alamat_supplier').val(),
+                telp_supplier: $('#telp_supplier').val()
+            },
+            dataType: "json",
+            success: function(response) {
+                if (response.status === 'success') {
+                    alert('Supplier berhasil ditambahkan!');
+                } else {
+                    alert('Gagal menambahkan supplier: ' + response.message);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.log(xhr.responseText);
+                alert('Terjadi kesalahan: ' + error);
+            }
+        });
+    }
+
     function ambilDataSupplier() {
         let id_supplier = $('#id_supplier').val();
 
@@ -307,28 +303,13 @@
             error: function(xhr, ajaxOptions, thrownError) {
                 alert(xhr.status + '\n' + thrownError);
             }
-        });    }
+        });
+    }
     $(document).ready(function() {
         $("body").addClass("sidebar-collapse");
         dataTemp();
         buatFaktur();
 
-        $('#formSupplier').submit(function(e) {
-            e.preventDefault()
-
-            $.ajax({
-                type: 'POST',
-                url: '<?= base_url("Supplier/InsertData") ?>',
-                data: $(this).serialize(),
-                dataType: 'json',
-                success: function(response) {
-                    if (response.status == 'success') {
-                        $('#modalSupplier').modal('hide');
-                        location.reload();
-                    }
-                }
-            });
-        });
         $('#id_part').keydown(function(e) {
             if (e.keyCode == 13) {
                 e.preventDefault();
@@ -348,9 +329,52 @@
             simpanTemp();
         });
 
+        $('btnSaveTambahSupp').click(function (e) { 
+            e.preventDefault();
+            tambahSupplier();            
+        });
+
         $('#tombolReload').off().on("click", function(e) {
             e.preventDefault();
             dataTemp();
+        });
+
+        $('#tombolTambahSupplier').click(function(e) {
+            e.preventDefault();
+            $.ajax({
+                url: "/transaksimasuk/tambahDataSupplier",
+                dataType: "json",
+                success: function(response) {
+                    if (response.data) {
+                        $('.modaltambahsupplier').html(response.data).show();
+                        $('#modaltambahsupplier').modal('show');
+
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status + '\n' + thrownError);
+                }
+
+            });
+        });
+
+        $('#tombolCariSupplier').click(function(e) {
+            e.preventDefault();
+            $.ajax({
+                url: "/transaksimasuk/cariDataSupplier",
+                dataType: "json",
+                success: function(response) {
+                    if (response.data) {
+                        $('.modalcarisupplier').html(response.data).show();
+                        $('#modalcarisupplier').modal('show');
+
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status + '\n' + thrownError);
+                }
+
+            });
         });
 
         $('#tombolCariPart').click(function(e) {
@@ -362,24 +386,6 @@
                     if (response.data) {
                         $('.modalcaripart').html(response.data).show();
                         $('#modalcaripart').modal('show');
-
-                    }
-                },
-                error: function(xhr, ajaxOptions, thrownError) {
-                    alert(xhr.status + '\n' + thrownError);
-                }
-
-            });
-        });
-        $('#tombolCariSupplier').click(function(e) {
-            e.preventDefault();
-            $.ajax({
-                url: "/transaksimasuk/cariDataSupplier",
-                dataType: "json",
-                success: function(response) {
-                    if (response.data) {
-                        $('.modalcarisupplier').html(response.data).show();
-                        $('#modalcarisupplier').modal('show');
 
                     }
                 },

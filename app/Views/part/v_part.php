@@ -51,7 +51,7 @@
                             <td>
                                 <a href="#" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#view-data<?= $row['id_part'] ?>"><i class="fas fa-eye"></i></a>
                                 <a href="#" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-data<?= $row['id_part'] ?>"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-data<?= $row['id_part'] ?>"><i class="fas fa-trash"></i></a>
+                                <a href="#" class="btn btn-sm btn-danger" onclick="deletePart('<?= $row['id_part'] ?>')"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php } ?>
@@ -144,6 +144,35 @@
         </div>
     </div>
 </div>
-
 <script>
+    function deletePart(id) {
+        Swal.fire({
+            title: "Yakin Hapus Item?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "post",
+                    url: "/Part/DeleteData",
+                    data: {
+                        id: id
+                    },
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.redirect) {
+                            window.location.href = response.redirect;
+                        }
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        alert(xhr.status + '\n' + thrownError);
+                    }
+                });
+            }
+        });
+
+    }
 </script>

@@ -1,6 +1,14 @@
 <div class="col-md-12">
     <div class="card">
-        <div class="card-header">Transaksi Keluar
+        <div class="card-header">
+            <div class="card-tools">
+                <a href="<?= base_url('TransaksiMasuk/dataMasuk')  ?>" class="btn btn-sm btn-warning">
+                    <i class="fa fa-backward"></i>
+                    Kembali
+                </a>
+            </div>
+        </div>
+        <div class="card-header">
             <div class="form-row">
                 <div class="form-group col-md">
                     <label for="">No Faktur</label>
@@ -13,11 +21,11 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md">
-                    <label for="">Kode Pelanggan</label>
+                    <label for="">Nopol</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="nopol">
+                        <input type="text" class="form-control" id="nopol" value="-">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#modalcaripelanggan">
+                            <button class="btn btn-outline-primary" type="button" id="tombolCariPelanggan">
                                 <i class="fa fa-search"></i>
                             </button>
                         </div>
@@ -25,7 +33,7 @@
                 </div>
                 <div class="form-group col-md">
                     <label for="">Nama Pelanggan</label>
-                    <input type="text" class="form-control" id="nama_pelanggan" readonly>
+                    <input type="text" class="form-control" id="nama_pelanggan" readonly value="-">
                 </div>
 
             </div>
@@ -35,11 +43,11 @@
                 </div>
                 <div class="card-body form-row">
                     <div class="form-group col-md">
-                        <label for="">Kode Part</label>
+                        <label for="">Kode Part / Jasa</label>
                         <div class="input-group">
                             <input type="text" class="form-control" id="id_part">
                             <div class="input-group-append">
-                                <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#modalcaribarang">
+                                <button class="btn btn-outline-primary" type="button" id="tombolCariItem">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </div>
@@ -53,13 +61,13 @@
                         <label for="">Harga Jual</label>
                         <input type="number" class="form-control" id="harga_jual" readonly>
                     </div>
-                    <div class="form-group col">
-                        <label for="">Harga Beli</label>
-                        <input type="number" class="form-control" id="harga_beli">
-                    </div>
                     <div class="form-group col-md-1">
                         <label for="">Jumlah</label>
-                        <input type="number" class="form-control" id="jml_item">
+                        <input type="number" class="form-control" id="jml_item" value="1">
+                    </div>
+                    <div class="form-group col-md-1">
+                        <label for="">Diskon (%)</label>
+                        <input type="number" class="form-control" id="diskon" name="diskon" value="0">
                     </div>
                     <div class="form-group col-md-1">
                         <label for="">Aksi</label>
@@ -84,58 +92,8 @@
         </div>
     </div>
 </div>
-<!-- modal cari barang -->
-<div class="modal fade" id="modalcaribarang">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header bg-primary">
-                <h4 class="modal-title">Cari Part Berdasarkan Nama</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Cari Berdasarkan Kode atau Nama Part" id="caripart">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-primary" type="button" id="btnCari">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- modal cari Pelanggan -->
-<div class="modal fade" id="modalcaripelanggan">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header bg-primary">
-                <h4 class="modal-title">Cari Pelanggan</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Cari Berdasarkan Nama Pelanggan" id="caripelanggan">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-primary" type="button" id="btnCariSupp">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
+<div class="modalcaripelanggan" style="display: none"></div>
+<div class="modalcariitem" style="display: none"></div>
 <script>
     function buatFaktur() {
         $.ajax({
@@ -154,6 +112,15 @@
                 alert(xhr.status + '\n' + thrownError);
             }
         });
+    }
+
+    function kosong() {
+        $('#id_part').val('');
+        $('#nama_part').val('');
+        $('#harga_jual').val('');
+        $('#jml_item').val(1);
+        $('#id_part').focus();
+
     }
 
     function dataTemp() {
@@ -176,24 +143,175 @@
             }
         });
     }
-    $('#nopol').keydown(function(e) {
-        if (e.keyCode == 13) {
-            e.preventDefault();
-            let nopol = $('#nopol').val();
 
+    $('#tombolCariPelanggan').click(function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: "/transaksikeluar/cariDataPelanggan",
+            dataType: "json",
+            success: function(response) {
+                if (response.data) {
+                    $('.modalcaripelanggan').html(response.data).show();
+                    $('#modalcaripelanggan').modal('show');
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + '\n' + thrownError);
+            }
+
+        });
+    });
+
+    function ambilDataPelanggan() {
+        let nopol = $('#nopol').val();
+
+        $.ajax({
+            type: "post",
+            url: "/transaksikeluar/ambilDataPelanggan",
+            data: {
+                nopol: nopol
+            },
+            dataType: "json",
+            success: function(response) {
+                if (response.sukses) {
+                    $('#nama_pelanggan').val(response.sukses.nama_pelanggan);
+                } else {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Pelanggan Tidak Ditemukan",
+                    });
+                    $('#nama_pelanggan').val('');
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + '\n' + thrownError);
+            }
+        });
+    }
+
+    $('#tombolCariItem').click(function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: "/transaksikeluar/cariDataItem",
+            dataType: "json",
+            success: function(response) {
+                if (response.data) {
+                    $('.modalcariitem').html(response.data).show();
+                    $('#modalcariitem').modal('show');
+
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + '\n' + thrownError);
+            }
+
+        });
+    });
+
+    function ambilDataPart() {
+        let id_part = $('#id_part').val();
+
+        $.ajax({
+            type: "post",
+            url: "/transaksimasuk/ambilDataBarang",
+            data: {
+                id_part: id_part
+            },
+            dataType: "json",
+            success: function(response) {
+                if (response.sukses) {
+                    let data = response.sukses;
+                    $('#nama_part').val(data.nama_part);
+                    $('#harga_jual').val(data.harga_jual);
+                    $('#jml_item').val(1);
+                }
+
+                if (response.error) {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Part Tidak Ditemukan!",
+                    });
+                    kosong();
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + '\n' + thrownError);
+            }
+        });
+    }
+
+    function ambilDataJasa() {
+        let id_jasa = $('#id_jasa').val();
+
+        $.ajax({
+            type: "post",
+            url: "/transaksikeluar/ambilDataJasa",
+            data: {
+                nopol: nopol
+            },
+            dataType: "json",
+            success: function(response) {
+                if (response.sukses) {
+                    $('#nama_jasa').val(response.sukses.nama_jasa);
+                } else {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Jasa Tidak Ditemukan",
+                    });
+                    $('#nama_jasa').val('');
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + '\n' + thrownError);
+            }
+        });
+    }
+
+    function simpanTemp() {
+
+        let faktur = $("#faktur").val();
+        let id_part = $("#id_part").val();
+        let harga_jual = $("#harga_jual").val();
+        let jml_item = $("#jml_item").val();
+        let nopol = $("#nopol").val();
+        let nama_part = $("#nama_part").val();
+        let diskon = $("#diskon").val();
+
+        if (id_part.length == 0) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Barang Belum Dipilih!",
+            });
+        } else if (jml_item == '' && jml_item <= 0) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Jumlah Item Belum Diisi!",
+            });
+        } else {
             $.ajax({
                 type: "post",
-                url: "/transaksikeluar/ambilDataPelanggan",
+                url: "/transaksikeluar/simpanTemp",
                 data: {
-                    nopol: nopol
+                    faktur: faktur,
+                    id_part: id_part,
+                    nopol: nopol,
+                    nama_part: nama_part,
+                    harga_jual: harga_jual,
+                    jml_item: jml_item,
+                    diskon: diskon
                 },
                 dataType: "json",
                 success: function(response) {
                     if (response.sukses) {
-                        $('#nama_pelanggan').val(response.sukses.nama_pelanggan);
-                    } else {
+                        dataTemp();
+                        kosong();
+                    } else if (response.error) {
                         alert(response.error);
-                        $('#nama_pelanggan').val('');
                     }
                 },
                 error: function(xhr, ajaxOptions, thrownError) {
@@ -201,112 +319,38 @@
                 }
             });
         }
-    });
-
-    function kosong() {
-        $('#id_part').val('');
-        $('#nama_part').val('');
-        $('#harga_jual').val('');
-        $('#id_part').focus();
     }
 
+
     $(document).ready(function() {
-        dataTemp();
+        $("body").addClass("sidebar-collapse");
         buatFaktur();
+        dataTemp();
+
+        $('#nopol').keydown(function(e) {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                ambilDataPelanggan();
+            }
+        });
 
         $('#id_part').keydown(function(e) {
             if (e.keyCode == 13) {
                 e.preventDefault();
-                let id_part = $('#id_part').val();
-
-                $.ajax({
-                    type: "post",
-                    url: "/transaksikeluar/ambilDataBarang",
-                    data: {
-                        id_part: id_part
-                    },
-                    dataType: "json",
-                    success: function(response) {
-                        if (response.sukses) {
-                            let data = response.sukses;
-                            $('#nama_part').val(data.nama_part);
-                            $('#harga_jual').val(data.harga_jual);
-
-                            $('#harga_beli').focus();
-                        }
-
-                        if (response.error) {
-                            alert(response.error);
-                            kosong();
-                        }
-                    },
-                    error: function(xhr, ajaxOptions, thrownError) {
-                        alert(xhr.status + '\n' + thrownError);
-                    }
-                });
+                ambilDataPart();
+            };
+        });
+        
+        $('#id_jasa').keydown(function(e) {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                ambilDataJasa();
             };
         });
 
-        $('#tombolTambahItem').click(function(e) {
+        $("#tombolTambahItem").off().on("click", function(e) {
             e.preventDefault();
-            let id_part = $('#id_part').val();
-            let harga_beli = $('#harga_beli').val();
-            let jml_item = $('#jml_item').val();
-            let nopol = $('#nopol').val();
-
-            if (nopol.length == 0) {
-                alert('Pelanggan belum diisi');
-            } else if (id_part.length == 0) {
-                alert('Belum memilih barang');
-            } else if (harga_beli == '') {
-                alert('Harga beli belum diisi');
-            } else if (jml_item == '') {
-                alert('Jumlah belum diisi');
-            };
+            simpanTemp();
         });
-        e.preventDefault();
     });
-
-    function cariDataBarang() {
-        let caripart = $('#cariPart').val()
-        $.ajax({
-            type: "post",
-            url: "/transaksikeluar/detailCariBarang",
-            data: {
-                caripart: caripart
-            },
-            dataType: "json",
-            success: function(response) {
-
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-                alert(xhr.status + '\n' + thrownError);
-            }
-        });
-
-        $('#tombolSelesaiTransaksi').click(function(e) {
-            e.preventDefault();
-            let faktur = $('#faktur').val();
-
-            if (faktur.length !== 0) {
-                Swal.fire({
-                    title: "Are you sure?",
-                    text: "You won't be able to revert this!",
-                    icon: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "Yes, delete it!"
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        Swal.fire({
-                            title: "Deleted!",
-                            text: "Your file has been deleted.",
-                            icon: "success"
-                        });
-                    }
-                });
-            }
-        });
-    }
 </script>

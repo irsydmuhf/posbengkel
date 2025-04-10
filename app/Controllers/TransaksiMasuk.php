@@ -25,7 +25,25 @@ class TransaksiMasuk extends BaseController
         ];
         return view('v_template', $data);
     }
+    public function buatFaktur()
+    {
+        $tgl = date('Y-m-d');
+        $modelTransaksiMasuk = new ModelTransaksiMasuk();
 
+        $hasil = $modelTransaksiMasuk->noFaktur($tgl)->getRowArray();
+        $data = $hasil['nofaktur'];
+
+        if (!$hasil['nofaktur']) {
+            $fakturBeli = 'B' . date('dmy', strtotime($tgl)) . '0001';
+        } else {
+            $lastNoUrut = substr($data, -4);
+            $nextNoUrut = intval($lastNoUrut) + 1;
+            $fakturBeli = 'B' . date('dmy', strtotime($tgl)) . sprintf('%04d', $nextNoUrut);
+        }
+
+        $msg = ['fakturbeli' => $fakturBeli];
+        echo json_encode($msg);
+    }
     function dataTemp()
     {
         if ($this->request->isAJAX()) {
@@ -151,6 +169,48 @@ class TransaksiMasuk extends BaseController
         }
     }
 
+    function tambahDataSupplier()
+    {
+        if ($this->request->isAJAX()) {
+            $json = [
+                'data' => view('transaksi_masuk/modaltambahsupplier')
+            ];
+            echo json_encode($json);
+        } else {
+            exit('Tidak bisa dipanggil');
+        }
+    }
+
+    public function tambahSupplier()
+    {
+        if ($this->request->isAJAX()) {
+            $data = [
+                'nama_supplier'   => $this->request->getPost('nama_supplier'),
+                'alamat_supplier' => $this->request->getPost('alamat_supplier'),
+                'telp_supplier'   => $this->request->getPost('telp_supplier')
+            ];
+
+            $modelSupplier = new ModelSupplier();
+
+            try {
+                $modelSupplier->insert($data);
+
+                return $this->response->setJSON([
+                    'status' => 'success',
+                    'message' => 'Supplier berhasil ditambahkan.'
+                ]);
+            } catch (\Exception $e) {
+                return $this->response->setJSON([
+                    'status' => 'error',
+                    'message' => 'Gagal menambahkan supplier: ' . $e->getMessage()
+                ]);
+            }
+        } else {
+            return redirect()->back(); // fallback kalau bukan AJAX
+        }
+    }
+
+
     function cariDataSupplier()
     {
         if ($this->request->isAJAX()) {
@@ -183,25 +243,6 @@ class TransaksiMasuk extends BaseController
     }
 
 
-    public function buatFaktur()
-    {
-        $tgl = date('Y-m-d');
-        $modelTransaksiKeluar = new ModelTransaksiMasuk();
-
-        $hasil = $modelTransaksiKeluar->noFaktur($tgl)->getRowArray();
-        $data = $hasil['nofaktur'];
-
-        if (!$hasil['nofaktur']) {
-            $fakturBeli = 'B' . date('dmy', strtotime($tgl)) . '0001';
-        } else {
-            $lastNoUrut = substr($data, -4);
-            $nextNoUrut = intval($lastNoUrut) + 1;
-            $fakturBeli = 'B' . date('dmy', strtotime($tgl)) . sprintf('%04d', $nextNoUrut);
-        }
-
-        $msg = ['fakturbeli' => $fakturBeli];
-        echo json_encode($msg);
-    }
     function simpanTemp()
     {
         if ($this->request->isAJAX()) {
@@ -285,6 +326,7 @@ class TransaksiMasuk extends BaseController
                         'subtotal_detbeli' => $row['subtotal_detbeli'],
                     ]);
                 }
+
                 // hapus data yg ada di tabel temp
                 $modelTemp->emptyTable();
 
@@ -304,6 +346,21 @@ class TransaksiMasuk extends BaseController
     {
         $modelTransaksiMasuk = new ModelTransaksiMasuk();
         $modelSupplier = new ModelSupplier();
+
+        $tombolCariTransaksi  = $this->request->getPost('tombolCariTransaksi');
+
+        if (isset($tombolCariTransaksi)) {
+            $caritransaksi = $this->request->getPost('caritransaksi');
+            session()->set('cari_transaksi', $caritransaksi);
+            return redirect()->to('/transaksimasuk/dataMasuk');
+        } else {
+            $caritransaksi = session()->get('cari_transaksi');
+        }
+
+        $totaldata = $caritransaksi ? $modelTransaksiMasuk->tampildata_cari($caritransaksi)->countAllResults() : $modelTransaksiMasuk->countAllResults();
+
+        $datatransaksi =  $caritransaksi ? $modelTransaksiMasuk->tampildata_cari($caritransaksi)->paginate(10) : $modelTransaksiMasuk->paginate(10);
+
         $data = [
             'icon' => 'fas fa-cash-register',
             'judul' => 'Transaksi',
@@ -311,20 +368,34 @@ class TransaksiMasuk extends BaseController
             'menu' => 'transaksi',
             'submenu' => 'Masuk',
             'page' => 'transaksi_masuk/data_transaksi',
-            'transaksi' => $modelTransaksiMasuk->AllData(),
+            'totaldata' => $totaldata,
+            'transaksi' => $datatransaksi,
             'supplier' => $modelSupplier->AllData()
         ];
         return view('v_template', $data);
     }
 
-
-    public function cariDataMasuk()
+    public function view($faktur_beli)
     {
-        $keyword = $this->request->getPost('keyword');
-        $modelTransaksiMasuk = new ModelTransaksiMasuk();
-        $data = $modelTransaksiMasuk->AllData($keyword);
-        return $this->response->setJSON($data);
+        $model = new ModelTransaksiMasuk();
+
+        $data['transaksi'] = $model->getTransactionByFaktur($faktur_beli);
+
+        if (!$data['transaksi']) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Transaction not found');
+        }
+
+        return view('transaksi_masuk/view', $data);
     }
+
+
+    // public function cariDataMasuk()
+    // {
+    //     $keyword = $this->request->getPost('keyword');
+    //     $modelTransaksiMasuk = new ModelTransaksiMasuk();
+    //     $data = $modelTransaksiMasuk->AllData($keyword);
+    //     return $this->response->setJSON($data);
+    // }
     // $tombolCariTransaksi = $this->request->getPost('tombolCariTransaksi');
 
     // if(isset($tombolCariTransaksi)){

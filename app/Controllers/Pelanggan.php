@@ -21,7 +21,7 @@ class Pelanggan extends BaseController
             'subjudul' => 'Pelanggan',
             'menu' => 'masterdata',
             'submenu' => 'pelanggan',
-            'page' => 'v_pelanggan',
+            'page' => 'pelanggan/v_pelanggan',
             'pelanggan' => $this->ModelPelanggan->AllData(),
         ];
         return view('v_template', $data);

@@ -54,3 +54,4 @@
         $('#id_part').focus();
     }
 </script>
+

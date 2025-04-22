@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-header">
             <div class="card-tools">
-                <a href="<?= base_url('TransaksiMasuk/dataMasuk')  ?>" class="btn btn-sm btn-warning">
+                <a href="<?= base_url('TransaksiKeluar/dataKeluar')  ?>" class="btn btn-sm btn-warning">
                     <i class="fa fa-backward"></i>
                     Kembali
                 </a>
@@ -45,7 +45,7 @@
                     <div class="form-group col-md">
                         <label for="">Kode Part / Jasa</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="id_part">
+                            <input type="text" class="form-control" id="id_item">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-primary" type="button" id="tombolCariItem">
                                     <i class="fa fa-search"></i>
@@ -55,11 +55,11 @@
                     </div>
                     <div class="form-group col">
                         <label for="">Nama Item</label>
-                        <input type="text" class="form-control" id="nama_part" readonly>
+                        <input type="text" class="form-control" id="nama_item" readonly>
                     </div>
                     <div class="form-group col">
                         <label for="">Harga Jual</label>
-                        <input type="number" class="form-control" id="harga_jual" readonly>
+                        <input type="number" class="form-control" id="harga_item" readonly>
                     </div>
                     <div class="form-group col-md-1">
                         <label for="">Jumlah</label>
@@ -209,6 +209,20 @@
         });
     });
 
+    function ambilDataItem() {
+        let id_item = $('#id_item').val();
+
+        $.ajax({
+            type: "pos",
+            url: "/transaksikeluar/ambilDataItem",
+            data: "data",
+            dataType: "dataType",
+            success: function(response) {
+
+            }
+        });
+    }
+
     function ambilDataPart() {
         let id_part = $('#id_part').val();
 
@@ -242,6 +256,8 @@
         });
     }
 
+
+
     function ambilDataJasa() {
         let id_jasa = $('#id_jasa').val();
 
@@ -249,7 +265,7 @@
             type: "post",
             url: "/transaksikeluar/ambilDataJasa",
             data: {
-                nopol: nopol
+                id_jasa: id_jasa
             },
             dataType: "json",
             success: function(response) {
@@ -334,13 +350,20 @@
             }
         });
 
+        $('#id_item').keydown(function(e) {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                ambilDataPart();
+            };
+        });
+
         $('#id_part').keydown(function(e) {
             if (e.keyCode == 13) {
                 e.preventDefault();
                 ambilDataPart();
             };
         });
-        
+
         $('#id_jasa').keydown(function(e) {
             if (e.keyCode == 13) {
                 e.preventDefault();

@@ -9,8 +9,6 @@
             </div>
 
             <div class="modal-body">
-
-                <!-- Tipe Pencarian -->
                 <div class="form-group">
                     <label><strong>Pilih Tipe Item:</strong></label><br>
                     <div class="form-check form-check-inline">
@@ -22,8 +20,6 @@
                         <label class="form-check-label" for="tipeJasa">Jasa</label>
                     </div>
                 </div>
-
-                <!-- Kolom Pencarian -->
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Cari Berdasarkan Nama Barang atau Jasa" id="cariitem">
                     <div class="input-group-append">
@@ -32,8 +28,6 @@
                         </button>
                     </div>
                 </div>
-
-                <!-- Tampilkan Data -->
                 <div class="row viewdetaildata"></div>
             </div>
         </div>

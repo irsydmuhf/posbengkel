@@ -45,7 +45,7 @@
     function pilih(kode) {
         $('#id_jasa').val(kode);
         $('#modalcarijasa').on('hidden.bs.modal', function(event) {
-            ambilDataJasa();
+            ambilDataItem();
         });
         $('#modalcarijasa').modal('hide');
     }

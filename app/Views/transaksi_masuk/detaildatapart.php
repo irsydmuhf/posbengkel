@@ -47,7 +47,7 @@
     function pilih(kode) {
         $('#id_part').val(kode);
         $('#modalcaripart').on('hidden.bs.modal', function(event) {
-            ambilDataPart();
+            ambilDataItem();
         });
         $('#modalcaripart').modal('hide');
     }
